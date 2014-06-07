@@ -45,10 +45,11 @@ app/config/parameters.yml
 ######################
 *.log
 
-# Personal config files #
+# Codekit files #
 #########################
 config.codekit
 codekit-config.json
+static/styles/sass/.sass-cache/*
 
 # OS generated files #
 ######################
