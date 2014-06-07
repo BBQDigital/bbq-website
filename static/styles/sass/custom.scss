@@ -1,0 +1,174 @@
+/* This is where all custom styles are held */
+
+/* Fonts */
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700,900,400italic,700italic,900italic);
+
+/* Global styles */
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+     > header {
+        position: absolute;
+        display: none //for now
+    }
+
+    > footer {
+        @extend .dark;
+        padding:1em;
+
+        a {
+            color: $offWhite;
+            font-size: 1.1em;
+        }
+
+        .copy {
+            display: block;
+            margin-bottom: 1em;
+        }
+    }
+}
+
+/* Landing section */
+.landing {
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+    max-height: 100%;
+    background-image: url("/static/images/steak-background.jpg");
+    background-position-y: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &.collapsed {
+        min-height:30%;
+        max-height:30%;
+        background-position-y: 50%;
+    }
+
+    > header {
+        text-align: center;
+        .logo {
+            margin: 0 auto;
+            box-shadow: 0 0 100px #000;
+        }
+        .slogan {
+            display: block;
+            margin: 0 auto;
+            font-size: 2.5em;
+            color: $offWhite;
+
+            strong { font-weight: bold; }
+        }
+    }
+
+    .cta {
+        position: absolute;
+        width: 100%;
+        bottom: 5%;
+        text-align: center;
+
+        span {
+            display: block;
+            font-size: 4em;
+            color: $offWhite;
+            text-shadow: 0 0 10px #000;
+            text-transform: uppercase;
+            @extend .extraBold;
+            strong {
+                @extend .black;
+                font-size: 1.3em;
+            }
+        }
+
+        .button { margin-top: 1em; }
+    }
+}
+
+/* Content Blocks */
+.content-block {
+    h1 {
+        background-color: $darkGrey;
+        color: $offWhite;
+        padding: 1em 0;
+        @extend .mainH1Style;
+        margin-bottom: 1em;
+    }
+
+    .shout {
+        display: block;
+        text-align: center;
+        text-transform: uppercase;
+        @extend .black;
+        font-size: 4em;
+        color: $darkGrey;
+        padding: 1em 20%;
+        background-image: url("/static/images/striped-bg.gif");
+        background-repeat: repeat;
+        margin: -0.8em 0 1em 0;
+    }
+
+    .content {
+        margin: 0 15%;
+    }
+
+    .button { margin: 1em auto; }
+
+    a {
+        color: $brand;
+        &:hover {
+            color: darken($brand, 15%);
+        }
+    }
+
+    p {
+        color: $darkGrey;
+        font-size: 1.6em;
+        line-height: 1.2em;
+        margin: 0 0 0.5em 0;
+    }
+
+    /* Contact type */
+    &.contact {
+
+        .content { padding: 1.5em 0;}
+
+        h1 { margin-bottom: 0.2em; }
+        .col p {padding-right: 2em; }
+        .item-detail {
+            display: block;
+            font-size: 1.4em;
+            margin-bottom: 1em;
+            h2, strong { font-weight: bold}
+        }
+        address { @extend .col-33; }
+    }
+
+    /* Map type */
+    &.map {
+        h1 {
+            font-size: 1.5em;
+            margin-bottom: 0
+        }
+    }
+}
+
+.brands {
+    margin-bottom: 1em;
+    li {
+        display: inline-block;
+        margin-right: 20px;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .landing { font-size: 70%; }
+
+    footer {
+        .col { width: 45%; }
+    }
+}

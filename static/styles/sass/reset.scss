@@ -12,4 +12,10 @@ abbr,acronym { border:0;}
 input, textarea { -webkit-appearance: none; }
 header, article, section, nav, figure, aside, hgroup, footer { display:block; } // Only for HTML5
 body, html { height:100%; }
+html, html a { -webkit-font-smoothing: antialiased !important; }
 select::-ms-expand { display: none; } // Remove default drop down style in IE
+body { font-size: 62.5%; }
+
+/* Any text inside a paragraph should be formatted normally */
+p strong { font-weight: bold; }
+p em { font-style: italic; }
