@@ -31,12 +31,12 @@
     transition: background-color 1s;
 
     &.light {
-        color: $darkGrey;
+        color: $darkGrey !important;
         background-color: rgba($offWhite, .8);
         &:hover { background-color: rgba($offWhite, 1); }
     }
     &.dark {
-        color: $offWhite;
+        color: $offWhite !important;
         background-color: rgba($darkGrey, .8);
         &:hover { background-color: rgba($darkGrey, 1); }
     }
