@@ -18,6 +18,7 @@ Core = {
 
     init: function () {
         var o = this;
+        o.constructor();
         o.detectSvgSupport();
         //o.responsiveLogger(); // Only turn on in dev environment
     },
@@ -28,6 +29,11 @@ Core = {
                 return $(this).attr('src').replace('.svg', '.png');
             });
         }
+    },
+
+    setHeightToParent: function (element, parent) {
+        var getHeight = element.parents(parent).outerHeight(true);
+        element.css('height', getHeight+'px');
     },
 
     responsiveLogger: function() {
