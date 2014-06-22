@@ -48,6 +48,8 @@ body {
     }
 
     > header {
+        position: relative;
+        z-index: 999;
         text-align: center;
         .logo {
             margin: 0 auto;
@@ -93,7 +95,6 @@ body {
         color: $offWhite;
         padding: 1em 0;
         @extend .mainH1Style;
-        margin-bottom: 1em;
     }
 
     .shout {
@@ -106,7 +107,7 @@ body {
         padding: 1em 20%;
         background-image: url("/static/images/striped-bg.gif");
         background-repeat: repeat;
-        margin: -0.8em 0 1em 0;
+        margin-bottom: 1em;
     }
 
     .block-image {
@@ -120,6 +121,10 @@ body {
         }
         &.knowledge-sharing {
             background-image: url("/static/images/knowledge_sharing_background.jpg");
+        }
+        &.almost-unbelievable {
+            background-image: url("/static/images/almost_unbelievable_background.jpg");
+            background-position: 50% 65%;
         }
     }
 
@@ -192,6 +197,20 @@ body {
         .cta {
              font-size: 60%;
              .button { font-size: 240%; }
+        }
+    }
+
+    .content-block {
+        .block-image {
+            &.beautiful-web {
+                background-image: url("/static/images/beautiful_web_background-mob.jpg");
+            }
+            &.knowledge-sharing {
+                background-image: url("/static/images/knowledge_sharing_background-mob.jpg");
+            }
+            &.almost-unbelievable {
+                background-image: url("/static/images/almost_unbelievable_background-mob.jpg");
+            }
         }
     }
 
