@@ -1,0 +1,56 @@
+/* This is where all media queries are held */
+
+// Narrow tablet layout
+@media only screen and (max-width: 650px) {
+    .content-block {
+        .shout { padding: 1em 8%; }
+        .content { margin: 0 8%; }
+    }
+}
+
+// Mobile layout
+@media only screen and (max-width: 450px) {
+    .landing {
+        background-image: url("/static/images/steak-background-mob.jpg");
+
+        .cta {
+             font-size: 60%;
+             .button { font-size: 240%; }
+        }
+    }
+
+    .content-block {
+        .block-image {
+            &.beautiful-web {
+                background-image: url("/static/images/beautiful_web_background-mob.jpg");
+            }
+            &.knowledge-sharing {
+                background-image: url("/static/images/knowledge_sharing_background-mob.jpg");
+            }
+            &.almost-unbelievable {
+                background-image: url("/static/images/almost_unbelievable_background-mob.jpg");
+            }
+        }
+    }
+
+    footer {
+        .col { width: 45%; }
+    }
+}
+
+
+// Small screen layout (eg Nintendo DS)
+@media only screen and (max-width: 320px) {
+    .landing {
+        .cta {
+            font-size: 30%;
+            span { background-color: #000 }
+            .button { font-size: 290%; }
+        }
+    }
+
+    .content-block {
+        .shout { font-size: 150%; }
+        h1 { font-size: 100%; }
+    }
+}
