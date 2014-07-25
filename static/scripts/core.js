@@ -20,6 +20,7 @@ Core = {
         var o = this;
         o.constructor();
         o.detectSvgSupport();
+        o.parallaxImage('.parallax');
         //o.responsiveLogger(); // Only turn on in dev environment
     },
 
@@ -48,6 +49,16 @@ Core = {
             }, 500
         );
     },
+
+    parallaxImage : function (element) {
+        var element = $(element)
+        if (element.length) {
+            $(window).scroll( function () {
+                var vMove = $(window).scrollTop();
+                element.css('background-position', '50%' + (vMove * 0.035)+'%');
+            });
+        }
+    }
 };
 
 $(document).ready( function() {
