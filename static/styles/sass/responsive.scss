@@ -1,5 +1,31 @@
 /* This is where all media queries are held */
 
+// desktop/landscape tablet layout
+@media only screen and (min-width: 1060px) {
+    .main {
+        width: 98%;
+        margin: 0 auto;
+    }
+    .content-block {
+        .main & {
+            display: inline-block;
+            width: 33.2%;
+            vertical-align: top;
+
+            h1 { padding: 1em 10%; }
+        }
+    }
+}
+
+// High resolution displays
+@media only screen and (min-width: 1760px) {
+    .content-block {
+        .main & {
+            h1 { padding: 1em 0;}
+        }
+    }
+}
+
 // Narrow tablet layout
 @media only screen and (max-width: 650px) {
     .content-block {
