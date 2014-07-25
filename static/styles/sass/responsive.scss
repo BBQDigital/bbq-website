@@ -1,7 +1,12 @@
 /* This is where all media queries are held */
 
+@media only screen and (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
+   @include hires-switch();
+}
+
 // desktop/landscape tablet layout
 @media only screen and (min-width: 1060px) {
+    @include hires-switch();
     .main {
         width: 98%;
         margin: 0 auto;
@@ -31,6 +36,18 @@
     .content-block {
         .shout { padding: 1em 8%; }
         .content { margin: 0 8%; }
+    }
+
+    .brands {
+        .content { margin: 1em 0; }
+        ul {
+            display: block;
+            li {
+                width: 49%;
+                margin: 1em 0;
+                display: inline-block;
+            }
+        }
     }
 }
 

@@ -176,19 +176,30 @@ body {
 }
 
 .brands {
-    margin-bottom: 1em;
-    li {
-        display: inline-block;
-        margin-right: 20px;
-        text-indent: -9999px;
-        background-size: contain;
+    .content { margin: 2em 0; }
+    ul {
+        margin-bottom: 1em;
+        display: table;
+        width: 100%;
+        border-spacing: 2em;
+        border-collapse: separate;
+        li {
+            display: table-cell;
+            margin-right: 20px;
+            text-indent: -9999px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            height: 5em;
+            text-align: center;
 
-        &.honda { background-image:url() no-repeat 0 0; }
-        &.accenture { background-image:url() no-repeat 0 0; }
-        &.nokia { background-image:url() no-repeat 0 0; }
-        &.asda { background-image:url() no-repeat 0 0; }
-        &.plusnet { background-image:url() no-repeat 0 0; }
-        &.bandq { background-image:url() no-repeat 0 0; }
-        &.sse { background-image:url() no-repeat 0 0; }
+            &.honda { background-image:url(/static/images/brands/honda.png); }
+            &.accenture { background-image:url(/static/images/brands/accenture.png); }
+            &.nokia { background-image:url(/static/images/brands/nokia.png); }
+            &.asda { background-image:url(/static/images/brands/asda.png); }
+            &.plusnet { background-image:url(/static/images/brands/plusnet.png); }
+            &.bandq { background-image:url(/static/images/brands/bandq.png); }
+            &.sse { background-image:url(/static/images/brands/sse.png); }
+        }
     }
 }
