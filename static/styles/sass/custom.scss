@@ -89,6 +89,9 @@ body {
 }
 
 /* Content Blocks */
+
+.main { position: relative; } // some content blocks on the home page are contained in this div
+
 .content-block {
     h1 {
         background-color: $darkGrey;
@@ -128,9 +131,7 @@ body {
         }
     }
 
-    .content {
-        margin: 0 15%;
-    }
+    .content { margin: 5em 15%; }
 
     .button { margin: 2em auto 1em; }
 
@@ -144,7 +145,7 @@ body {
     p {
         color: $darkGrey;
         font-size: 2em;
-        line-height: 1.5em;
+        line-height: 2em;
         margin: 0 0 1em 0;
     }
 
@@ -178,5 +179,15 @@ body {
     li {
         display: inline-block;
         margin-right: 20px;
+        text-indent: -9999px;
+        background-size: contain;
+
+        &.honda { background-image:url() no-repeat 0 0; }
+        &.accenture { background-image:url() no-repeat 0 0; }
+        &.nokia { background-image:url() no-repeat 0 0; }
+        &.asda { background-image:url() no-repeat 0 0; }
+        &.plusnet { background-image:url() no-repeat 0 0; }
+        &.bandq { background-image:url() no-repeat 0 0; }
+        &.sse { background-image:url() no-repeat 0 0; }
     }
 }

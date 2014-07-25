@@ -20,7 +20,8 @@ Core = {
         var o = this;
         o.constructor();
         o.detectSvgSupport();
-        o.parallaxImage('.parallax');
+        o.parallaxEffect('.parallax', 0.030, 'image');
+        o.parallaxEffect('.landing', 0.30);
         //o.responsiveLogger(); // Only turn on in dev environment
     },
 
@@ -50,12 +51,16 @@ Core = {
         );
     },
 
-    parallaxImage : function (element) {
-        var element = $(element)
+    parallaxEffect : function (el, moveBy, type) {
+        var element = $(el);
         if (element.length) {
             $(window).scroll( function () {
                 var vMove = $(window).scrollTop();
-                element.css('background-position', '50%' + (vMove * 0.035)+'%');
+                if (type === 'image') {
+                    element.css('background-position', '50%' + (vMove * moveBy)+'%');
+                } else {
+                    element.css('top', (vMove * moveBy)+'px');
+                }
             });
         }
     }
