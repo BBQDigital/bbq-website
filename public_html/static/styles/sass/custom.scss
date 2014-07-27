@@ -10,8 +10,45 @@ body {
     height: 100%;
     min-height: 100%;
      > header {
-        position: absolute;
-        display: none //for now
+        position: fixed;
+        width: 100%;
+        z-index: 9999;
+        background-color: $darkGrey;
+        color: $offWhite;
+        padding: 1em 0;
+        .main-menu { margin-left: 1em; }
+        .social {
+            margin-right: 1em;
+            width: 5.5em;
+            float: right;
+
+            li {
+                text-indent: -9999px;
+                width: 2.5em;
+                height: 100%;
+            }
+
+            a {
+                background-size: contain;
+                background-repeat: no-repeat;
+                &.facebook { background-image: url("/static/images/social-fb.png"); }
+                &.twitter { background-image: url("/static/images/social-twitter.png"); }
+                &:hover { opacity: 0.8; }
+            }
+        }
+        li {
+            display: inline-block;
+        }
+
+        a {
+            color: $offWhite;
+            font-size: 1.2em;
+            display: block;
+            padding: 0.46em 0.5em;
+            &:hover {
+                background-color: rgba($offWhite, 0.1);
+            }
+        }
     }
 
     > footer {
@@ -52,7 +89,7 @@ body {
         z-index: 999;
         text-align: center;
         .logo {
-            margin: 0 auto;
+            margin: 6em auto 0;
             box-shadow: 0 0 100px #000;
         }
         .slogan {

@@ -17,6 +17,8 @@
             width: 33.2%;
             vertical-align: top;
 
+            .button { width: 66% }
+
             h1 { padding: 1em 10%; }
         }
     }
@@ -53,6 +55,7 @@
 
 // Mobile layout
 @media only screen and (max-width: 450px) {
+    .button { width: 70%; }
     .landing {
         background-image: url("/static/images/steak-background-mob.jpg");
 

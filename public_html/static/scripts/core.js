@@ -20,7 +20,7 @@ Core = {
         var o = this;
         o.constructor();
         o.detectSvgSupport();
-        o.parallaxEffect('.parallax', 0.030, 'image');
+        o.parallaxEffect('.parallax', 0.036, 'image');
         o.parallaxEffect('.landing', 0.30);
         //o.responsiveLogger(); // Only turn on in dev environment
     },
