@@ -1,0 +1,5 @@
+bbq_charcoal_core:
+    resource: "@BBQCharcoalCoreBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
