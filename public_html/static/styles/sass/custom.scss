@@ -19,13 +19,14 @@ body {
         .main-menu { margin-left: 1em; }
         .social {
             margin-right: 1em;
-            width: 5.5em;
+            width: 6.5em;
             float: right;
 
             li {
                 text-indent: -9999px;
                 width: 2.5em;
                 height: 100%;
+                margin-left: 0.5em;
             }
 
             a {
@@ -138,6 +139,12 @@ body {
         @extend .mainH1Style;
     }
 
+    h2 {
+        font-size: 1.6em;
+        font-weight: bold;
+        margin-bottom: 1em;
+    }
+
     .shout {
         display: block;
         text-align: center;
@@ -183,8 +190,18 @@ body {
     p {
         color: $darkGrey;
         font-size: 2em;
-        line-height: 2em;
+        line-height: 1.6em;
         margin: 0 0 1em 0;
+    }
+
+    ul {
+        margin: 0 0 2em 2em;
+        list-style-type: disc;
+        list-style-position: inside;
+        li {
+            font-size: 1.8em;
+            margin-bottom: 0.5em;
+        }
     }
 
     /* Contact type */
