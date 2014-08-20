@@ -1,5 +1,5 @@
 <!-- @import includes/header -->
-        <section class="landing collapsed">
+        <section class="landing collapsed contact-us">
             <!-- @import includes/logo_slogan -->
         </section>
         <div class="main">
@@ -28,7 +28,28 @@
                         <a href="mailto:info@bbqdigital.com" class="item-detail"><strong>Email us</strong></a>
                     </div>
                     <div class="col col-37">
-                        Form goes here
+                        <form action="mailer.php" method="post">
+                            <fieldset>
+                                <legend>contact BBQ</legend>
+                                <div class="inputContainer">
+                                    <label for="name">Name:</label>
+                                    <input type="text" name="yourname" id="name">
+                                </div>
+                                <div class="inputContainer">
+                                    <label for="email">Email:</label>
+                                    <input type="email" name="email" id="email">
+                                </div>
+                                <div class="inputContainer">
+                                    <label for="tel">Contact Number:</label>
+                                    <input type="number" name="tel" id="tel">
+                                </div>
+                                <div class="inputContainer">
+                                    <label for="enquiry">What can we do for you?:</label>
+                                    <textarea name="enquiry" id="enquiry" cols="30" rows="10"></textarea>
+                                </div>
+                                <button type="submit" value="Send enquiry"/>
+                            </fieldset>
+                        </form>
                     </div>
                 </div>
             </section>

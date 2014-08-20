@@ -5,24 +5,24 @@
 }
 
 // desktop/landscape tablet layout
-@media only screen and (min-width: 1500px) {
-    @include hires-switch();
-    .main {
-        width: 98%;
-        margin: 0 auto;
-    }
-    .content-block {
-        .main & {
-            display: inline-block;
-            width: 33.2%;
-            vertical-align: top;
+// @media only screen and (min-width: 1500px) {
+//     @include hires-switch();
+//     .main {
+//         width: 98%;
+//         margin: 0 auto;
+//     }
+//     .content-block {
+//         .main & {
+//             display: inline-block;
+//             width: 33.2%;
+//             vertical-align: top;
 
-            .button { width: 66% }
+//             .button { width: 66% }
 
-            h1 { padding: 1em 10%; }
-        }
-    }
-}
+//             h1 { padding: 1em 10%; }
+//         }
+//     }
+// }
 
 // High resolution displays
 @media only screen and (min-width: 1760px) {

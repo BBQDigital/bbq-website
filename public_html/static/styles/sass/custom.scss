@@ -3,6 +3,7 @@
 /* Global styles */
 body {
     font-family: 'Lato', sans-serif;
+    color: #333;
 }
 
 .wrapper {
@@ -19,7 +20,7 @@ body {
         .main-menu { margin-left: 1em; }
         .social {
             margin-right: 1em;
-            width: 6.5em;
+
             float: right;
 
             li {
@@ -27,6 +28,11 @@ body {
                 width: 2.5em;
                 height: 100%;
                 margin-left: 0.5em;
+
+                &.blog {
+                    text-indent: 0;
+                    width: auto;
+                }
             }
 
             a {
@@ -80,9 +86,9 @@ body {
     background-size: cover;
 
     &.collapsed {
-        min-height:30%;
-        max-height:30%;
+        min-height:250px;
         background-position-y: 50%;
+        margin-bottom: 1px;
     }
 
     > header {
@@ -268,6 +274,17 @@ body {
             &.plusnet { background-image:url(/static/images/brands/plusnet.png); }
             &.bandq { background-image:url(/static/images/brands/bandq.png); }
             &.sse { background-image:url(/static/images/brands/sse.png); }
+        }
+    }
+}
+
+.testimonials {
+    min-height: 30em;
+    blockquote {
+        font-size: 2.5em;
+        text-align: center;
+        strong {
+            font-weight: bold;
         }
     }
 }

@@ -2,6 +2,7 @@
 
 // Namespacing
 var Core = Core || {};
+var Care = Care || {};
 
 Core = {
     constructor: function () {
@@ -22,7 +23,24 @@ Core = {
         o.detectSvgSupport();
         o.parallaxEffect('.parallax', 0.036, 'image');
         o.parallaxEffect('.landing', 0.30);
+        o.contentCycle('.testimonials blockquote');
         //o.responsiveLogger(); // Only turn on in dev environment
+    },
+
+    contentCycle : function (element) {
+        var el = $(element).hide(),
+            count = el.length,
+            i = 1;
+            el.first().show();
+            setInterval( function () {
+                if (i < count) {
+                    el.fadeOut('fast').delay('300');
+                    el.eq(i).fadeIn('slow');
+                    i++;
+                } else {
+                    i = 0;
+                }
+            }, 5000);
     },
 
     detectSvgSupport: function () {
