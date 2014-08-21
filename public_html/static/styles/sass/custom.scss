@@ -86,9 +86,19 @@ body {
     background-size: cover;
 
     &.collapsed {
-        min-height:250px;
+        min-height:350px;
         background-position-y: 50%;
-        margin-bottom: 1px;
+        border-bottom: 1px solid #444;
+    }
+
+    &.about-us {
+        background-image: url("/static/images/about-us-hires.jpg");
+        background-position-y: 58%;
+    }
+
+    &.contact-us {
+        background-image: url("/static/images/contact-us-hires.jpg");
+        background-position-y: 75%;
     }
 
     > header {
@@ -104,6 +114,7 @@ body {
             margin: 0 auto;
             font-size: 2.5em;
             color: $offWhite;
+            text-shadow: 0 0 3px rgba(0,0,0,0.7);
 
             strong { font-weight: bold; }
         }
@@ -221,16 +232,19 @@ body {
     &.contact {
 
         .content { padding: 1.5em 0;}
-
+        .contact-details { margin-right: 5%; }
         h1 { margin-bottom: 0.2em; }
         .col p { padding-right: 2em; }
-        .item-detail {
+        .phone-number {
+            margin: 0.3em 0;
             display: block;
-            font-size: 1.4em;
-            margin-bottom: 1em;
-            h2, strong { font-weight: bold}
+            font-size: 1.6em;
+            font-weight: bold;
         }
-        address { @extend .col-33; }
+        address {
+            font-size: 1.6em;
+            line-height: 1.6;
+        }
 
         form {
             legend { position: absolute; left:-999px; }

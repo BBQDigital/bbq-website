@@ -22,7 +22,7 @@ Core = {
         o.constructor();
         o.detectSvgSupport();
         o.parallaxEffect('.parallax', 0.036, 'image');
-        o.parallaxEffect('.landing', 0.30);
+        o.parallaxEffect('.landing', 0.25);
         o.contentCycle('.testimonials blockquote');
         //o.responsiveLogger(); // Only turn on in dev environment
     },
