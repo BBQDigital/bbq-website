@@ -231,6 +231,39 @@ body {
             h2, strong { font-weight: bold}
         }
         address { @extend .col-33; }
+
+        form {
+            legend { position: absolute; left:-999px; }
+            label {
+                display: block;
+                font-size: 1.6em;
+                margin-bottom: 0.5em;
+            }
+            input, textarea {
+                font-size: 1.6em;
+                padding:0.2em;
+                border:0;
+                background-color: #f1f1f1;
+
+                &:focus {
+                    outline: none;
+                    background-color: #ebebeb;
+                }
+            }
+            button {
+                border:0;
+                background-color: $brand;
+                color: #fff;
+                padding: 0.5em 1em;
+                margin: 1em 0;
+                font-size: 1.6em;
+                &:hover {
+                    background-color: darken($brand, 5%);
+                    cursor:pointer;
+                }
+            }
+            .inputContainer { margin-bottom: 1em; }
+        }
     }
 
     /* Map type */
