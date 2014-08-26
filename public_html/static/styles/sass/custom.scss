@@ -29,7 +29,7 @@ body {
                 height: 100%;
                 margin-left: 0.5em;
 
-                &.blog {
+                &.reset {
                     text-indent: 0;
                     width: auto;
                 }
@@ -61,15 +61,30 @@ body {
     > footer {
         @extend .dark;
         padding:1em;
-
         a {
             color: $offWhite;
             font-size: 1.1em;
+            display: inline-block;
+            margin-bottom: 0.5em;
         }
 
         .copy {
+            clear: both;
             display: block;
-            margin-bottom: 1em;
+            margin-bottom: 0.3em;
+        }
+
+        .contact {
+            float: right;
+            font-size: 1.2em;
+            line-height: 1.3em;
+            a {
+                display: block;
+                margin-bottom: 0.5em;
+            }
+            strong {
+                font-weight: bold;
+            }
         }
     }
 }
@@ -99,6 +114,32 @@ body {
     &.contact-us {
         background-image: url("/static/images/contact-us-hires.jpg");
         background-position-y: 75%;
+    }
+
+    &.frequently-asked-questions {
+        background-image: url("/static/images/faq-header-hires.jpg");
+        background-position-y: 35%;
+    }
+
+    .scrolly {
+        display: block;
+        position: absolute;
+        right: 1.5em;
+        bottom: 1em;
+        font-size: 2em;
+        color: #fff;
+        padding: 0 20px;
+        &:before, &:after {
+            content:'';
+            position:absolute;
+            top:9px;
+            width:0;
+            height:0;
+            border:6px solid transparent;
+            border-top:10px solid #fff;
+        }
+        &:before { left:0; }
+        &:after { right:0; }
     }
 
     > header {
@@ -197,7 +238,7 @@ body {
     }
 
     .content {
-        margin: 5em 15%;
+        margin: 5em 15% 4em;
         overflow: hidden;
     }
 
@@ -225,6 +266,12 @@ body {
             font-size: 1.6em;
             line-height: 1.6em;
             margin-bottom: 0.5em;
+            ul { margin: 0.5em 0 0 3em; }
+            li {
+                font-size: 1em;
+                line-height: 1.2em;
+                list-style: lower-alpha;
+            }
         }
     }
 
@@ -271,6 +318,7 @@ body {
                 padding: 0.5em 1em;
                 margin: 1em 0;
                 font-size: 1.6em;
+                border-radius: 4px;
                 &:hover {
                     background-color: darken($brand, 5%);
                     cursor:pointer;
@@ -333,5 +381,20 @@ body {
         strong {
             font-weight: bold;
         }
+    }
+}
+
+.faq {
+    dt {
+        font-size: 2em;
+        font-weight: bold;
+        color: #fff;
+        background: $darkGrey;
+        padding:1em;
+        margin-bottom: 1em;
+    }
+
+    dd {
+        margin-bottom: 3em;
     }
 }
