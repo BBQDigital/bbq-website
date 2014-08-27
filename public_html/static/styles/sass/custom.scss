@@ -20,9 +20,10 @@ body {
         .main-menu { margin-left: 1em; }
         .social {
             margin-right: 1em;
-
-            float: right;
-
+            display: inline-block;
+            position: absolute;
+            right: 0;
+            top: 1em;
             li {
                 text-indent: -9999px;
                 width: 2.5em;
@@ -110,6 +111,11 @@ body {
         background-image: url("/static/images/about-us-hires.jpg");
         background-position-y: 58%;
     }
+    &.why-bbq {
+        background-image: url("/static/images/why-bbq-hires.jpg");
+        background-position-y: 45%;
+        background-position-x: 50%;
+    }
 
     &.contact-us {
         background-image: url("/static/images/contact-us-hires.jpg");
@@ -119,6 +125,7 @@ body {
     &.frequently-asked-questions {
         background-image: url("/static/images/faq-header-hires.jpg");
         background-position-y: 35%;
+        background-position-x: 90%;
     }
 
     .scrolly {
@@ -155,7 +162,7 @@ body {
             margin: 0 auto;
             font-size: 2.5em;
             color: $offWhite;
-            text-shadow: 0 0 3px rgba(0,0,0,0.7);
+            text-shadow: 0 1px 5px rgba(0,0,0,1);
 
             strong { font-weight: bold; }
         }
@@ -304,7 +311,7 @@ body {
                 font-size: 1.6em;
                 padding:0.2em;
                 border:0;
-                background-color: #f1f1f1;
+                background-color: lighten($lightGrey, 15%);
 
                 &:focus {
                     outline: none;

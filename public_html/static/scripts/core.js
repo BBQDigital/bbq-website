@@ -2,8 +2,10 @@
 
 // Namespacing
 var Core = Core || {};
-var Care = Care || {};
+var Mobile = Mobile || {};
+var Desktop = Desktop || {};
 
+// Core functions which are used throughout the site on all devices
 Core = {
     constructor: function () {
         // Detect browser
@@ -15,16 +17,18 @@ Core = {
         this.bodyTag.removeClass('no-js').addClass('js'); // We know js has been detected so add the 'js' class to the page.
         this.viewportHeight = this.bodyTag.outerHeight(true);
         this.viewportWidth = this.bodyTag.outerWidth(true);
+
     },
 
     init: function () {
         var o = this;
         o.constructor();
         o.detectSvgSupport();
-        o.parallaxEffect('.parallax', 0.036, 'image');
-        o.parallaxEffect('.landing', 0.25);
         o.contentCycle('.testimonials blockquote');
         //o.responsiveLogger(); // Only turn on in dev environment
+
+        if (o.viewportWidth <= 450) Mobile.init();
+        if (o.viewportWidth >= 1024) Desktop.init();
     },
 
     contentCycle : function (element) {
@@ -56,6 +60,8 @@ Core = {
         element.css('height', getHeight+'px');
     },
 
+
+
     responsiveLogger: function() {
         // Output the screen width (For development only this method should be removed when the site is deployed)
         var o = this;
@@ -67,6 +73,17 @@ Core = {
                 o.screenLogger.html(o.viewportWidth+'px');
             }, 500
         );
+    },
+
+
+};
+
+// Desktop only functions
+Desktop = {
+    init : function () {
+        var d = this;
+        d.parallaxEffect('.parallax', 0.036, 'image');
+        d.parallaxEffect('.landing', 0.25);
     },
 
     parallaxEffect : function (el, moveBy, type) {
@@ -81,6 +98,31 @@ Core = {
                 }
             });
         }
+    }
+};
+
+// The mobile only functions
+Mobile = {
+    init : function () {
+        var m = this;
+        m.mobileMenu();
+    },
+
+    mobileMenu: function () {
+        var toggle = 0,
+        header = Core.bodyTag.find('.wrapper > header'),
+        nav = header.find('nav');
+        header.on('click', function () {
+            if (toggle === 0) {
+                $(this).removeClass('closed').addClass('open');
+                nav.slideDown();
+                toggle = 1;
+            } else {
+                nav.slideUp();
+                $(this).removeClass('open').addClass('closed');
+                toggle = 0;
+            }
+        });
     }
 };
 
