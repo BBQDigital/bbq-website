@@ -285,8 +285,13 @@ body {
     /* Contact type */
     &.contact {
 
+        /* columns */
+        .contact-details { width: 24.5%;padding-right: 2em }
+        .form { width: 50%; }
+        /* end columns */
+
         .content { padding: 1.5em 0;}
-        .contact-details { margin-right: 5%; }
+
         h1 { margin-bottom: 0.2em; }
         .col p { padding-right: 2em; }
         .phone-number {
