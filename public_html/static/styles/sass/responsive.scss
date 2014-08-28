@@ -38,6 +38,7 @@
     .content-block {
         .shout { padding: 1em 8%; }
         .content { margin: 0 8%; }
+        h1 { margin-bottom: 0.5em; }
     }
 
     .brands {
@@ -142,7 +143,6 @@
     }
 
     .content-block {
-        h1 { margin-bottom: 1em; }
         .block-image {
             &.beautiful-web {
                 background-image: url("/static/images/beautiful_web_background-mob.jpg");
@@ -187,7 +187,6 @@
         margin-bottom: 1em;
     }
 
-    .contact form,
     .contact-details {
         background-color: lighten($lightGrey, 15%);
         padding: 2em;

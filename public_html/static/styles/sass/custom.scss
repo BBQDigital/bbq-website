@@ -245,7 +245,7 @@ body {
     }
 
     .content {
-        margin: 5em 15% 4em;
+        margin: 5em 10% 4em;
         overflow: hidden;
     }
 
@@ -301,7 +301,13 @@ body {
         }
 
         form {
-            legend { position: absolute; left:-999px; }
+            background-color: lighten($lightGrey, 15%);
+            padding: 2em;
+
+            legend {
+                position: absolute;
+                left:-999px;
+            }
             label {
                 display: block;
                 font-size: 1.6em;
@@ -309,15 +315,17 @@ body {
             }
             input, textarea {
                 font-size: 1.6em;
-                padding:0.2em;
+                padding:0.2em 0;
                 border:0;
-                background-color: lighten($lightGrey, 15%);
+                background-color: lighten($lightGrey, 8%);
 
                 &:focus {
                     outline: none;
                     background-color: #ebebeb;
                 }
             }
+
+            textarea { width: 100%; }
             button {
                 border:0;
                 background-color: $brand;
