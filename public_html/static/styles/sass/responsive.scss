@@ -157,6 +157,18 @@
         .content {
             margin: 0 5%;
         }
+
+        &.contact {
+             .phone-number {
+                font-size: 1.8em;
+            }
+            .contact-details { padding: 2em; }
+            form {
+                input, textarea {
+                        background-color: lighten($lightGrey, 5%);
+                }
+            }
+        }
     }
 
     footer {
@@ -183,20 +195,12 @@
 
     .col {
         display: block;
-        width: 100%;
+        width: 100% !important;
         margin-bottom: 1em;
     }
 
-    .contact-details {
-        background-color: lighten($lightGrey, 15%);
-        padding: 2em;
-    }
 
-    .content-block.contact form {
-        input, textarea {
-                background-color: lighten($lightGrey, 5%);
-        }
-    }
+
 
 
 }
