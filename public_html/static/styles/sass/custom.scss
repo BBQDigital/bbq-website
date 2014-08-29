@@ -360,6 +360,17 @@ body {
                 }
             }
             .inputContainer { margin-bottom: 1em; }
+
+            .posted-message {
+                display: none;
+                background: #99cc99 url(/static/images/thumbs-up.png) no-repeat 0.5em 50%;
+                background-size: 8%;
+                margin-left: 1em;
+                padding: 0.6em 0.5em 0.6em 2em;
+                font-size: 1.4em;
+                border-radius: 3px;
+                &.true { display: inline-block; }
+            }
         }
     }
 

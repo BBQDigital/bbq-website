@@ -25,6 +25,7 @@ Core = {
         o.constructor();
         o.detectSvgSupport();
         o.contentCycle('.testimonials blockquote');
+        o.checkPosted();
        // o.responsiveLogger(); // Only turn on in dev environment
 
         if (o.viewportWidth <= 650) Mobile.init();
@@ -76,6 +77,18 @@ Core = {
     },
 
 
+    checkPosted: function () {
+        var o = this;
+        // Read a page's GET URL variables and return them as an associative array.
+        if (o.bodyTag.find('form').length !== 0) {
+            // if there is a form on the page, check to see if it has been posted
+            if (getUrlVars()["posted"] == 'true') {
+                $('.posted-message').addClass('true');
+            }
+        }
+
+    }
+
 };
 
 // Desktop only functions
@@ -126,6 +139,22 @@ Mobile = {
         });
     }
 };
+
+// custom functions
+
+// Read a page's GET URL variables and return them as an associative array. (thanks to http://jquery-howto.blogspot.co.uk/2009/09/get-url-parameters-values-with-jquery.html)
+function getUrlVars()
+{
+    var vars = [], hash;
+    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    for(var i = 0; i < hashes.length; i++)
+    {
+        hash = hashes[i].split('=');
+        vars.push(hash[0]);
+        vars[hash[0]] = hash[1];
+    }
+    return vars;
+}
 
 $(document).ready( function() {
     Core.init();
