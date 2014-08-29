@@ -61,12 +61,17 @@ body {
 
     > footer {
         @extend .dark;
-        padding:1em;
+        padding:1em 2em;
+
         a {
             color: $offWhite;
             font-size: 1.1em;
             display: inline-block;
             margin-bottom: 0.5em;
+        }
+
+        .col {
+            width: 20%;
         }
 
         .copy {

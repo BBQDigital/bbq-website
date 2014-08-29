@@ -25,6 +25,7 @@ $offWhite: #f1f1f1;
 
 /* Mixins */
 
+/* If hires switch is included, use the high pixel ratio versions of the following background images */
 @mixin hires-switch() {
     .brands {
         ul {

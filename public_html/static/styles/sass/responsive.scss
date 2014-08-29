@@ -4,27 +4,7 @@
    @include hires-switch();
 }
 
-// desktop/landscape tablet layout
-// @media only screen and (min-width: 1500px) {
-//     @include hires-switch();
-//     .main {
-//         width: 98%;
-//         margin: 0 auto;
-//     }
-//     .content-block {
-//         .main & {
-//             display: inline-block;
-//             width: 33.2%;
-//             vertical-align: top;
-
-//             .button { width: 66% }
-
-//             h1 { padding: 1em 10%; }
-//         }
-//     }
-// }
-
-// High resolution displays
+// Big displays displays
 @media only screen and (min-width: 1760px) {
     .content-block {
         .main & {
@@ -33,50 +13,61 @@
     }
 }
 
-// Narrow tablet layout
-@media only screen and (max-width: 650px) {
-    .content-block {
-        .shout { padding: 1em 8%; }
-        .content { margin: 0 8%; }
-        h1 { margin-bottom: 0.5em; }
+@media only screen and (max-width: 1300px) {
+    .content-block{
+        &.contact {
+            .contact-details {
+                width: 49%;
+            }
+            .form { width: 100%; }
+        }
+    }
+}
+
+// Wider tablets
+@media only screen and (max-width: 850px) {
+.button { width: 70%; }
+    .landing {
+        background-image: url("/static/images/steak-background-mob.jpg");
+
+        .cta {
+             font-size: 0.6em;
+             .button {
+                font-size: 3.5em;
+                margin-bottom: 2em;
+            }
+        }
+        &.collapsed { min-height:250px; }
+        .scrolly {
+            box-sizing: border-box;
+            right: 0;
+            width: 100%;
+            text-align: center;
+            &:before { left:1em; }
+            &:after { right:1em; }
+        }
     }
 
-    .brands {
-        .content { margin: 1em 0; }
-        ul {
-            display: block;
-            li {
-                width: 49%;
-                margin: 1em 0;
-                display: inline-block;
+    .testimonials {
+        min-height: 50em;
+        blockquote {
+            margin-top: 1.5em;
+            font-size: 2.2em;
+            line-height: 1.4;
+            text-align: center;
+            strong {
+                display: block;
+                font-weight: bold;
+                margin-bottom: 0.5em;
             }
         }
     }
 }
 
-// Mobile layout
-@media only screen and (max-width: 450px) {
-    .button { width: 70%; }
-    .landing {
-        background-image: url("/static/images/steak-background-mob.jpg");
 
-        .cta {
-             font-size: 60%;
-             .button { font-size: 240%; }
-        }
-        &.collapsed { min-height:250px; }
 
-        > header {
-            .logo {
-                width: 100px;
-                height: 100px;
-                margin: 1em 0;
-                box-shadow: none;
-            }
-            .slogan { display: none; }
-        }
-    }
-
+// Mobile and narrow tablet layout
+@media only screen and (max-width: 650px) {
     .wrapper > header {
         top:5px;
         left:0px;
@@ -90,11 +81,14 @@
         border-radius: 0 6px 6px 0;
         box-shadow: 0 0 5px rgba(#000, 0.5);
         nav { display: none; }
-        &:hover {
+        &.open {
             border-radius: 0 6px 0 0;
+            background-image: url("/static/images/bmenu-toclose.gif");
+
             nav {
+                display: block;
                 position: relative;
-                top: 40px;
+                top: 39px;
                 width: 250%;
                 padding:1em 1em 0;
                 background: $darkGrey;
@@ -102,6 +96,7 @@
                 box-shadow: 0 5px 5px rgba(#000, 0.5);
             }
             ul {
+                margin-top: 0.5em;
                 position: static;
                 li {
                     margin-left: 0;
@@ -118,7 +113,7 @@
                 &.main-menu { margin-left: 0; }
                 &.social {
                     margin-right: 0;
-
+                    display: block;
                     .ico {
                         width: 3.5em;
                         margin-top: 1em;
@@ -130,16 +125,24 @@
                 }
             }
         }
-        &.open {
-            background-image: url("/static/images/bmenu-toclose.gif");
-            .social { display: block; }
-        }
 
         &.closed {
             background-image: url("/static/images/bmenu-toopen.gif");
+            nav {
+                display: none;
+            }
             .social { display: none; }
         }
 
+    }
+
+      .landing {
+        > header {
+            .logo {
+                margin: 1em 0;
+                box-shadow: none;
+            }
+        }
     }
 
     .content-block {
@@ -155,14 +158,14 @@
             }
         }
         .content {
-            margin: 0 5%;
+            margin: 3em 5%;
         }
 
         &.contact {
              .phone-number {
                 font-size: 1.8em;
             }
-            .contact-details { padding: 2em; }
+            .contact-details { padding: 0 2em ; }
             form {
                 input, textarea {
                         background-color: lighten($lightGrey, 5%);
@@ -173,6 +176,7 @@
 
     footer {
         .col { width: 45%; }
+        font-size: 1.3em;
     }
 
     .person {
@@ -198,26 +202,60 @@
         width: 100% !important;
         margin-bottom: 1em;
     }
-
-
-
-
-
 }
 
 
-// Small screen layout (eg Nintendo DS)
+// mobile only
+
+// Mobile and narrow tablet layout
+@media only screen and (max-width: 450px) {
+    .landing {
+        > header {
+            .logo {
+                width: 125px;
+                height: 125px;
+                box-shadow: none;
+            }
+        }
+    }
+
+        .testimonials {
+        min-height: 43em;
+        blockquote {
+            font-size: 1.8em;
+            line-height: 1.4;
+        }
+    }
+}
+
+// Small screen layout (eg Nintendo DS, iPhone - iPhone 4S)
 @media only screen and (max-width: 320px) {
     .landing {
         .cta {
-            font-size: 30%;
-            span { background-color: #000 }
-            .button { font-size: 290%; }
+            font-size: 0.5em;
+            .button { font-size: 3em; }
         }
     }
 
     .content-block {
         .shout { font-size: 150%; }
         h1 { font-size: 2em; }
+    }
+}
+
+
+// Small devices in landscape
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 640px) and (orientation : landscape) {
+    .wrapper > header {
+        &.open {
+            nav { width: 600%; }
+            li { display: inline-block !important; }
+        }
+    }
+    .landing {
+        .cta,
+        .scrolly {display: none; }
+        > header .logo { margin: 2.5em 0 }
     }
 }

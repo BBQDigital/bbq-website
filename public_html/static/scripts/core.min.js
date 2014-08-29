@@ -25,9 +25,9 @@ Core = {
         o.constructor();
         o.detectSvgSupport();
         o.contentCycle('.testimonials blockquote');
-        //o.responsiveLogger(); // Only turn on in dev environment
+       // o.responsiveLogger(); // Only turn on in dev environment
 
-        if (o.viewportWidth <= 450) Mobile.init();
+        if (o.viewportWidth <= 650) Mobile.init();
         if (o.viewportWidth >= 1024) Desktop.init();
     },
 
@@ -44,7 +44,7 @@ Core = {
                 } else {
                     i = 0;
                 }
-            }, 5000);
+            }, 11000);
     },
 
     detectSvgSupport: function () {
@@ -65,7 +65,7 @@ Core = {
     responsiveLogger: function() {
         // Output the screen width (For development only this method should be removed when the site is deployed)
         var o = this;
-        o.screenLogger = $('<div style="position:absolute;left:5px;top:5px;padding:10px;font-size:12px;background:black;color:#fff;z-index:10000;opacity:0.8"></div>');
+        o.screenLogger = $('<div style="position:fixed;right:5px;top:5px;padding:10px;font-size:12px;background:black;color:#fff;z-index:10000;opacity:0.8"></div>');
         o.screenLogger.appendTo('body');
         setInterval(
             function() {
@@ -118,8 +118,9 @@ Mobile = {
                 nav.slideDown();
                 toggle = 1;
             } else {
-                nav.slideUp();
-                $(this).removeClass('open').addClass('closed');
+                nav.slideUp(function(){
+                    header.removeClass('open').addClass('closed');
+                });
                 toggle = 0;
             }
         });
