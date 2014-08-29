@@ -247,6 +247,15 @@ body {
             background-image: url("/static/images/almost_unbelievable_background.jpg");
             background-position: 50% 65%;
         }
+        &.wwd-discover {
+            background-image: url("/static/images/discover-hires.jpg");
+        }
+        &.wwd-design {
+            background-image: url("/static/images/design-hires.jpg");
+        }&.wwd-develop {
+            background-image: url("/static/images/develop-hires.jpg");
+        }
+
     }
 
     .content {

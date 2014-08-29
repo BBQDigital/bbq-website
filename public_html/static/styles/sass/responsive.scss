@@ -29,6 +29,10 @@
 .button { width: 70%; }
     .landing {
         background-image: url("/static/images/steak-background-mob.jpg");
+        &.about-us { background-image: url("/static/images/about-us-mob.jpg"); }
+        &.why-bbq { background-image: url("/static/images/why-bbq-mob.jpg"); }
+        &.contact-us { background-image: url("/static/images/contact-us-mob.jpg"); }
+        &.frequently-asked-questions { background-image: url("/static/images/faq-header-mob.jpg"); }
 
         .cta {
              font-size: 0.6em;
@@ -155,6 +159,15 @@
             }
             &.almost-unbelievable {
                 background-image: url("/static/images/almost_unbelievable_background-mob.jpg");
+            }
+            &.wwd-discover {
+            background-image: url("/static/images/discover-mob.jpeg");
+            }
+            &.wwd-design {
+                background-image: url("/static/images/design-mob.jpeg");
+            }
+            &.wwd-develop {
+                background-image: url("/static/images/develop-mob.jpg");
             }
         }
         .content {
