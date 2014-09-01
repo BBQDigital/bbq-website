@@ -6,17 +6,38 @@ body {
     color: #333;
 }
 
+.warning {
+    background: url(/static/images/error-bg-tile.png) repeat;
+    padding:1em;
+    text-align: center;
+    font-size: 1.2em;
+    border-bottom: 1px dotted #f00;
+    span { font-weight: bold; }
+    a {
+        font-weight: bold;
+        color: $brand;
+    }
+}
+
 .wrapper {
     width: 100%;
     height: 100%;
     min-height: 100%;
+
+     .warnings {
+        position: absolute;
+        top:45px;
+        width: 100%;
+        z-index: 9998;
+     }
      > header {
-        position: fixed;
         width: 100%;
         z-index: 9999;
         background-color: $darkGrey;
         color: $offWhite;
         padding: 1em 0;
+        position: fixed;
+
         .main-menu { margin-left: 1em; }
         .social {
             margin-right: 1em;
@@ -61,7 +82,7 @@ body {
 
     > footer {
         @extend .dark;
-        padding:1em 2em;
+        padding:1em 2em 3em;
 
         a {
             color: $offWhite;
@@ -334,6 +355,7 @@ body {
                 margin-bottom: 0.5em;
             }
             input, textarea {
+                width: 70%;
                 font-size: 1.6em;
                 padding:0.5em;
                 border:0;

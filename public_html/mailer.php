@@ -8,7 +8,7 @@
         $message = '<p>The BBQ website just received a message from <a href="mailto:'.$email.'">'.$name.'</a>, they can be reached at '.$tel.'.</p> <p><strong>Here is their message:</strong></p><p>"'.$enquiry.'"</p>';
         $headers  = 'MIME-Version: 1.0' . "\r\n";
         $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-       mail('sayhi@bbqdigital.com', 'Email from BBQ Website', $message, $headers);
+       mail('alex.ward@bbqdigital.com', 'Email from BBQ Website', $message, $headers);
 
        header('Location: '. '/contact-us.html?posted=true');
        die();

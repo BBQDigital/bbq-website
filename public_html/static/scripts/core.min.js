@@ -4,6 +4,7 @@
 var Core = Core || {};
 var Mobile = Mobile || {};
 var Desktop = Desktop || {};
+var Forms = Forms || {};
 
 // Core functions which are used throughout the site on all devices
 Core = {
@@ -23,6 +24,7 @@ Core = {
     init: function () {
         var o = this;
         o.constructor();
+        o.loader();
         o.detectSvgSupport();
         o.contentCycle('.testimonials blockquote');
         o.checkPosted();
@@ -30,6 +32,12 @@ Core = {
 
         if (o.viewportWidth <= 650) Mobile.init();
         if (o.viewportWidth >= 1024) Desktop.init();
+    },
+
+    loader : function () {
+        // Things to do as soon as the page has loaded.
+        var o = this;
+        o.bodyTag.find('.js-disabled').remove();
     },
 
     contentCycle : function (element) {
@@ -82,9 +90,7 @@ Core = {
         // Read a page's GET URL variables and return them as an associative array.
         if (o.bodyTag.find('form').length !== 0) {
             // if there is a form on the page, check to see if it has been posted
-            if (getUrlVars()["posted"] == 'true') {
-                $('.posted-message').addClass('true');
-            }
+            if (getUrlVars().posted === 'true') $('.posted-message').addClass('true');
         }
 
     }
@@ -140,7 +146,29 @@ Mobile = {
     }
 };
 
-// custom functions
+Forms = {
+    constructor : function () {
+        this.formContainer = Core.bodyTag.find('.form');
+    },
+
+    init : function () {
+        var f = this;
+        f.constructor();
+        f.checkBrowser();
+    },
+
+    checkBrowser : function () {
+        var f = this;
+        if(!Modernizr.input.placeholder) {
+            // Browser does not support HTML5 forms.
+            $('<div class="warning">The browser you are using is not secure and I\'m afraid we cannot allow you to continue. <br /> <a href="http://browsehappy.com/?locale=en">Please update to a new version of your browser</a> and try completing the form again</div>').prependTo(f.formContainer);
+            f.formContainer.find('input, textarea, button').prop('disabled', true);
+        }
+    }
+};
+
+// 3rd party functions - ignored by JShint, use with caution and always cite sources
+/* jshint ignore:start */
 
 // Read a page's GET URL variables and return them as an associative array. (thanks to http://jquery-howto.blogspot.co.uk/2009/09/get-url-parameters-values-with-jquery.html)
 function getUrlVars()
@@ -155,8 +183,10 @@ function getUrlVars()
     }
     return vars;
 }
+/* jshint ignore:end */
 
 $(document).ready( function() {
     Core.init();
+    Forms.init();
 });
 
