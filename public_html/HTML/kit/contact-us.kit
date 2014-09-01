@@ -35,21 +35,21 @@
                                 <legend>contact BBQ</legend>
                                 <div class="inputContainer">
                                     <label for="name">Hi, my name is </label>
-                                    <input type="text" name="yourname" id="name" required placeholder="Insert your name">
+                                    <input type="text" name="yourname" id="name" required placeholder="Insert your name" disabled>
                                 </div>
                                 <div class="inputContainer">
                                     <label for="enquiry">and I'd like to speak to you about the following:</label>
-                                    <textarea name="enquiry" id="enquiry" cols="30" rows="10" required placeholder="Write about your query"></textarea>
+                                    <textarea name="enquiry" id="enquiry" cols="30" rows="10" required placeholder="Write about your query" disabled></textarea>
                                 </div>
                                 <div class="inputContainer">
                                     <label for="email">If you need to get in touch with me, you can email me at </label>
-                                    <input type="email" name="email" id="email" required placeholder="Enter a valid email address">
+                                    <input type="email" name="email" id="email" required placeholder="Enter a valid email address" disabled>
                                 </div>
                                 <div class="inputContainer">
                                     <label for="tel">or call me on </label>
-                                    <input type="tel" name="tel" id="tel" placeholder="Enter your telephone number (optional)">
+                                    <input type="tel" name="tel" id="tel" placeholder="Enter your telephone number (optional)" pattern="^\s*\(?(020[7,8]{1}\)?[ ]?[1-9]{1}[0-9{2}[ ]?[0-9]{4})|(0[1-8]{1}[0-9]{3}\)?[ ]?[1-9]{1}[0-9]{2}[ ]?[0-9]{3})\s*$" title="UK phone number" disabled>
                                 </div>
-                                <button type="submit" value="submit" name="submit">Send message </button>
+                                <button type="submit" value="submit" name="submit" disabled>Send message </button>
                                 <span class="posted-message">Message sent, thanks very much!</span>
                             </fieldset>
                         </form>

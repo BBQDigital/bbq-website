@@ -162,7 +162,8 @@ Forms = {
         if(!Modernizr.input.placeholder) {
             // Browser does not support HTML5 forms.
             $('<div class="warning">The browser you are using is not secure and I\'m afraid we cannot allow you to continue. <br /> <a href="http://browsehappy.com/?locale=en">Please update to a new version of your browser</a> and try completing the form again</div>').prependTo(f.formContainer);
-            f.formContainer.find('input, textarea, button').prop('disabled', true);
+        } else {
+            f.formContainer.find('input, textarea, button').prop('disabled', false);
         }
     }
 };
