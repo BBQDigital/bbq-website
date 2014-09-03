@@ -29,7 +29,7 @@
                         <p>You are welcome to contact us and ask us any questions (although we have no idea who would win in a fight between Iron-Man and Batman - our money is on Iron-Man though.). </p>
                         <p>We're always happy to give advice and share the love, so get in touch and let's have a chat.</p>
                     </div>
-                    <div class="col form">
+                    <div class="col form disabled">
                         <div class="warning">The browser you are using is not secure and I\'m afraid we cannot allow you to continue. <br /> <a href="http://browsehappy.com/?locale=en">Please update to a new version of your browser</a> and try completing the form again</div>
                         <form action="mailer.php" method="post">
                             <fieldset>
@@ -54,9 +54,14 @@
                                     <label for="website">I also have a website, here is the address: </label>
                                     <input type="url" name="website" id="website" placeholder="Enter your website address" disabled>
                                 </div>
+                                <div class="inputContainer">
+                                    <label for="consent"><input type="checkbox" name="consent" id="consent" value="I agree" disabled/>By ticking this box, you agree to be contacted by BBQ Digital Limited and allow us to store your contact details for this purpose. For more information, please view our <a href="/privacy-policy.html">Privacy Policy</a></label>
+
+                                </div>
                                 <button type="submit" value="submit" name="submit" disabled>Send message </button>
                                 <span class="posted-message">Message sent, thanks very much!</span>
                             </fieldset>
+
                         </form>
                     </div>
                 </div>

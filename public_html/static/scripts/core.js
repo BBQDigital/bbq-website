@@ -159,6 +159,7 @@ Forms = {
     enableForms : function () {
         var f = this;
         // Disable forms on the site if javascript is not enabled/supported.
+        f.formContainer.removeClass('disabled');
         f.formContainer.find('.warning').remove();
         f.formContainer.find('input, textarea, button').prop('disabled', false);
     }

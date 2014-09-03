@@ -1,9 +1,5 @@
 /* This is where all media queries are held */
 
-@media only screen and (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dppx) {
-   @include hires-switch();
-}
-
 // Big displays displays
 @media only screen and (min-width: 1760px) {
     .content-block {
@@ -20,6 +16,15 @@
                 width: 49%;
             }
             .form { width: 100%; }
+        }
+    }
+
+    .brands {
+        ul {
+            li {
+                width: 32%;
+                margin: 0 0 0.5em 0.7%;
+            }
         }
     }
 }
@@ -68,6 +73,19 @@
                 display: block;
                 font-weight: bold;
                 margin-bottom: 0.5em;
+            }
+        }
+    }
+
+    .brands {
+        ul {
+            li {
+                width: 45.5%;
+                margin:  0.5em 2%;
+                img {
+                    width: 70%;
+                    height: auto;
+                }
             }
         }
     }
@@ -193,6 +211,7 @@
                 }
             }
         }
+
     }
 
     footer {
@@ -222,6 +241,17 @@
         display: block;
         width: 100% !important;
         margin-bottom: 1em;
+    }
+
+    .brands {
+        ul {
+            li {
+                width: 47%;
+                margin: 0.2em 1%;
+
+                img { width: 80%; }
+            }
+        }
     }
 }
 

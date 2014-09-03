@@ -22,22 +22,3 @@ $offWhite: #f1f1f1;
     @extend .black;
     font-size: 3em;
 }
-
-/* Mixins */
-
-/* If hires switch is included, use the high pixel ratio versions of the following background images */
-@mixin hires-switch() {
-    .brands {
-        ul {
-            li {
-                &.honda { background-image:url(/static/images/brands/honda-hires.png); }
-                &.accenture { background-image:url(/static/images/brands/accenture-hires.png); }
-                &.nokia { background-image:url(/static/images/brands/nokia-hires.png); }
-                &.asda { background-image:url(/static/images/brands/asda-hires.png); }
-                &.plusnet { background-image:url(/static/images/brands/plusnet-hires.png); }
-                &.bandq { background-image:url(/static/images/brands/bandq-hires.png); }
-                &.sse { background-image:url(/static/images/brands/sse-hires.png); }
-            }
-        }
-    }
-}

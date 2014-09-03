@@ -75,7 +75,8 @@ body {
             display: block;
             padding: 0.46em 0.5em;
             &:hover {
-                background-color: rgba($offWhite, 0.1);
+                background-color: rgba($brand, 0.6);
+                transition: background .25s ease-in-out;
             }
         }
     }
@@ -89,6 +90,8 @@ body {
             font-size: 1.1em;
             display: inline-block;
             margin-bottom: 0.5em;
+
+            &:hover:not(.phone-number) { color: $brand; }
         }
 
         .col {
@@ -251,7 +254,7 @@ body {
         @extend .black;
         font-size: 4em;
         color: $darkGrey;
-        padding: 1em 20%;
+        padding: 1em 15%;
         background-image: url("/static/images/striped-bg.gif");
         background-repeat: repeat;
         margin-bottom: 1em;
@@ -327,7 +330,20 @@ body {
 
         /* columns */
         .contact-details { width: 24.5%;padding-right: 2em }
-        .form { width: 50%; }
+        .form {
+            width: 50%;
+
+            &.disabled {
+                // If the form is disabled then show the 'not allowed' cursor on all form elements.
+                input, textarea, button { cursor: not-allowed; }
+
+                button {
+                    opacity: 0.5;
+                    background-color: $mediumGrey;
+                    &:hover { background-color: $mediumGrey; }
+                }
+            }
+        }
         /* end columns */
 
         .content { padding: 1.5em 0;}
@@ -370,6 +386,13 @@ body {
                     outline: none;
                     background-color: #ebebeb;
                 }
+            }
+
+            input[type="checkbox"] {
+                width: auto;
+                -webkit-appearance: checkbox;
+                margin-right: 0.2em;
+                border: 0;
             }
 
             textarea { width: 100%; }
@@ -449,28 +472,23 @@ body {
 .brands {
     .content { margin: 2em 0; }
     ul {
-        margin-bottom: 1em;
-        display: table;
         width: 100%;
+        margin: 0 0 1em;
         border-spacing: 2em;
         border-collapse: separate;
         li {
-            display: table-cell;
-            margin-right: 20px;
-            text-indent: -9999px;
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: 50% 50%;
-            height: 5em;
+            display: inline-block;
+            width: 16%;
+            margin: 0 0 0 0.37%;
+            vertical-align: middle;
             text-align: center;
+            padding: 1em 0;
+            border:1px dotted $lightGrey;
 
-            &.honda { background-image:url(/static/images/brands/honda.png); }
-            &.accenture { background-image:url(/static/images/brands/accenture.png); }
-            &.nokia { background-image:url(/static/images/brands/nokia.png); }
-            &.asda { background-image:url(/static/images/brands/asda.png); }
-            &.plusnet { background-image:url(/static/images/brands/plusnet.png); }
-            &.bandq { background-image:url(/static/images/brands/bandq.png); }
-            &.sse { background-image:url(/static/images/brands/sse.png); }
+            img {
+                width: 80%;
+                height: auto;
+            }
         }
     }
 }
