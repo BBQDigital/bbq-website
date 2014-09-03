@@ -161,6 +161,11 @@ body {
         background-position-x: 90%;
     }
 
+    &.error {
+        background-image: url("/static/images/error-hires.jpg");
+        background-position-y: 40%;
+    }
+
     .scrolly {
         display: block;
         position: absolute;
