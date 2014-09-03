@@ -31,6 +31,7 @@
         background-image: url("/static/images/steak-background-mob.jpg");
         &.about-us { background-image: url("/static/images/about-us-mob.jpg"); }
         &.why-bbq { background-image: url("/static/images/why-bbq-mob.jpg"); }
+        &.what-we-do { background-image: url("/static/images/what-we-do-mob.jpg"); }
         &.contact-us { background-image: url("/static/images/contact-us-mob.jpg"); }
         &.frequently-asked-questions { background-image: url("/static/images/faq-header-mob.jpg"); }
 
@@ -50,6 +51,10 @@
             &:before { left:1em; }
             &:after { right:1em; }
         }
+    }
+
+    .content-block {
+        .shout { font-size: 3em; }
     }
 
     .testimonials {
@@ -78,7 +83,7 @@
         width: 60px;
         padding-right: 0.5em;
         height: 30px;
-        background-image:url("/static/images/bmenu.gif");
+        background-image:url("/static/images/icons/bmenu.gif");
         background-size: 60%;
         background-position: 50%;
         background-repeat: no-repeat;
@@ -87,7 +92,7 @@
         nav { display: none; }
         &.open {
             border-radius: 0 6px 0 0;
-            background-image: url("/static/images/bmenu-toclose.gif");
+            background-image: url("/static/images/icons/bmenu-toclose.gif");
 
             nav {
                 display: block;
@@ -131,7 +136,7 @@
         }
 
         &.closed {
-            background-image: url("/static/images/bmenu-toopen.gif");
+            background-image: url("/static/images/icons/bmenu-toopen.gif");
             nav {
                 display: none;
             }
@@ -150,6 +155,9 @@
     }
 
     .content-block {
+
+         .shout { font-size: 2.4em; }
+
         .block-image {
             &.beautiful-web {
                 background-image: url("/static/images/beautiful_web_background-mob.jpg");
@@ -161,10 +169,10 @@
                 background-image: url("/static/images/almost_unbelievable_background-mob.jpg");
             }
             &.wwd-discover {
-            background-image: url("/static/images/discover-mob.jpeg");
+            background-image: url("/static/images/discover-mob.jpg");
             }
             &.wwd-design {
-                background-image: url("/static/images/design-mob.jpeg");
+                background-image: url("/static/images/design-mob.jpg");
             }
             &.wwd-develop {
                 background-image: url("/static/images/develop-mob.jpg");
@@ -232,7 +240,9 @@
         }
     }
 
-        .testimonials {
+
+
+    .testimonials {
         min-height: 43em;
         blockquote {
             font-size: 1.8em;
@@ -253,7 +263,6 @@
     }
 
     .content-block {
-        .shout { font-size: 150%; }
         h1 { font-size: 2em; }
     }
 }

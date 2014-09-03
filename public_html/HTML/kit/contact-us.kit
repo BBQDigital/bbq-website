@@ -25,11 +25,12 @@
                         <p>You can even use the form on this page.</p>
                     </div>
                     <div class="col contact-details">
-                        <p><time itemprop="openingHours" datetime="Mo-Fr 09:00-17:00">TuesdaysOur office hours are Monday to Friday <br /> 9am to 5pm. </time></p>
+                        <p><time itemprop="openingHours" datetime="Mo-Fr 09:00-17:00">Our office hours are Monday to Friday 9am to 5pm. </time></p>
                         <p>You are welcome to contact us and ask us any questions (although we have no idea who would win in a fight between Iron-Man and Batman - our money is on Iron-Man though.). </p>
                         <p>We're always happy to give advice and share the love, so get in touch and let's have a chat.</p>
                     </div>
                     <div class="col form">
+                        <div class="warning">The browser you are using is not secure and I\'m afraid we cannot allow you to continue. <br /> <a href="http://browsehappy.com/?locale=en">Please update to a new version of your browser</a> and try completing the form again</div>
                         <form action="mailer.php" method="post">
                             <fieldset>
                                 <legend>contact BBQ</legend>
@@ -48,6 +49,10 @@
                                 <div class="inputContainer">
                                     <label for="tel">or call me on </label>
                                     <input type="tel" name="tel" id="tel" placeholder="Enter your telephone number (optional)" pattern="^\s*\(?(020[7,8]{1}\)?[ ]?[1-9]{1}[0-9{2}[ ]?[0-9]{4})|(0[1-8]{1}[0-9]{3}\)?[ ]?[1-9]{1}[0-9]{2}[ ]?[0-9]{3})\s*$" title="UK phone number" disabled>
+                                </div>
+                                <div class="inputContainer">
+                                    <label for="website">I also have a website, here is the address: </label>
+                                    <input type="url" name="website" id="website" placeholder="Enter your website address" disabled>
                                 </div>
                                 <button type="submit" value="submit" name="submit" disabled>Send message </button>
                                 <span class="posted-message">Message sent, thanks very much!</span>
