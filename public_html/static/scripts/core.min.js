@@ -154,6 +154,7 @@ Forms = {
         var f = this;
         f.constructor();
         f.enableForms();
+        f.validation();
     },
 
     enableForms : function () {
@@ -162,6 +163,10 @@ Forms = {
         f.formContainer.removeClass('disabled');
         f.formContainer.find('.warning').remove();
         f.formContainer.find('input, textarea, button').prop('disabled', false);
+    },
+
+    validation : function() {
+        // client side validation
     }
 };
 
