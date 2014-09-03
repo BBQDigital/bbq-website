@@ -22,3 +22,14 @@ $offWhite: #f1f1f1;
     @extend .black;
     font-size: 3em;
 }
+
+.bodyTextStyle {
+    font-size: 1.6em;
+    line-height: 1.6em;
+}
+
+// If nested tags are bubbling ems, use this to reset to the height of the parent;
+.resetFontSize {
+    font-size: 1em;
+    line-height: 1em;
+}
