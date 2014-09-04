@@ -15,7 +15,6 @@ Core = {
 
         // set global variables.
         this.bodyTag = $('body');
-        this.bodyTag.removeClass('no-js').addClass('js'); // We know js has been detected so add the 'js' class to the page.
         this.viewportHeight = this.bodyTag.outerHeight(true);
         this.viewportWidth = this.bodyTag.outerWidth(true);
 
@@ -28,7 +27,7 @@ Core = {
         o.detectSvgSupport();
         o.contentCycle('.testimonials blockquote');
         o.checkPosted();
-       // o.responsiveLogger(); // Only turn on in dev environment
+        //o.responsiveLogger(); // Only turn on in dev environment
 
         if (o.viewportWidth <= 650) Mobile.init();
         if (o.viewportWidth >= 1024) Desktop.init();
