@@ -271,6 +271,14 @@
         }
     }
 
+    .person .staff-photo {
+        float:none;
+        margin: 0 auto;
+        border-radius:0;
+        width: 100%;
+
+    }
+
 
 
     .testimonials {
@@ -314,3 +322,43 @@
         > header .logo { margin: 2.5em 0 }
     }
 }
+
+// For screens with a small height
+@media screen and (max-height:450px) {
+    .landing {
+        > header {
+        .logo {
+                width: 80px;
+                height: 80px;
+                box-shadow: none;
+            }
+            .slogan { display: none; }
+        }
+        .cta span { font-size: 3em; }
+    }
+}
+
+@media screen and (max-height:290px) {
+    .landing {
+        > header {
+        .logo {
+                width: 100px;
+                height: 100px;
+                box-shadow: none;
+            }
+        }
+        .scrolly { display: none; }
+        .cta {
+            span { display: none }
+            .button { margin-bottom: 0;}
+        }
+    }
+
+    .wrapper > header {
+        &.open {
+            nav { width: 600%; }
+            li { display: inline-block !important; }
+        }
+    }
+}
+
