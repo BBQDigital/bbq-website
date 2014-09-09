@@ -26,7 +26,6 @@ Core = {
         o.loader();
         o.detectSvgSupport();
         o.contentCycle('.testimonials blockquote');
-        o.checkPosted();
         //o.responsiveLogger(); // Only turn on in dev environment
 
         if (o.viewportWidth <= 650) Mobile.init();
@@ -81,18 +80,7 @@ Core = {
                 o.screenLogger.html(o.viewportWidth+'px');
             }, 500
         );
-    },
-
-
-    checkPosted: function () {
-        var o = this;
-        // Read a page's GET URL variables and return them as an associative array.
-        if (o.bodyTag.find('form').length !== 0) {
-            // if there is a form on the page, check to see if it has been posted
-            if (getUrlVars().posted === 'true') $('.posted-message').addClass('true');
-        }
-
-    },
+    }
 };
 
 // Desktop only functions
@@ -118,7 +106,7 @@ Desktop = {
     }
 };
 
-// The mobile only functions
+// The mobile only functions activated in Core object.
 Mobile = {
     init : function () {
         var m = this;
@@ -152,8 +140,10 @@ Forms = {
     init : function () {
         var f = this;
         f.constructor();
-        f.enableForms();
-        f.validation();
+        if (f.formContainer.length) {
+            f.enableForms();
+            f.validation();
+        }
     },
 
     enableForms : function () {
@@ -161,11 +151,185 @@ Forms = {
         // Disable forms on the site if javascript is not enabled/supported.
         f.formContainer.removeClass('disabled');
         f.formContainer.find('.warning').remove();
-        f.formContainer.find('input, textarea, button').prop('disabled', false);
+        f.formContainer.find('input, textarea').prop('disabled', false);
+        // note submit button will not be enabled until validation has passed
     },
 
     validation : function() {
         // client side validation
+        // Any form inside a .form container will be subject to the validation rules set below.
+        var f = this,
+            passed = false; // Assume the form has failed until validation has completed
+
+        // getLimitType finds the 'maxLength' attribute of the input to determine the length of the input
+        // this attribute can be safely used as nothing can ever exceed the max length anyway.
+        var getLimitType = function (element) {
+            var ml = element.find('input').attr('maxlength');
+            if (element.hasClass('exact-chars')) {
+                return 'exact_'+ml;
+            } else if (element.hasClass('min-chars')) {
+                return 'min_'+ml;
+            } else if (element.hasClass('max-chars')) {
+                return 'max_'+ml;
+            } else {
+                return 0;
+            }
+        };
+
+       var runValidator = function(element, mandatory, charlimit, friendlyname, regex) {
+            // runValiator has three mandatory paramaters and one optional.
+            // element = the container that the targeted input it in (eg .input.validate-as-number) only one input should be in this container
+            // mandatory = is this a mandatory field? Options are true or false.
+            // Charlimit = is there a max number of charactters? Set to '0' for no.  (Also set to zero if the charlimit is being set elsewhere eg in a custom validator)
+            // Charlimit has a few options. It defaults to the maximum number of characters, however you can change it to minimum by calling 'Min_X' or set
+            // an exact limit (eg exactly 10 chars) by calling "Exact_X"
+            // friendlyname = the element name in a format which can be shown to the end user.
+            // Regex = this is the regex pattern required to validate a field. It can be left blank if this is not required.
+            // note: runValidator CAN be used on custom validation operations but it will only work on text-based inputs.
+
+            regex = regex || null;
+
+            //check if the item is mandatory and then optionally perform a test based on the regex required and will return either true or false.
+            if (mandatory === true) {
+                // test to ensure the input has been completed. If not return 'empty' and stop processing
+                if (!element.val().length) {
+                    passed = false;
+                    return {
+                        valid: false,
+                        errorType: 'empty'
+                    };
+                }
+            }
+
+
+            if (charlimit !== 0 && charlimit.indexOf("max") >= 0) {
+                var max = parseInt(charlimit.split("_").pop());
+                if (element.val().length > max) {
+                    passed = false;
+                    return {
+                        valid: false,
+                        errorType: 'max-chars',
+                        errorVar: max
+                    };
+                }
+            }
+
+            if (charlimit !== 0 && charlimit.indexOf("min") >= 0) {
+
+                var min = parseInt(charlimit.split("_").pop());
+                if (element.val().length < min) {
+                    passed = false;
+                    return {
+                        valid: false,
+                        errorType: 'min-chars',
+                        errorVar: min
+                    };
+                }
+            }
+
+            if (charlimit !== 0 && charlimit.indexOf("exact") >= 0) {
+                // If a specific limit is set (eg must be exactly 10 chars)
+                var limitTo = parseInt(charlimit.split("_").pop());
+                if (element.val().length !== limitTo) {
+                    passed = false;
+                    return {
+                        valid: false,
+                        errorType: 'limit-chars',
+                        errorVar: limitTo
+                    };
+                }
+            }
+
+            if (regex) {
+                if (element.val().length) {
+                    // If the field has been filled in test against a regex.
+                    var isValid = (!regex.test(element.val())) ? false : true;
+                    if(!isValid) {
+                        passed = false;
+                        var classList = element.attr('class').split(" ");
+                        var classIndex = classList.filter(function(word){
+                            if(word.match(/v-/g)) return true;
+                        }).toString();
+                        var regexType = classIndex.replace('v-', '');
+                        return {
+                            valid: false,
+                            errorType: 'regex-'+regexType
+                        };
+                    }
+                }
+            }
+
+            if (passed) return true; // No errors were found, validation passed.
+        };
+
+        var showErrors = function(results, el) {
+            if (results.valid === false) {
+                var errorType = results.errorType,
+                    errorVar = results.errorVar || results.errorType;
+                $(el).addClass('error-flag');
+
+                // Validator did not pass, work out which error was returned and display apropriate message
+                switch(errorType){
+                    case 'empty':
+                        // if (variableField.length) {
+                        //     variableField.html(friendlyName);
+                        // }
+                        // TODO: Else show default text in error
+                    break;
+                    case 'max-chars':
+                    case 'min-chars':
+                    case 'limit-chars':
+                        // variableField.html(friendlyName);
+                        // updateError.find('.variable-number').html(errorVar);
+                    break;
+                    // Anything else is a regex error
+                    default:
+                        // updateError.find('.variable-field').html(friendlyName);
+                    break;
+                }
+            }
+        };
+
+        // do validation
+        f.formContainer.find('form').each(function() {
+            var form = $(this);
+            $(this).find('input, textarea').on('blur', function() {
+                var el = $(this),
+                mandatory = false,
+                theregex = null,
+                results = null,
+                friendlyName = el.parent().find('label').text().replace('_', '');
+
+                /**** Validation presets ****/
+
+                // Input can only contain numbers
+                if (el.hasClass('v-num')) theregex = new RegExp("^([0-9])+$");
+                // Input can only contain letters (Inlcudes foreign characters)
+                if (el.hasClass('v-text')) theregex = new RegExp("^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð .'-]+$");
+                // Input cannot contain symbols (letters and numbers only)
+                if (el.hasClass('v-alpha')) theregex = new RegExp("[A-Za-z0-9' -]$");
+                // Input must validate as a UK postcode
+                if (el.hasClass('v-postcode')) theregex = new RegExp("^([A-PR-UWYZa-pr-uwyz]([0-9]{1,2}|([A-HK-Ya-hk-y][0-9]|[A-HK-Ya-hk-y][0-9]([0-9]|[ABEHMNPRV-Yabehmnprvwx-y]))|[0-9][A-HJKPS-UWa-hjkps-uw]) {0,1}[0-9][ABD-HJLNP-UW-Zabd-hjlnp-uw-z]{2})$");
+                // Input must validate as email
+                if (el.hasClass('v-email')) theregex = new RegExp("^([a-zA-Z0-9\'_\\-\\+\\.]+)@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.)|(([a-zA-Z0-9\\-]+\\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\\]?)$");
+                // Input must validate as password
+                if (el.hasClass('v-password')) theregex = new RegExp("^[a-zA-Z0-9#~@]{7,14}$");
+                // Input must validate as telephone number
+                if (el.hasClass('v-tel')) theregex = new RegExp("^(((\\+44\\s?\\d{4}|\\(?0\\d{4}\\)?)\\s?\\d{3}\\s?\\d{3})|((\\+44\\s?\\d{3}|\\(?0\\d{3}\\)?)\\s?\\d{3}\\s?\\d{4})|((\\+44\\s?\\d{2}|\\(?0\\d{2}\\)?)\\s?\\d{4}\\s?\\d{4}))(\\s?\\#(\\d{4}|\\d{3}))?$");
+
+                // Determine if there are any limitations on character numbers and return the correct parameter
+                var charLimit = getLimitType(el);
+                // Input is mandatory
+                if (el.hasClass('required')) mandatory = true;
+
+                // run validatior
+                results = runValidator($(this), mandatory, charLimit, friendlyName, theregex);
+                if (typeof results !== "undefined") {  showErrors(results, $(this)); }
+            }).on('focus', function() {
+                // Remove error flags on focus
+                $(this).removeClass('error-flag');
+            });
+        });
     }
 };
 
@@ -185,7 +349,9 @@ function getUrlVars()
     }
     return vars;
 }
+
 /* jshint ignore:end */
+
 
 $(document).ready( function() {
     Core.init();

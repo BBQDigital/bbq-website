@@ -39,32 +39,29 @@
                                 <legend>contact BBQ</legend>
                                 <div class="inputContainer">
                                     <label for="name">Hi, my name is </label>
-                                    <input type="text" name="yourname" id="name" required placeholder="Insert your name" disabled>
+                                    <input type="text" name="yourname" class="v-text required" id="name"  placeholder="Insert your name" disabled>
                                 </div>
                                 <div class="inputContainer">
                                     <label for="enquiry">and I'd like to speak to you about the following:</label>
-                                    <textarea name="enquiry" id="enquiry" cols="30" rows="10" required placeholder="Write about your query" disabled></textarea>
+                                    <textarea name="enquiry" id="enquiry" class="required" cols="30" rows="10" placeholder="Write about your query" disabled></textarea>
                                 </div>
                                 <div class="inputContainer">
                                     <label for="email">If you need to get in touch with me, you can email me at </label>
-                                    <input type="email" name="email" id="email" required placeholder="Enter a valid email address" disabled>
+                                    <input type="email" name="email" id="email" class="v-email required" placeholder="Enter a valid email address" disabled>
                                 </div>
                                 <div class="inputContainer">
                                     <label for="tel">or call me on </label>
-                                    <input type="tel" name="tel" id="tel" placeholder="Enter your telephone number (optional)" pattern="^\s*\(?(020[7,8]{1}\)?[ ]?[1-9]{1}[0-9{2}[ ]?[0-9]{4})|(0[1-8]{1}[0-9]{3}\)?[ ]?[1-9]{1}[0-9]{2}[ ]?[0-9]{3})\s*$" title="UK phone number" disabled>
+                                    <input type="number" name="tel" id="tel" class="v-tel" placeholder="Enter your telephone number (optional)" disabled>
                                 </div>
                                 <div class="inputContainer">
                                     <label for="website">I also have a website, here is the address: </label>
-                                    <input type="url" name="website" id="website" placeholder="Enter your website address" disabled>
+                                    <input type="url" name="website" id="website" class="v-url" placeholder="Enter your website address" disabled>
                                 </div>
                                 <div class="inputContainer">
                                     <label for="consent"><input type="checkbox" name="consent" id="consent" value="I agree" disabled/>By ticking this box, you agree to be contacted by BBQ Digital Limited and allow us to store your contact details for this purpose. For more information, please view our <a href="/privacy-policy.html">Privacy Policy</a></label>
-
                                 </div>
                                 <button type="submit" value="submit" name="submit" disabled>Send message </button>
-                                <span class="posted-message">Message sent, thanks very much!</span>
                             </fieldset>
-
                         </form>
                     </div>
                 </div>

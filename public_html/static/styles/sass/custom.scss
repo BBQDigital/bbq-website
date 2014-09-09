@@ -276,6 +276,7 @@ body {
         text-indent: -9999px;
         &.beautiful-web {
             background-image: url("/static/images/beautiful_web_background.jpg");
+            background-position: 50% 80%;
         }
         &.knowledge-sharing {
             background-image: url("/static/images/knowledge_sharing_background.jpg");
@@ -426,6 +427,12 @@ body {
                 border-radius: 3px;
                 &.true { display: inline-block; }
             }
+        }
+
+        .error-flag {
+            //border: 1px solid $brand;
+            box-shadow: inset 0px 0px 5px $brand;
+            background-color: rgba($brand, 0.01)
         }
     }
 
