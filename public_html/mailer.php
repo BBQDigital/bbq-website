@@ -1,5 +1,5 @@
 <?php
-    if($_POST['yourname']) {
+    if($_POST['js']) {
         $name = stripslashes($_POST['yourname']);
         $enquiry = stripslashes($_POST['enquiry']);
         $email = stripslashes($_POST['email']);
@@ -17,7 +17,9 @@
         $headers  = 'MIME-Version: 1.0' . "\r\n";
         $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
        mail('alex.ward@bbqdigital.com', 'Email from BBQ Website', $message, $headers);
-       header('Location: '. '/contact-us.html?notify=true&t=notice&m=vp");
+       header('Location: '. '/contact-us.html?posted=true');
        die();
+    } else {
+      header('Location: '. '/error.html');
     }
 ?>

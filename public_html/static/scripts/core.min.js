@@ -4,6 +4,25 @@ var Mobile = Mobile || {};
 var Desktop = Desktop || {};
 var Forms = Forms || {};
 
+// 3rd party functions - ignored by JShint, use with caution and always cite sources
+/* jshint ignore:start */
+
+// Read a page's GET URL variables and return them as an associative array. (thanks to http://jquery-howto.blogspot.co.uk/2009/09/get-url-parameters-values-with-jquery.html)
+function getUrlVars()
+{
+    var vars = [], hash;
+    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    for(var i = 0; i < hashes.length; i++)
+    {
+        hash = hashes[i].split('=');
+        vars.push(hash[0]);
+        vars[hash[0]] = hash[1];
+    }
+    return vars;
+}
+
+/* jshint ignore:end */
+
 // Core functions which are used throughout the site on all devices
 Core = {
     constructor: function () {
@@ -23,7 +42,6 @@ Core = {
         o.loader();
         o.contentCycle('.testimonials blockquote');
         //o.responsiveLogger(); // Only turn on in dev environment
-        o.notify();
 
         if (o.viewportWidth <= 650) Mobile.init();
         if (o.viewportWidth >= 1024) Desktop.init();
@@ -54,10 +72,6 @@ Core = {
     setHeightToParent: function (element, parent) {
         var getHeight = element.parents(parent).outerHeight(true);
         element.css('height', getHeight+'px');
-    },
-
-    notify: function () {
-
     },
 
     responsiveLogger: function() {
@@ -134,6 +148,7 @@ Forms = {
         if (f.formContainer.length) {
             f.enableForms();
             f.validation();
+            f.checkPosted();
         }
     },
 
@@ -143,7 +158,21 @@ Forms = {
         f.formContainer.removeClass('disabled');
         f.formContainer.find('.warning').remove();
         f.formContainer.find('input, textarea, button').prop('disabled', false);
+        $('<input type="hidden" name="js" id="jsform" value="js" />').insertBefore(f.formContainer.find('button')); // We don't want the form to be submitted without js.
         // note submit button will not be enabled until validation has passed
+    },
+
+    checkPosted: function () {
+        var f = this;
+        if (getUrlVars().posted === 'true') {
+            var message = $('<div class="posted-message">Thank you, your message has been sent</div>').prependTo(f.formContainer.find('form'));
+            // We don't want to leave the notice there forever, remove it after 10 seconds
+            setTimeout( function () {
+                message.fadeOut('slow', function () {
+                    $(this).remove();
+                });
+            }, 10000);
+        }
     },
 
     validation : function() {
@@ -180,10 +209,17 @@ Forms = {
 
             regex = regex || null;
 
+            var passCheck = null;
+
             //check if the item is mandatory and then optionally perform a test based on the regex required and will return either true or false.
             if (mandatory === true) {
                 // test to ensure the input has been completed. If not return 'empty' and stop processing
-                if (!element.val().length) {
+                if (element.is(':checkbox')) {
+                    passCheck = (element.prop('checked')) ? true : false;
+                } else {
+                    passCheck = (element.val().length) ? true : false;
+                }
+                if (!passCheck) {
                     passed = false;
                     return {
                         valid: false,
@@ -253,33 +289,22 @@ Forms = {
             if (passed) return true; // No errors were found, validation passed.
         };
 
-        var showErrors = function(results, el) {
+        var showErrors = function(results, el, friendlyName) {
             if (results.valid === false) {
                 var errorType = results.errorType,
                     errorVar = results.errorVar || results.errorType;
-                $(el).addClass('error-flag');
-
-                // Validator did not pass, work out which error was returned and display apropriate message
-                switch(errorType){
-                    case 'empty':
-                        // if (variableField.length) {
-                        //     variableField.html(friendlyName);
-                        // }
-                        // TODO: Else show default text in error
-                    break;
-                    case 'max-chars':
-                    case 'min-chars':
-                    case 'limit-chars':
-                        // variableField.html(friendlyName);
-                        // updateError.find('.variable-number').html(errorVar);
-                    break;
-                    // Anything else is a regex error
-                    default:
-                        // updateError.find('.variable-field').html(friendlyName);
-                    break;
-                }
+                el = $(el);
+                el.addClass('error-flag');
+                el.parents('.inputContainer').find('.inline-error').remove(); // Remove errors each time the user tries again
+                var variableField = $('<div class="inline-error"></div>').clone().appendTo(el.parents('.inputContainer')).html(friendlyName);
             }
         };
+
+        var removeErrors = function (el) {
+            $(el).removeClass('error-flag');
+            $(el).parents('.inputContainer').find('.inline-error').fadeOut('fast', function () { $(this).remove(); }); // Remove errors each time the user tries again
+        }
+
         var executeValidation = function(el) {
             var form = $(el),
                 errors = 0;
@@ -289,7 +314,7 @@ Forms = {
                     mandatory = false,
                     theregex = null,
                     results = null,
-                    friendlyName = el.parent().find('label').text().replace('_', '');
+                    friendlyName = el.data('validation');
 
                 /**** Validation presets ****/
 
@@ -308,7 +333,7 @@ Forms = {
                 // Input must validate as telephone number
                 if (el.hasClass('v-phone')) theregex = new RegExp("^(((\\+44\\s?\\d{4}|\\(?0\\d{4}\\)?)\\s?\\d{3}\\s?\\d{3})|((\\+44\\s?\\d{3}|\\(?0\\d{3}\\)?)\\s?\\d{3}\\s?\\d{4})|((\\+44\\s?\\d{2}|\\(?0\\d{2}\\)?)\\s?\\d{4}\\s?\\d{4}))(\\s?\\#(\\d{4}|\\d{3}))?$");
                 // Input must validate as telephone number
-                if (el.hasClass('v-url')) theregex = new RegExp(/^(http[s]?:\/\/(www\.)?|ftp:\/\/(www\.)?|www\.){1}([0-9A-Za-z-\.@:%_\+~#=]+)+((\.[a-zA-Z]{2,3})+)(/(.)*)?(\?(.)*)?/);
+                if (el.hasClass('v-url')) theregex = new RegExp("^(http[s]?:\\/\\/(www\\.)?|ftp:\\/\\/(www\\.)?|www\\.){1}([0-9A-Za-z-\\.@:%_\+~#=]+)+((\\.[a-zA-Z]{2,3})+)(/(.)*)?(\\?(.)*)?");
 
                 // Determine if there are any limitations on character numbers and return the correct parameter
                 var charLimit = getLimitType(el);
@@ -318,11 +343,12 @@ Forms = {
                 results = runValidator(el, mandatory, charLimit, friendlyName, theregex);
                 if (typeof results !== "undefined") {
                     errors++;
-                    showErrors(results, el);
+                    showErrors(results, el, friendlyName);
                 }
-            }).on('focus', function() {
-                // Remove error flags on focus
-                $(this).removeClass('error-flag');
+            }).on('focus', function () {
+                removeErrors($(this));
+            }).on('change', function () {
+                removeErrors($(this));
             });
             return errors;
         };
@@ -333,33 +359,10 @@ Forms = {
             var errors = executeValidation($(this).parents('form'));
             if (errors === 0) {
                 f.formContainer.find('form').submit();
-
-            } else {
-                // add 'errors message'
             }
         });
     }
 };
-
-// 3rd party functions - ignored by JShint, use with caution and always cite sources
-/* jshint ignore:start */
-
-// Read a page's GET URL variables and return them as an associative array. (thanks to http://jquery-howto.blogspot.co.uk/2009/09/get-url-parameters-values-with-jquery.html)
-function getUrlVars()
-{
-    var vars = [], hash;
-    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-    for(var i = 0; i < hashes.length; i++)
-    {
-        hash = hashes[i].split('=');
-        vars.push(hash[0]);
-        vars[hash[0]] = hash[1];
-    }
-    return vars;
-}
-
-/* jshint ignore:end */
-
 
 $(document).ready( function() {
     Core.init();

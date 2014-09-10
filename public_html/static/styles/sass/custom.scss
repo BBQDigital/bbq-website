@@ -234,8 +234,6 @@ body {
 }
 
 /* Content Blocks */
-
-
 .main {
     position: relative;
     z-index: 50;
@@ -385,6 +383,7 @@ body {
                 font-size: 1.6em;
                 padding:0.5em;
                 border:0;
+                margin-bottom: 2px;
                 box-sizing: border-box;
                 background-color: lighten($lightGrey, 8%);
 
@@ -415,23 +414,34 @@ body {
                     cursor:pointer;
                 }
             }
-            .inputContainer { margin-bottom: 1em; }
+            .inputContainer {
+                position: relative;
+                margin-bottom: 1em;
+            }
+
+            .inline-error {
+                position: relative;
+                display: table-cell;
+                background-color: lighten($brand, 10%);
+                padding:0.5em;
+                color: #fff;
+                font-size: 1.2em;
+                font-weight: bold;
+            }
 
             .posted-message {
-                display: none;
                 background: #99cc99 url(/static/images/icons/thumbs-up.png) no-repeat 0.5em 50%;
-                background-size: 8%;
-                margin-left: 1em;
+                background-size: 3.5%;
                 padding: 0.6em 0.5em 0.6em 2em;
                 font-size: 1.4em;
                 border-radius: 3px;
-                &.true { display: inline-block; }
+                margin-bottom: 1em;
             }
         }
 
         .error-flag {
-            //border: 1px solid $brand;
-            box-shadow: inset 0px 0px 5px $brand;
+            border: 1px solid $brand;
+            box-shadow: inset 0px 0px 5px rgba($brand, 0.8);
             background-color: rgba($brand, 0.01)
         }
     }
@@ -562,5 +572,3 @@ body {
         }
     }
 }
-
-
