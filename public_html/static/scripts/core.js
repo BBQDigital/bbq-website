@@ -151,7 +151,7 @@ Forms = {
         // Disable forms on the site if javascript is not enabled/supported.
         f.formContainer.removeClass('disabled');
         f.formContainer.find('.warning').remove();
-        f.formContainer.find('input, textarea').prop('disabled', false);
+        f.formContainer.find('input, textarea, button').prop('disabled', false);
         // note submit button will not be enabled until validation has passed
     },
 
@@ -289,16 +289,15 @@ Forms = {
                 }
             }
         };
+        var executeValidation = function(el) {
+            var form = $(el);
 
-        // do validation
-        f.formContainer.find('form').each(function() {
-            var form = $(this);
-            $(this).find('input, textarea').on('blur', function() {
+            form.find('input, textarea').each( function() {
                 var el = $(this),
-                mandatory = false,
-                theregex = null,
-                results = null,
-                friendlyName = el.parent().find('label').text().replace('_', '');
+                    mandatory = false,
+                    theregex = null,
+                    results = null,
+                    friendlyName = el.parent().find('label').text().replace('_', '');
 
                 /**** Validation presets ****/
 
@@ -322,16 +321,28 @@ Forms = {
                 // Input is mandatory
                 if (el.hasClass('required')) mandatory = true;
 
-                // run validatior
-                results = runValidator($(this), mandatory, charLimit, friendlyName, theregex);
-                if (typeof results !== "undefined") {  showErrors(results, $(this)); }
+                results = runValidator(el, mandatory, charLimit, friendlyName, theregex);
+                    if (typeof results !== "undefined") {
+                    // if there are errors, show them.
+                    showErrors(results, el);
+                }
             }).on('focus', function() {
                 // Remove error flags on focus
                 $(this).removeClass('error-flag');
             });
+        };
+
+
+        f.formContainer.find('button').on('click', function(e) {
+            e.preventDefault();
+            executeValidation($(this).parents('form'));
         });
+
     }
 };
+
+
+
 
 // 3rd party functions - ignored by JShint, use with caution and always cite sources
 /* jshint ignore:start */
