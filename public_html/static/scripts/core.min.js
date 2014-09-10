@@ -1,5 +1,3 @@
-/* global Modernizr:true */
-
 // Namespacing
 var Core = Core || {};
 var Mobile = Mobile || {};
@@ -17,16 +15,15 @@ Core = {
         this.bodyTag = $('body');
         this.viewportHeight = this.bodyTag.outerHeight(true);
         this.viewportWidth = this.bodyTag.outerWidth(true);
-
     },
 
     init: function () {
         var o = this;
         o.constructor();
         o.loader();
-        o.detectSvgSupport();
         o.contentCycle('.testimonials blockquote');
         //o.responsiveLogger(); // Only turn on in dev environment
+        o.notify();
 
         if (o.viewportWidth <= 650) Mobile.init();
         if (o.viewportWidth >= 1024) Desktop.init();
@@ -54,20 +51,14 @@ Core = {
             }, 11000);
     },
 
-    detectSvgSupport: function () {
-        if (!Modernizr.svg) {
-            $('img[src*="svg"]').attr('src', function() {
-                return $(this).attr('src').replace('.svg', '.png');
-            });
-        }
-    },
-
     setHeightToParent: function (element, parent) {
         var getHeight = element.parents(parent).outerHeight(true);
         element.css('height', getHeight+'px');
     },
 
+    notify: function () {
 
+    },
 
     responsiveLogger: function() {
         // Output the screen width (For development only this method should be removed when the site is deployed)
@@ -290,7 +281,8 @@ Forms = {
             }
         };
         var executeValidation = function(el) {
-            var form = $(el);
+            var form = $(el),
+                errors = 0;
 
             form.find('input, textarea').each( function() {
                 var el = $(this),
@@ -314,7 +306,9 @@ Forms = {
                 // Input must validate as password
                 if (el.hasClass('v-password')) theregex = new RegExp("^[a-zA-Z0-9#~@]{7,14}$");
                 // Input must validate as telephone number
-                if (el.hasClass('v-tel')) theregex = new RegExp("^(((\\+44\\s?\\d{4}|\\(?0\\d{4}\\)?)\\s?\\d{3}\\s?\\d{3})|((\\+44\\s?\\d{3}|\\(?0\\d{3}\\)?)\\s?\\d{3}\\s?\\d{4})|((\\+44\\s?\\d{2}|\\(?0\\d{2}\\)?)\\s?\\d{4}\\s?\\d{4}))(\\s?\\#(\\d{4}|\\d{3}))?$");
+                if (el.hasClass('v-phone')) theregex = new RegExp("^(((\\+44\\s?\\d{4}|\\(?0\\d{4}\\)?)\\s?\\d{3}\\s?\\d{3})|((\\+44\\s?\\d{3}|\\(?0\\d{3}\\)?)\\s?\\d{3}\\s?\\d{4})|((\\+44\\s?\\d{2}|\\(?0\\d{2}\\)?)\\s?\\d{4}\\s?\\d{4}))(\\s?\\#(\\d{4}|\\d{3}))?$");
+                // Input must validate as telephone number
+                if (el.hasClass('v-url')) theregex = new RegExp(/^(http[s]?:\/\/(www\.)?|ftp:\/\/(www\.)?|www\.){1}([0-9A-Za-z-\.@:%_\+~#=]+)+((\.[a-zA-Z]{2,3})+)(/(.)*)?(\?(.)*)?/);
 
                 // Determine if there are any limitations on character numbers and return the correct parameter
                 var charLimit = getLimitType(el);
@@ -322,27 +316,30 @@ Forms = {
                 if (el.hasClass('required')) mandatory = true;
 
                 results = runValidator(el, mandatory, charLimit, friendlyName, theregex);
-                    if (typeof results !== "undefined") {
-                    // if there are errors, show them.
+                if (typeof results !== "undefined") {
+                    errors++;
                     showErrors(results, el);
                 }
             }).on('focus', function() {
                 // Remove error flags on focus
                 $(this).removeClass('error-flag');
             });
+            return errors;
         };
 
 
         f.formContainer.find('button').on('click', function(e) {
             e.preventDefault();
-            executeValidation($(this).parents('form'));
-        });
+            var errors = executeValidation($(this).parents('form'));
+            if (errors === 0) {
+                f.formContainer.find('form').submit();
 
+            } else {
+                // add 'errors message'
+            }
+        });
     }
 };
-
-
-
 
 // 3rd party functions - ignored by JShint, use with caution and always cite sources
 /* jshint ignore:start */

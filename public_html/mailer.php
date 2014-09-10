@@ -1,17 +1,23 @@
 <?php
-    if($_POST['submit']) {
+    if($_POST['yourname']) {
         $name = stripslashes($_POST['yourname']);
         $enquiry = stripslashes($_POST['enquiry']);
         $email = stripslashes($_POST['email']);
         $website = stripslashes($_POST['website']);
         $tel = stripslashes($_POST['tel']);
 
-        $message = '<p>The BBQ website just received a message from <a href="mailto:'.$email.'">'.$name.'</a>, they can be reached at '.$tel.'.</p> <p><strong>Here is their message:</strong></p><p>"'.$enquiry.'"</p><p>Here is their website: '.$website.;
+        $message  = '<h1>'.$name .' has just sent a message!</h1>';
+
+        $message .= '<p><h2>Contact details</h2>';
+        $message .= '<strong>Email:</strong> <a href="mailto:'.$email.'">'.$email.'</a><br />';
+        if ($tel) $message .= '<strong>Telephone number:</strong> ' .$tel. '<br />';
+        if ($website) $message .= '<strong>Website address:</strong> <a href="'.$website.'">' .$website. '</a><br />';
+        $message .= '</p><p><strong>The message is as follows</strong><br />'.$enquiry.'</p>';
+
         $headers  = 'MIME-Version: 1.0' . "\r\n";
         $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
        mail('alex.ward@bbqdigital.com', 'Email from BBQ Website', $message, $headers);
-
-       header('Location: '. '/contact-us.html?posted=true');
+       header('Location: '. '/contact-us.html?notify=true&t=notice&m=vp");
        die();
     }
 ?>
