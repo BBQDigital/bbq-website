@@ -16,7 +16,7 @@
 
         $headers  = 'MIME-Version: 1.0' . "\r\n";
         $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-       mail('alex.ward@bbqdigital.com', 'Email from BBQ Website', $message, $headers);
+       mail('sayhi@bbqdigital.com', 'Email from BBQ Website', $message, $headers);
        header('Location: '. '/contact-us.html?posted=true');
        die();
     } else {
