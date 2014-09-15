@@ -2,7 +2,7 @@
 
 /* Global styles */
 body {
-    font-family: 'Lato', sans-serif;
+    font-family: $fontFamily;
     color: #333;
 }
 
@@ -386,6 +386,7 @@ body {
                 margin-bottom: 2px;
                 box-sizing: border-box;
                 background-color: lighten($lightGrey, 8%);
+                font-family: $fontFamily;
 
                 &:focus {
                     outline: none;
