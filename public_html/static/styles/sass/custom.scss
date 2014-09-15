@@ -333,7 +333,11 @@ body {
     /* Contact type */
     &.contact {
         /* columns */
-        .contact-details { width: 24.5%;padding-right: 2em }
+        .contact-details {
+            width: 24.5%;
+            padding-right: 2em;
+        }
+
         .form {
             width: 50%;
 
