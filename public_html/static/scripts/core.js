@@ -173,13 +173,13 @@ Forms = {
     checkPosted: function () {
         var f = this;
         if (getUrlVars().posted === 'true') {
-            var message = $('<div class="posted-message">Thank you, your message has been sent</div>').prependTo(f.formContainer.find('form'));
-            // We don't want to leave the notice there forever, remove it after 10 seconds
-            setTimeout( function () {
+            var message = $('<div class="posted-message">Thank you, your message has been sent <span class="close">x</span></div>').prependTo(Core.bodyTag);
+
+            $('.close').click( function () {
                 message.fadeOut('slow', function () {
                     $(this).remove();
                 });
-            }, 10000);
+            });
         }
     },
 

@@ -184,10 +184,8 @@
         .content { margin: 3em 5%; }
 
         &.contact {
-             .phone-number {
-                font-size: 1.8em;
-            }
-            .contact-details { padding: 0 2em ; }
+             .phone-number { font-size: 1.8em; }
+
             form {
                 input, textarea {
                     width: 100%;
@@ -273,8 +271,6 @@
             line-height: 1.4;
         }
     }
-
-    .posted-message { margin: 0 !important; }
 }
 
 // Small screen layout (eg Nintendo DS, iPhone - iPhone 4S)

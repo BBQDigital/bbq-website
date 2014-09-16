@@ -449,15 +449,6 @@ body {
                 font-size: 1.2em;
                 font-weight: bold;
             }
-
-            .posted-message {
-                background: #99cc99 url(/static/images/icons/thumbs-up.png) no-repeat 0.5em 50%;
-                background-size: 3.5%;
-                padding: 0.6em 0.5em 0.6em 2em;
-                font-size: 1.4em;
-                border-radius: 3px;
-                margin-bottom: 1em;
-            }
         }
 
         .error-flag {
@@ -486,6 +477,34 @@ body {
             font-size: 1.5em;
             margin-bottom: 0
         }
+    }
+}
+
+.posted-message {
+    position: absolute;
+    width: 20em;
+    margin-left: -10em;
+    top:1em;
+    left:50%;
+    z-index: 99999;
+    background: #99cc99 url(/static/images/icons/thumbs-up.png) no-repeat 0.5em 50%;
+    background-size: 15px;
+    padding: 0.6em 0.5em 0.6em 2em;
+    font-size: 1.4em;
+    border-radius: 3px;
+    margin-bottom: 1em;
+
+    .close {
+        display: inline-block;
+        float: right;
+        margin-left: 1em;
+        padding: 2px 6px;
+        font-weight: bold;
+        line-height: 1;
+        cursor:pointer;
+        color: #fff;
+        border-radius:60px;
+        background-color: darken(#99cc99, 40%);
     }
 }
 
