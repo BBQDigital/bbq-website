@@ -41,6 +41,7 @@ Core = {
         o.constructor();
         o.loader();
         o.contentCycle('.testimonials blockquote');
+        o.warningClose();
         //o.responsiveLogger(); // Only turn on in dev environment
 
         if (o.viewportWidth <= 650) Mobile.init();
@@ -51,6 +52,13 @@ Core = {
         // Things to do as soon as the page has loaded.
         var o = this;
         o.bodyTag.find('.js-disabled').remove();
+    },
+
+    warningClose : function () {
+        var o = this;
+        o.bodyTag.find('.warning').click(function() {
+            $(this).fadeOut('fast');
+        }).append('<div class="close">x</div>');
     },
 
     contentCycle : function (element) {

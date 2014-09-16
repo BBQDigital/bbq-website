@@ -7,8 +7,9 @@ body {
 }
 
 .warning {
+    position: relative;
     background: url(/static/images/error-bg-tile.png) repeat;
-    padding:1em;
+    padding:2em 1em;
     text-align: center;
     font-size: 1.2em;
     border-bottom: 1px dotted #f00;
@@ -16,6 +17,23 @@ body {
     a {
         font-weight: bold;
         color: $brand;
+    }
+    .close {
+        cursor: pointer;
+        position: absolute;
+        top:5px;
+        right:5px;
+        font-size: 0.8em;
+        font-weight: bold;
+        text-transform: uppercase;
+        &:before {
+            color: $brand;
+            content: "[ ";
+        }
+        &:after {
+            color: $brand;
+            content: " ] close";
+        }
     }
 }
 
@@ -492,6 +510,8 @@ body {
             &:hover { background-image: url("/static/images/staff/colette-youde-fun.jpg"); }
         }
     }
+
+    p { overflow: hidden; }
 }
 
 .brands {
@@ -519,6 +539,9 @@ body {
 }
 
 .testimonials {
+
+    .content { margin-top: 3em; }
+
     min-height: 30em;
     blockquote {
         font-size: 2.5em;

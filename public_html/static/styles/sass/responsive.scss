@@ -212,11 +212,7 @@
 
         h2 {
             font-size: 2.5em;
-            text-align: center;
             margin-top: 0;
-            color:#fff;
-            background-color: $darkGrey;
-            padding: 0.5em 0;
         }
     }
 
@@ -253,12 +249,21 @@
         }
     }
 
-    .person .staff-photo {
-        float:none;
-        margin: 0 auto;
-        border-radius:0;
-        width: 100%;
-    }
+    .person {
+        .staff-photo {
+            float:none;
+            margin: 0 auto;
+            border-radius:0;
+            width: 100%;
+        }
+
+        h2 {
+            text-align: center;
+            color:#fff;
+            background-color: $darkGrey;
+            padding: 0.5em 0;
+        }
+}
 
     .testimonials {
         min-height: 43em;
