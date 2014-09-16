@@ -12,9 +12,7 @@
 @media only screen and (max-width: 1300px) {
     .content-block{
         &.contact {
-            .contact-details {
-                width: 49%;
-            }
+            .contact-details { width: 49%; }
             .form { width: 100%; }
         }
     }
@@ -93,7 +91,6 @@
 }
 
 
-
 // Mobile and narrow tablet layout
 @media only screen and (max-width: 650px) {
     .wrapper > header {
@@ -157,9 +154,7 @@
 
         &.closed {
             background-image: url("/static/images/icons/bmenu-toopen.gif");
-            nav {
-                display: none;
-            }
+            nav { display: none; }
             .social { display: none; }
         }
 
@@ -179,28 +174,14 @@
          .shout { font-size: 2.4em; }
 
         .block-image {
-            &.beautiful-web {
-                background-image: url("/static/images/beautiful_web_background-mob.jpg");
-            }
-            &.knowledge-sharing {
-                background-image: url("/static/images/knowledge_sharing_background-mob.jpg");
-            }
-            &.almost-unbelievable {
-                background-image: url("/static/images/almost_unbelievable_background-mob.jpg");
-            }
-            &.wwd-discover {
-            background-image: url("/static/images/discover-mob.jpg");
-            }
-            &.wwd-design {
-                background-image: url("/static/images/design-mob.jpg");
-            }
-            &.wwd-develop {
-                background-image: url("/static/images/develop-mob.jpg");
-            }
+            &.beautiful-web { background-image: url("/static/images/beautiful_web_background-mob.jpg"); }
+            &.knowledge-sharing { background-image: url("/static/images/knowledge_sharing_background-mob.jpg"); }
+            &.almost-unbelievable { background-image: url("/static/images/almost_unbelievable_background-mob.jpg"); }
+            &.wwd-discover { background-image: url("/static/images/discover-mob.jpg"); }
+            &.wwd-design { background-image: url("/static/images/design-mob.jpg"); }
+            &.wwd-develop { background-image: url("/static/images/develop-mob.jpg"); }
         }
-        .content {
-            margin: 3em 5%;
-        }
+        .content { margin: 3em 5%; }
 
         &.contact {
              .phone-number {
@@ -277,10 +258,7 @@
         margin: 0 auto;
         border-radius:0;
         width: 100%;
-
     }
-
-
 
     .testimonials {
         min-height: 43em;
@@ -318,7 +296,7 @@
         }
     }
     .landing {
-        .scrolly {display: none; }
+        .scrolly { display: none; }
         > header .logo { margin: 2.5em 0 }
     }
 }
