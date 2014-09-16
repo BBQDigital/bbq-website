@@ -190,7 +190,8 @@
             .contact-details { padding: 0 2em ; }
             form {
                 input, textarea {
-                        background-color: lighten($lightGrey, 5%);
+                    width: 100%;
+                    background-color: lighten($lightGrey, 5%);
                 }
             }
         }
