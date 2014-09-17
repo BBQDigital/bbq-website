@@ -24,7 +24,7 @@
         $message .= '<p><h2>Contact details</h2>';
         $message .= '<strong>Email:</strong> <a href="mailto:'.$email.'">'.$email.'</a><br />';
         if ($tel) $message .= '<strong>Telephone number:</strong> ' .$tel. '<br />';
-        if ($time_output !== null) $message .= 'The best time of day to contact them is ' . $time_output;
+        if ($time_output !== null) $message .= 'The best time of day to contact them is ' . $time_output . '</br>';
         if ($website) $message .= '<strong>Website address:</strong> <a href="'.$website.'">' .$website. '</a><br />';
         $message .= '</p><p><strong>The message is as follows</strong><br />'.$enquiry.'</p>';
 
