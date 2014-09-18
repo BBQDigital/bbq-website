@@ -105,6 +105,7 @@
         background-repeat: no-repeat;
         border-radius: 0 6px 6px 0;
         box-shadow: 0 0 5px rgba(#000, 0.5);
+        z-index: 99999;
         nav { display: none; }
         &:hover,
         &.open {
