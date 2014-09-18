@@ -219,11 +219,12 @@
     }
 
     .person {
-        img {
+        .staff-photo {
+            float:none;
+            margin: 0 auto;
+            border-radius:0;
             width: 100%;
-            height: auto;
-            margin: 0;
-            float: none;
+            background-position: 50% 30%;
         }
 
         h2 {
@@ -266,12 +267,7 @@
     }
 
     .person {
-        .staff-photo {
-            float:none;
-            margin: 0 auto;
-            border-radius:0;
-            width: 100%;
-        }
+
 
         h2 {
             text-align: center;
