@@ -26,9 +26,6 @@ function getUrlVars()
 // Core functions which are used throughout the site on all devices
 Core = {
     constructor: function () {
-        // Detect browser
-        this.isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
-        this.isSafari = /Safari/.test(navigator.userAgent) && /Apple Computer/.test(navigator.vendor);
 
         // set global variables.
         this.bodyTag = $('body');
@@ -45,7 +42,8 @@ Core = {
         //o.responsiveLogger(); // Only turn on in dev environment
 
         if (o.viewportWidth <= 650) Mobile.init();
-        if (o.viewportWidth >= 1024) Desktop.init();
+        if( !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) { Desktop.init(); }
+
     },
 
     loader : function () {
