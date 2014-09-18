@@ -498,13 +498,12 @@ body {
         display: inline-block;
         float: right;
         margin-left: 1em;
-        padding: 2px 6px;
-        font-weight: bold;
-        line-height: 1;
         cursor:pointer;
-        color: #fff;
-        border-radius:60px;
-        background-color: darken(#99cc99, 40%);
+        text-indent: -9999px;
+        background: url('/static/images/icons/green-close.png') no-repeat 50% 50%;
+        background-size: contain;
+        width: 1.3em;
+        height: 1.3em;
     }
 }
 
