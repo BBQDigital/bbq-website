@@ -298,19 +298,17 @@ Forms = {
 
         var showErrors = function(results, el, friendlyName) {
             if (results.valid === false) {
-                var errorType = results.errorType,
-                    errorVar = results.errorVar || results.errorType;
                 el = $(el);
                 el.addClass('error-flag');
                 el.parents('.inputContainer').find('.inline-error').remove(); // Remove errors each time the user tries again
-                var variableField = $('<div class="inline-error"></div>').clone().appendTo(el.parents('.inputContainer')).html(friendlyName);
+                $('<div class="inline-error"></div>').clone().appendTo(el.parents('.inputContainer')).html(friendlyName);
             }
         };
 
         var removeErrors = function (el) {
             $(el).removeClass('error-flag');
             $(el).parents('.inputContainer').find('.inline-error').fadeOut('fast', function () { $(this).remove(); }); // Remove errors each time the user tries again
-        }
+        };
 
         var executeValidation = function(el) {
             var form = $(el),

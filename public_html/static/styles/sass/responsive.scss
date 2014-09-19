@@ -296,6 +296,17 @@
         }
     }
 
+    .brands {
+        ul {
+            li {
+                width: 46.5%;
+                margin: 0.2em 1%;
+
+                img { width: 80%; }
+            }
+        }
+    }
+
     .content-block {
         h1 { font-size: 2em; }
     }
