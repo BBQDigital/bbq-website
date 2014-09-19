@@ -4,16 +4,18 @@ var Mobile = Mobile || {};
 var Desktop = Desktop || {};
 var Forms = Forms || {};
 
+// Declarations
+
+/* global getUrlVars: true */
+
 // 3rd party functions - ignored by JShint, use with caution and always cite sources
 /* jshint ignore:start */
 
 // Read a page's GET URL variables and return them as an associative array. (thanks to http://jquery-howto.blogspot.co.uk/2009/09/get-url-parameters-values-with-jquery.html)
-function getUrlVars()
-{
+function getUrlVars() {
     var vars = [], hash;
     var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-    for(var i = 0; i < hashes.length; i++)
-    {
+    for(var i = 0; i < hashes.length; i++) {
         hash = hashes[i].split('=');
         vars.push(hash[0]);
         vars[hash[0]] = hash[1];
@@ -39,7 +41,7 @@ Core = {
         o.loader();
         o.contentCycle('.testimonials blockquote');
         o.warningClose();
-        //o.responsiveLogger(); // Only turn on in dev environment
+        o.responsiveLogger(); // Only turn on in dev environment
 
         if (o.viewportWidth <= 650) Mobile.init();
         if( !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) { Desktop.init(); }
@@ -134,7 +136,7 @@ Mobile = {
                 nav.slideDown();
                 toggle = 1;
             } else {
-                nav.slideUp(function(){
+                nav.slideUp( function() {
                     header.removeClass('open').addClass('closed');
                 });
                 toggle = 0;
@@ -169,7 +171,6 @@ Forms = {
     },
 
     checkPosted: function () {
-        var f = this;
         if (getUrlVars().posted === 'true') {
             var message = $('<div class="posted-message">Thank you, your message has been sent <span class="close">x</span></div>').prependTo(Core.bodyTag);
 

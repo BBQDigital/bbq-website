@@ -313,6 +313,7 @@
     }
     .landing {
         .scrolly { display: none; }
+        .cta span { display: none }
         > header .logo { margin: 2.5em 0 }
     }
 }

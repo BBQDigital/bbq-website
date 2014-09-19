@@ -467,8 +467,6 @@ body {
                 margin-left: 1em;
             }
         }
-
-
     }
 
     /* Map type */
@@ -476,6 +474,31 @@ body {
         h1 {
             font-size: 1.5em;
             margin-bottom: 0
+        }
+    }
+
+    .iconblock {
+        width: 100%;
+        margin: 0;
+        display: flex;
+        display: -webkit-flex;
+        justify-content: space-between;
+        flex-direction: row;
+        flex-wrap: wrap;
+        list-style-type: none;
+        li {
+            flex-grow: 1;
+            box-sizing: border-box;
+            height: 10em;
+            width: 40%;
+            padding: 0.5em 1%;
+            margin: 1em 1%;
+
+        }
+
+        img {
+            float: left;
+            margin-right: 1em;
         }
     }
 }
