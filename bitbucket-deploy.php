@@ -17,7 +17,7 @@ if (empty($payload->commits)){
 } else {
   foreach ($payload->commits as $commit) {
     $branch = $commit->branch;
-    if ($branch === 'master' || isset($commit->branches) && in_array('master', $commit->branches)) {
+    if ($branch === 'staging' || isset($commit->branches) && in_array('staging', $commit->branches)) {
       $update = true;
       break;
     }
