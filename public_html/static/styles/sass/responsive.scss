@@ -15,7 +15,14 @@
             .contact-details { width: 49%; }
             .form { width: 100%; }
         }
+
+        .iconblock {
+            font-size: 0.9em;
+            p { overflow: hidden; }
+        }
     }
+
+
 
     .brands {
         ul {
@@ -25,6 +32,19 @@
             }
         }
     }
+}
+
+@media only screen and (max-width: 1080px) {
+
+   .content-block {
+        .iconblock {
+            img {
+                width: 30%;
+                height: auto;
+            }
+        }
+    }
+
 }
 
 // Wider tablets
@@ -59,6 +79,18 @@
 
     .content-block {
         .shout { font-size: 3em; }
+        .iconblock {
+            img {
+                width: 50%;
+                height: auto;
+                float: none;
+                margin: 0 1em 0;
+            }
+
+            h2 { line-height: 1.2; }
+
+            li { text-align: center; }
+        }
     }
 
     .testimonials {
@@ -283,6 +315,11 @@
         blockquote {
             font-size: 1.8em;
             line-height: 1.4;
+        }
+    }
+    .content-block {
+        .iconblock {
+            li { width: 100%; }
         }
     }
 }

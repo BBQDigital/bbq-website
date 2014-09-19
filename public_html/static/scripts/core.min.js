@@ -41,7 +41,7 @@ Core = {
         o.loader();
         o.contentCycle('.testimonials blockquote');
         o.warningClose();
-        o.responsiveLogger(); // Only turn on in dev environment
+        //o.responsiveLogger(); // Only turn on in dev environment
 
         if (o.viewportWidth <= 650) Mobile.init();
         if( !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) { Desktop.init(); }
