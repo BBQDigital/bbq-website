@@ -24,9 +24,7 @@ app/config/parameters.yml
 *.exe
 *.o
 *.so
-*.css
 *-ck.js
-*.html
 
 # Packages #
 ############
