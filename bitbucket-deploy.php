@@ -2,6 +2,7 @@
 $repo_dir = '/srv/users/serverpilot/apps/bbqstaging/repo';
 $web_root_dir = '/srv/users/serverpilot/apps/bbqstaging/public';
 
+
 // Full path to git binary is required if git is not in your PHP user's path. Otherwise just use 'git'.
 $git_bin_path = 'git';
 
