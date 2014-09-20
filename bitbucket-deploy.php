@@ -1,6 +1,6 @@
 <?php
-$repo_dir = '/srv/users/serverpilot/apps/bbqstaging/repo';
-$web_root_dir = '/srv/users/serverpilot/apps/bbqstaging/public';
+$repo_dir = '/srv/users/serverpilot/apps/bbqpreview/repo';
+$web_root_dir = '/srv/users/serverpilot/apps/bbqpreview/public';
 
 
 // Full path to git binary is required if git is not in your PHP user's path. Otherwise just use 'git'.
