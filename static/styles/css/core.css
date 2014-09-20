@@ -193,12 +193,13 @@ body {
     color: #f1f1f1;
     padding: 1em 0;
     position: fixed; }
-    .wrapper > header.open nav {
-      width: 600%; }
-    .wrapper > header.open ul li {
-      display: inline-block; }
-      .wrapper > header.open ul li a {
-        font-size: 1.2em; }
+    .wrapper > header:hover nav, .wrapper > header.open nav {
+      width: 500%;
+      overflow: hidden; }
+    .wrapper > header:hover ul li, .wrapper > header.open ul li {
+      float: left; }
+      .wrapper > header:hover ul li a, .wrapper > header.open ul li a {
+        font-size: 1.3em; }
     .wrapper > header .main-menu {
       margin-left: 1em; }
     .wrapper > header .social {
@@ -216,7 +217,7 @@ body {
           text-indent: 0;
           width: auto; }
       .wrapper > header .social a {
-        background-size: contain;
+        background-size: cover;
         background-repeat: no-repeat; }
         .wrapper > header .social a.facebook {
           background-image: url("/static/images/icons/social-fb.png"); }
@@ -662,6 +663,16 @@ body {
   .content-block .iconblock img {
     width: 30%;
     height: auto; } }
+@media only screen and (min-width: 650px) and (min-height: 450px) {
+  .wrapper > header nav {
+    width: 100% !important; }
+  .wrapper > header ul li {
+    display: inline-block !important;
+    float: none !important; }
+    .wrapper > header ul li a {
+      font-size: 1.3em;
+      padding: 0.46em 0.5em !important;
+      margin-bottom: 0 !important; } }
 @media only screen and (max-width: 850px) {
   .button {
     width: 70%; }
@@ -750,13 +761,13 @@ body {
         display: block;
         position: relative;
         top: 39px;
-        width: 250%;
         padding: 1em 1em 0;
         background: #333;
         border-radius: 0 6px 6px 0;
         box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5); }
       .wrapper > header:hover ul, .wrapper > header.open ul {
         margin-top: 0.5em;
+        margin-bottom: 0.5em;
         position: static; }
         .wrapper > header:hover ul li, .wrapper > header.open ul li {
           margin-left: 0; }
@@ -767,14 +778,16 @@ body {
           margin-left: 0; }
         .wrapper > header:hover ul.social, .wrapper > header.open ul.social {
           margin-right: 0;
-          display: block; }
+          display: block;
+          float: left; }
           .wrapper > header:hover ul.social .ico, .wrapper > header.open ul.social .ico {
             width: 3.5em;
             margin-top: 1em;
             margin-right: 5px;
             display: inline-block; }
             .wrapper > header:hover ul.social .ico a, .wrapper > header.open ul.social .ico a {
-              background-color: transparent; }
+              background-color: transparent;
+              background-size: contain; }
     .wrapper > header.closed {
       background-image: url("/static/images/icons/bmenu-toopen.gif"); }
       .wrapper > header.closed nav {
@@ -886,8 +899,11 @@ body {
   .content-block h1 {
     font-size: 2em; } }
 @media only screen and (min-height: 320px) {
+  .wrapper > header:hover nav, .wrapper > header.open nav {
+    width: 250%; }
   .wrapper > header:hover li, .wrapper > header.open li {
-    display: block; }
+    display: block;
+    float: none !important; }
     .wrapper > header:hover li a, .wrapper > header.open li a {
       font-size: 1.6em;
       padding: 10px;

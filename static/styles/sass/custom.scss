@@ -59,12 +59,16 @@ body {
         padding: 1em 0;
         position: fixed;
 
+        &:hover,
         &.open {
-            nav { width: 600%; }
+            nav {
+                width: 500%;
+                overflow: hidden;
+            }
             ul {
                 li {
-                    display: inline-block;
-                    a { font-size: 1.2em; }
+                    float: left;
+                    a { font-size: 1.3em; }
                 }
             }
         }
@@ -89,22 +93,22 @@ body {
             }
 
             a {
-                background-size: contain;
+                background-size: cover;
                 background-repeat: no-repeat;
                 &.facebook { background-image: url("/static/images/icons/social-fb.png"); }
                 &.twitter { background-image: url("/static/images/icons/social-twitter.png"); }
                 &:hover { opacity: 0.8; }
             }
         }
-        li {
-            display: inline-block;
-        }
+
+        li { display: inline-block; }
 
         a {
             color: $offWhite;
             font-size: 1.2em;
             display: block;
             padding: 0.46em 0.5em;
+
             &:hover {
                 background-color: rgba($brand, 0.6);
                 transition: background .25s ease-in-out;
