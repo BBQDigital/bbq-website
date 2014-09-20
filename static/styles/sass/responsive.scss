@@ -159,14 +159,10 @@
                 position: static;
                 li {
                     margin-left: 0;
-                    display: block;
 
                     a {
-                        font-size: 1.6em;
                         display: block;
-                        padding: 10px;
                         background-color: darken($darkGrey, 2%);
-                        margin-bottom: 2px;
                      }
                 }
                 &.main-menu { margin-left: 0; }
@@ -184,7 +180,6 @@
                 }
             }
         }
-
         &.closed {
             background-image: url("/static/images/icons/bmenu-toopen.gif");
             nav { display: none; }
@@ -329,6 +324,7 @@
 // Small screen layout (eg Nintendo DS, iPhone - iPhone 4S)
 @media only screen and (max-width: 320px) {
     .landing {
+
         .cta {
             font-size: 0.5em;
             .button { font-size: 3em; }
@@ -352,15 +348,27 @@
 }
 
 
+//switch to the portrait menu for larger mobile devices
+
+@media only screen and (min-height: 320px) {
+    .wrapper > header {
+        &:hover,
+        &.open {
+            li {
+                display: block;
+                a {
+                    font-size: 1.6em;
+                    padding: 10px;
+                    margin-bottom: 2px;
+                }
+            }
+        }
+    }
+}
+
 // Small devices in landscape
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 640px) and (orientation : landscape) {
-    .wrapper > header {
-        &.open {
-            nav { width: 600%; }
-            li { display: inline-block !important; }
-        }
-    }
     .landing {
         .scrolly { display: none; }
         .cta span { display: none }
@@ -376,6 +384,7 @@
                 width: 100px;
                 height: 100px;
                 box-shadow: none;
+                margin-top: 0;
             }
             .slogan { display: none; }
         }
@@ -391,18 +400,6 @@
         .cta {
             span { display: none }
             .button { margin-bottom: 0;}
-        }
-    }
-
-    .wrapper > header {
-        &.open {
-            nav { width: 600%; }
-            ul {
-                li {
-                    display: inline-block !important;
-                    a { font-size: 1.2em; }
-                }
-            }
         }
     }
 }

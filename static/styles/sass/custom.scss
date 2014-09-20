@@ -59,6 +59,16 @@ body {
         padding: 1em 0;
         position: fixed;
 
+        &.open {
+            nav { width: 600%; }
+            ul {
+                li {
+                    display: inline-block;
+                    a { font-size: 1.2em; }
+                }
+            }
+        }
+
         .main-menu { margin-left: 1em; }
         .social {
             margin-right: 1em;

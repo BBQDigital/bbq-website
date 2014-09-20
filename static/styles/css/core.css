@@ -193,6 +193,12 @@ body {
     color: #f1f1f1;
     padding: 1em 0;
     position: fixed; }
+    .wrapper > header.open nav {
+      width: 600%; }
+    .wrapper > header.open ul li {
+      display: inline-block; }
+      .wrapper > header.open ul li a {
+        font-size: 1.2em; }
     .wrapper > header .main-menu {
       margin-left: 1em; }
     .wrapper > header .social {
@@ -753,14 +759,10 @@ body {
         margin-top: 0.5em;
         position: static; }
         .wrapper > header:hover ul li, .wrapper > header.open ul li {
-          margin-left: 0;
-          display: block; }
+          margin-left: 0; }
           .wrapper > header:hover ul li a, .wrapper > header.open ul li a {
-            font-size: 1.6em;
             display: block;
-            padding: 10px;
-            background-color: #2e2e2e;
-            margin-bottom: 2px; }
+            background-color: #2e2e2e; }
         .wrapper > header:hover ul.main-menu, .wrapper > header.open ul.main-menu {
           margin-left: 0; }
         .wrapper > header:hover ul.social, .wrapper > header.open ul.social {
@@ -883,12 +885,14 @@ body {
 
   .content-block h1 {
     font-size: 2em; } }
+@media only screen and (min-height: 320px) {
+  .wrapper > header:hover li, .wrapper > header.open li {
+    display: block; }
+    .wrapper > header:hover li a, .wrapper > header.open li a {
+      font-size: 1.6em;
+      padding: 10px;
+      margin-bottom: 2px; } }
 @media only screen and (min-device-width: 320px) and (max-device-width: 640px) and (orientation: landscape) {
-  .wrapper > header.open nav {
-    width: 600%; }
-  .wrapper > header.open li {
-    display: inline-block !important; }
-
   .landing .scrolly {
     display: none; }
   .landing .cta span {
@@ -899,7 +903,8 @@ body {
   .landing > header .logo {
     width: 100px;
     height: 100px;
-    box-shadow: none; }
+    box-shadow: none;
+    margin-top: 0; }
   .landing > header .slogan {
     display: none; }
   .landing .cta span {
@@ -910,14 +915,7 @@ body {
   .landing .cta span {
     display: none; }
   .landing .cta .button {
-    margin-bottom: 0; }
-
-  .wrapper > header.open nav {
-    width: 600%; }
-  .wrapper > header.open ul li {
-    display: inline-block !important; }
-    .wrapper > header.open ul li a {
-      font-size: 1.2em; } }
+    margin-bottom: 0; } }
 /* The styles in this sheet are only visible when JS is enabled */
 .js .pixel-overlay {
   position: absolute;
