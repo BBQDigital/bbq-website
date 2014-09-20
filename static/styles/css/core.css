@@ -865,7 +865,7 @@ body {
   .content-block .iconblock li {
     width: 100%; }
 
-  .ssl {
+  .wrapper > footer .ssl {
     margin-top: 0; } }
 @media only screen and (max-width: 320px) {
   .landing .cta {
