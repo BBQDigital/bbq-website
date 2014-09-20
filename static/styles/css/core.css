@@ -863,7 +863,10 @@ body {
       line-height: 1.4; }
 
   .content-block .iconblock li {
-    width: 100%; } }
+    width: 100%; }
+
+  .ssl {
+    margin-top: 0; } }
 @media only screen and (max-width: 320px) {
   .landing .cta {
     font-size: 0.5em; }
