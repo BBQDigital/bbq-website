@@ -504,6 +504,7 @@ body {
             width: 40%;
             padding: 0.5em 1%;
             margin: 1em 1%;
+            float: left; // For older browsers which don't support flexbox
         }
 
         h2 {
