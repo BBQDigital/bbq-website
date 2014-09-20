@@ -514,7 +514,8 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     list-style-type: none;
-    font-size: 1em; }
+    font-size: 1em;
+    overflow: hidden; }
     .content-block .iconblock p {
       font-size: 1em; }
     .content-block .iconblock li {
