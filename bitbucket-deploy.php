@@ -35,5 +35,10 @@ if ($update) {
   file_put_contents('deploy.log', date('m/d/Y h:i:s a') . " Deployed branch: " .  $branch . " Commit: " . $commit_hash . " [ sucesss ] \n", FILE_APPEND);
 } else {
   file_put_contents('deploy.log', date('m/d/Y h:i:s a') . " Deployed branch: " .  $branch . " [ failed ] \n", FILE_APPEND);
+  $headers  = 'MIME-Version: 1.0' . "\r\n";
+  $headers .= 'From: mailerbot@bbqdigital.com' . "\r\n" ;
+  $headers .= 'Reply-To: mailerbot@bbqdigital.com' . "\r\n";
+  $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+  mail('incoming@bbqdigital.com', 'Deployment failed!', "The deployment made at ".date('m/d/Y h:i:s a'). "was not successful", $headers);
 }
 ?>
