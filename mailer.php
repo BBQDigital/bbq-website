@@ -30,7 +30,7 @@
 
         $headers  = 'MIME-Version: 1.0' . "\r\n";
         $headers .= 'From: mailerbot@bbqdigital.com' . "\r\n" ;
-        $headers .= 'Reply-To: mailerbot@bbqdigital.com' . "\r\n" . . "\r\n" ;
+        $headers .= 'Reply-To: mailerbot@bbqdigital.com' . "\r\n";
         $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
        mail('sayhi@bbqdigital.com', 'Email from BBQ Website', $message, $headers);
        header('Location: '. '/contact-us.html?posted=true');
