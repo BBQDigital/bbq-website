@@ -527,6 +527,9 @@ body {
     justify-content: space-between;
     flex-direction: row;
     flex-wrap: wrap;
+    -webkit-justify-content: space-between;
+    -webkit-flex-direction: row;
+    -webkit-flex-wrap: wrap;
     list-style-type: none;
     font-size: 1em;
     overflow: hidden; }
@@ -534,6 +537,7 @@ body {
       font-size: 1em; }
     .content-block .iconblock li {
       flex-grow: 1;
+      -webkit-flex-grow: 1;
       box-sizing: border-box;
       width: 40%;
       padding: 0.5em 1%;
