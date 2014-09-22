@@ -33,9 +33,9 @@
         $headers .= 'Reply-To: mailerbot@bbqdigital.com' . "\r\n";
         $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
        mail('sayhi@bbqdigital.com', 'Email from BBQ Website', $message, $headers);
-       header('Location: '. '/contact-us.html?posted=true');
+       header('Location: '. '/contact-us?posted=true');
        die();
     } else {
-      header('Location: '. '/error.html');
+      header('Location: '. '/error');
     }
 ?>
