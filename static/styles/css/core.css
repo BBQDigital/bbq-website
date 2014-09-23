@@ -674,7 +674,7 @@ body {
   .content-block .iconblock img {
     width: 30%;
     height: auto; } }
-@media only screen and (min-width: 650px) and (min-height: 450px) {
+@media only screen and (min-width: 855px) and (min-height: 450px) {
   .wrapper > header nav {
     width: 100% !important; }
   .wrapper > header ul li {

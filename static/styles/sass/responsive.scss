@@ -48,7 +48,7 @@
 }
 
 // anything bigger than the 'narrow tablet' breakpoint
-@media only screen and (min-width: 650px) and (min-height: 450px){
+@media only screen and (min-width: 855px) and (min-height: 450px){
     .wrapper {
         > header {
             nav { width: 100% !important; }
