@@ -68,16 +68,82 @@
 }
 
 // Wider tablets
-@media only screen and (max-width: 850px) {
-.button { width: 70%; }
-    .landing {
-        background-image: url("/static/images/steak-background-mob.jpg");
-        &.about-us { background-image: url("/static/images/about-us-mob.jpg"); }
-        &.why-bbq { background-image: url("/static/images/why-bbq-mob.jpg"); }
-        &.what-we-do { background-image: url("/static/images/what-we-do-mob.jpg"); }
-        &.contact-us { background-image: url("/static/images/contact-us-mob.jpg"); }
-        &.frequently-asked-questions { background-image: url("/static/images/faq-header-mob.jpg"); }
-        &.error { background-image: url("/static/images/error-mob.jpg"); }
+@media only screen and (max-width: 855px) {
+    .wrapper > header {
+        top:5px;
+        left:0px;
+        width: 60px;
+        padding-right: 0.5em;
+        height: 30px;
+        background-image:url("/static/images/icons/bmenu.gif");
+        background-size: 60%;
+        background-position: 50%;
+        background-repeat: no-repeat;
+        border-radius: 0 6px 6px 0;
+        box-shadow: 0 0 5px rgba(#000, 0.5);
+        z-index: 99999;
+        nav { display: none; }
+
+        &:hover,
+        &.open {
+            border-radius: 0 6px 0 0;
+            background-image: url("/static/images/icons/bmenu-toclose.gif");
+
+            nav {
+                display: block;
+                position: relative;
+                top: 39px;
+                padding:1em 1em 0;
+                background: $darkGrey;
+                border-radius: 0 6px 6px 0;
+                box-shadow: 0 5px 5px rgba(#000, 0.5);
+            }
+            ul {
+                margin-top: 0.5em;
+                margin-bottom: 0.5em;
+                position: static;
+                li {
+                    margin-left: 0;
+
+                    a {
+                        display: block;
+                        background-color: darken($darkGrey, 2%);
+                     }
+                }
+                &.main-menu { margin-left: 0; }
+                &.social {
+                    margin-right: 0;
+                    display: block;
+                    float: left;
+                    .ico {
+                        width: 3.5em;
+                        margin-top: 1em;
+                        margin-right: 5px;
+                        display: inline-block;
+
+                        a {
+                            background-color: transparent;
+                            background-size: contain;
+                        }
+                    }
+                }
+            }
+        }
+        &.closed {
+            background-image: url("/static/images/icons/bmenu-toopen.gif");
+            nav { display: none; }
+            .social { display: none; }
+        }
+    }
+    .button { width: 70%; }
+        .landing {
+            background-image: url("/static/images/steak-background-mob.jpg");
+            &.about-us { background-image: url("/static/images/about-us-mob.jpg"); }
+            &.why-bbq { background-image: url("/static/images/why-bbq-mob.jpg"); }
+            &.what-we-do { background-image: url("/static/images/what-we-do-mob.jpg"); }
+            &.contact-us { background-image: url("/static/images/contact-us-mob.jpg"); }
+            &.frequently-asked-questions { background-image: url("/static/images/faq-header-mob.jpg"); }
+            &.error { background-image: url("/static/images/error-mob.jpg"); }
 
         .cta {
              font-size: 0.6em;
@@ -145,72 +211,7 @@
 
 // Mobile and narrow tablet layout
 @media only screen and (max-width: 650px) {
-    .wrapper > header {
-        top:5px;
-        left:0px;
-        width: 60px;
-        padding-right: 0.5em;
-        height: 30px;
-        background-image:url("/static/images/icons/bmenu.gif");
-        background-size: 60%;
-        background-position: 50%;
-        background-repeat: no-repeat;
-        border-radius: 0 6px 6px 0;
-        box-shadow: 0 0 5px rgba(#000, 0.5);
-        z-index: 99999;
-        nav { display: none; }
-        &:hover,
-        &.open {
-            border-radius: 0 6px 0 0;
-            background-image: url("/static/images/icons/bmenu-toclose.gif");
 
-            nav {
-                display: block;
-                position: relative;
-                top: 39px;
-                padding:1em 1em 0;
-                background: $darkGrey;
-                border-radius: 0 6px 6px 0;
-                box-shadow: 0 5px 5px rgba(#000, 0.5);
-            }
-            ul {
-                margin-top: 0.5em;
-                margin-bottom: 0.5em;
-                position: static;
-                li {
-                    margin-left: 0;
-
-                    a {
-                        display: block;
-                        background-color: darken($darkGrey, 2%);
-                     }
-                }
-                &.main-menu { margin-left: 0; }
-                &.social {
-                    margin-right: 0;
-                    display: block;
-                    float: left;
-                    .ico {
-                        width: 3.5em;
-                        margin-top: 1em;
-                        margin-right: 5px;
-                        display: inline-block;
-
-                        a {
-                            background-color: transparent;
-                            background-size: contain;
-                        }
-                    }
-                }
-            }
-        }
-        &.closed {
-            background-image: url("/static/images/icons/bmenu-toopen.gif");
-            nav { display: none; }
-            .social { display: none; }
-        }
-
-    }
 
   .landing {
         > header {

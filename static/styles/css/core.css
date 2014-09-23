@@ -684,7 +684,63 @@ body {
       font-size: 1.3em;
       padding: 0.46em 0.5em !important;
       margin-bottom: 0 !important; } }
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 855px) {
+  .wrapper > header {
+    top: 5px;
+    left: 0px;
+    width: 60px;
+    padding-right: 0.5em;
+    height: 30px;
+    background-image: url("/static/images/icons/bmenu.gif");
+    background-size: 60%;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    border-radius: 0 6px 6px 0;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    z-index: 99999; }
+    .wrapper > header nav {
+      display: none; }
+    .wrapper > header:hover, .wrapper > header.open {
+      border-radius: 0 6px 0 0;
+      background-image: url("/static/images/icons/bmenu-toclose.gif"); }
+      .wrapper > header:hover nav, .wrapper > header.open nav {
+        display: block;
+        position: relative;
+        top: 39px;
+        padding: 1em 1em 0;
+        background: #333;
+        border-radius: 0 6px 6px 0;
+        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5); }
+      .wrapper > header:hover ul, .wrapper > header.open ul {
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        position: static; }
+        .wrapper > header:hover ul li, .wrapper > header.open ul li {
+          margin-left: 0; }
+          .wrapper > header:hover ul li a, .wrapper > header.open ul li a {
+            display: block;
+            background-color: #2e2e2e; }
+        .wrapper > header:hover ul.main-menu, .wrapper > header.open ul.main-menu {
+          margin-left: 0; }
+        .wrapper > header:hover ul.social, .wrapper > header.open ul.social {
+          margin-right: 0;
+          display: block;
+          float: left; }
+          .wrapper > header:hover ul.social .ico, .wrapper > header.open ul.social .ico {
+            width: 3.5em;
+            margin-top: 1em;
+            margin-right: 5px;
+            display: inline-block; }
+            .wrapper > header:hover ul.social .ico a, .wrapper > header.open ul.social .ico a {
+              background-color: transparent;
+              background-size: contain; }
+    .wrapper > header.closed {
+      background-image: url("/static/images/icons/bmenu-toopen.gif"); }
+      .wrapper > header.closed nav {
+        display: none; }
+      .wrapper > header.closed .social {
+        display: none; }
+
   .button {
     width: 70%; }
 
@@ -750,62 +806,6 @@ body {
       width: 70%;
       height: auto; } }
 @media only screen and (max-width: 650px) {
-  .wrapper > header {
-    top: 5px;
-    left: 0px;
-    width: 60px;
-    padding-right: 0.5em;
-    height: 30px;
-    background-image: url("/static/images/icons/bmenu.gif");
-    background-size: 60%;
-    background-position: 50%;
-    background-repeat: no-repeat;
-    border-radius: 0 6px 6px 0;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-    z-index: 99999; }
-    .wrapper > header nav {
-      display: none; }
-    .wrapper > header:hover, .wrapper > header.open {
-      border-radius: 0 6px 0 0;
-      background-image: url("/static/images/icons/bmenu-toclose.gif"); }
-      .wrapper > header:hover nav, .wrapper > header.open nav {
-        display: block;
-        position: relative;
-        top: 39px;
-        padding: 1em 1em 0;
-        background: #333;
-        border-radius: 0 6px 6px 0;
-        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5); }
-      .wrapper > header:hover ul, .wrapper > header.open ul {
-        margin-top: 0.5em;
-        margin-bottom: 0.5em;
-        position: static; }
-        .wrapper > header:hover ul li, .wrapper > header.open ul li {
-          margin-left: 0; }
-          .wrapper > header:hover ul li a, .wrapper > header.open ul li a {
-            display: block;
-            background-color: #2e2e2e; }
-        .wrapper > header:hover ul.main-menu, .wrapper > header.open ul.main-menu {
-          margin-left: 0; }
-        .wrapper > header:hover ul.social, .wrapper > header.open ul.social {
-          margin-right: 0;
-          display: block;
-          float: left; }
-          .wrapper > header:hover ul.social .ico, .wrapper > header.open ul.social .ico {
-            width: 3.5em;
-            margin-top: 1em;
-            margin-right: 5px;
-            display: inline-block; }
-            .wrapper > header:hover ul.social .ico a, .wrapper > header.open ul.social .ico a {
-              background-color: transparent;
-              background-size: contain; }
-    .wrapper > header.closed {
-      background-image: url("/static/images/icons/bmenu-toopen.gif"); }
-      .wrapper > header.closed nav {
-        display: none; }
-      .wrapper > header.closed .social {
-        display: none; }
-
   .landing > header .logo {
     margin: 1em 0;
     box-shadow: none; }
