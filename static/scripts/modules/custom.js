@@ -16,7 +16,8 @@ Core = {
         o.warningClose();
         //o.responsiveLogger(); // Only turn on in dev environment
 
-        if (o.viewportWidth <= 650) Mobile.init();
+        /* These are fine for now but don't allow them into release 2 */
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) Mobile.init();
         if( !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) { Desktop.init(); }
 
     },

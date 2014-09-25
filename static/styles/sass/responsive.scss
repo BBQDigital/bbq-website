@@ -48,7 +48,7 @@
 }
 
 // anything bigger than the 'narrow tablet' breakpoint
-@media only screen and (min-width: 855px) and (min-height: 450px){
+@media only screen and (min-width: 855px) and (min-height: 320px){
     .wrapper {
         > header {
             nav { width: 100% !important; }
@@ -68,7 +68,7 @@
 }
 
 // Wider tablets
-@media only screen and (max-width: 855px) {
+@media only screen and (max-width: 980px) {
     .wrapper > header {
         top:5px;
         left:0px;
@@ -211,8 +211,6 @@
 
 // Mobile and narrow tablet layout
 @media only screen and (max-width: 650px) {
-
-
   .landing {
         > header {
             .logo {
