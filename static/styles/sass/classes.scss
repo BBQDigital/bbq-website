@@ -32,12 +32,14 @@
     &.light {
         color: $darkGrey !important;
         background-color: rgba($offWhite, .8);
-        &:hover { background-color: rgba($offWhite, 1); }
+        &:hover { background-color: rgba($offWhite, 0.9); }
+        &:focus { background-color: rgba($offWhite, 1); }
     }
     &.dark {
         color: $offWhite !important;
         background-color: rgba($darkGrey, .8);
-        &:hover { background-color: rgba($darkGrey, 1); }
+        &:hover { background-color: rgba($darkGrey, 0.9); }
+        &:focus { background-color: rgba($darkGrey, 1); }
     }
 }
 

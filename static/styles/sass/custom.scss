@@ -6,6 +6,26 @@ body {
     color: #333;
 }
 
+.skip {
+    a {
+        position: absolute;
+        top:-80px;
+        display: block;
+        width: 100%;
+        box-sizing:border-box;
+        padding:1em;
+        font-size: 1.6em;
+        text-align: center;
+        background:$brand;
+        color: #fff;
+        z-index: 999999;
+        -webkit-transition: top 1s; /* For Safari 3.1 to 6.0 */
+        transition: top 1s;
+
+        &:focus { top:0; }
+    }
+}
+
 .warning {
     position: relative;
     background: url(/static/images/error-bg-tile.png) repeat;
@@ -93,11 +113,12 @@ body {
             }
 
             a {
-                background-size: cover;
+                background-size: 100%;
                 background-repeat: no-repeat;
                 &.facebook { background-image: url("/static/images/icons/social-fb.png"); }
                 &.twitter { background-image: url("/static/images/icons/social-twitter.png"); }
                 &:hover { opacity: 0.8; }
+                &:focus { border: 1px dotted $brand; }
             }
         }
 
@@ -111,6 +132,10 @@ body {
 
             &:hover {
                 background-color: rgba($brand, 0.6);
+                transition: background .25s ease-in-out;
+            }
+            &:focus {
+                background-color: rgba($brand, 1);
                 transition: background .25s ease-in-out;
             }
         }
@@ -127,6 +152,10 @@ body {
             margin-bottom: 0.5em;
 
             &:hover:not(.phone-number) { color: $brand; }
+            &:focus {
+                color: $brand;
+                outline:1px dotted $brand;
+            }
         }
 
         .col {
@@ -343,6 +372,10 @@ body {
         &:hover {
             color: darken($brand, 15%);
         }
+        &:focus {
+            color: darken($brand, 25%);
+            border-bottom: 1px solid darken($brand, 25%);
+        }
     }
 
     p {
@@ -455,6 +488,7 @@ body {
                     background-color: darken($brand, 5%);
                     cursor:pointer;
                 }
+                &:focus { background-color: darken($brand, 10%);}
             }
             .inputContainer {
                 position: relative;
