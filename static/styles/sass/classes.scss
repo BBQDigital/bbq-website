@@ -29,6 +29,8 @@
     font-weight: bold;
     transition: background-color 0.5s;
 
+    &:focus { outline: 1px dotted $brand; }
+
     &.light {
         color: $darkGrey !important;
         background-color: rgba($offWhite, .8);
