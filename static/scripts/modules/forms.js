@@ -189,7 +189,7 @@ Forms = {
                 // Input must validate as password
                 if (el.hasClass('v-password')) theregex = new RegExp("^[a-zA-Z0-9#~@]{7,14}$");
                 // Input must validate as telephone number
-                if (el.hasClass('v-phone')) theregex = new RegExp("^(((\\+44\\s?\\d{4}|\\(?0\\d{4}\\)?)\\s?\\d{3}\\s?\\d{3})|((\\+44\\s?\\d{3}|\\(?0\\d{3}\\)?)\\s?\\d{3}\\s?\\d{4})|((\\+44\\s?\\d{2}|\\(?0\\d{2}\\)?)\\s?\\d{4}\\s?\\d{4}))(\\s?\\#(\\d{4}|\\d{3}))?$");
+                if (el.hasClass('v-phone')) theregex = new RegExp("^([0-9 ]{7,13})$");
                 // Input must validate as telephone number
                 if (el.hasClass('v-url')) theregex = new RegExp("^(http[s]?:\\/\\/(www\\.)?|ftp:\\/\\/(www\\.)?|www\\.){1}([0-9A-Za-z-\\.@:%_\+~#=]+)+((\\.[a-zA-Z]{2,3})+)(/(.)*)?(\\?(.)*)?");
 
