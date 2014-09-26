@@ -14,6 +14,7 @@ Core = {
         o.loader();
         o.contentCycle('.testimonials blockquote');
         o.warningClose();
+        o.interceptSkip();
         //o.responsiveLogger(); // Only turn on in dev environment
 
         /* These are fine for now but don't allow them into release 2 */
@@ -49,6 +50,18 @@ Core = {
                     i = 0;
                 }
             }, 11000);
+    },
+
+    interceptSkip : function () {
+        //As javascript is enabled, lets intercept the clicking of the skip link and make it scroll instead of jump to the content.
+        var o = this,
+        offset = $('#main').offset(),
+        jumpTo = offset.top-40;
+
+        o.bodyTag.find('.skip a').on('click', function(e) {
+            e.preventDefault();
+            $('html, body').animate({ scrollTop: jumpTo });
+        });
     },
 
     setHeightToParent: function (element, parent) {
