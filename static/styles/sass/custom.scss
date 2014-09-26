@@ -473,6 +473,12 @@ body {
                 -webkit-appearance: checkbox;
                 margin-right: 0.2em;
                 border: 0;
+
+                &:focus { outline: 1px dotted $brand; }
+            }
+
+            select {
+                &:focus { outline: 1px dotted $brand; }
             }
 
             textarea { width: 100%; }
@@ -488,7 +494,10 @@ body {
                     background-color: darken($brand, 5%);
                     cursor:pointer;
                 }
-                &:focus { background-color: darken($brand, 10%);}
+                &:focus {
+                    background-color: darken($brand, 10%);
+                    outline: none;
+                }
             }
             .inputContainer {
                 position: relative;
