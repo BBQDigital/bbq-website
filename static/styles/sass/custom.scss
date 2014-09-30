@@ -25,6 +25,8 @@ body {
         &:focus { top:0; }
     }
 }
+.no-js .wrapper .warnings,
+.no-js .warning { position: static; }
 
 .warning {
     position: relative;
@@ -78,20 +80,6 @@ body {
         color: $offWhite;
         padding: 1em 0;
         position: fixed;
-
-        &:hover,
-        &.open {
-            nav {
-                width: 500%;
-                overflow: hidden;
-            }
-            ul {
-                li {
-                    float: left;
-                    a { font-size: 1.3em; }
-                }
-            }
-        }
 
         .main-menu { margin-left: 1em; }
         .social {

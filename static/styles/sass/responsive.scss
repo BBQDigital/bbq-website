@@ -47,94 +47,8 @@
 
 }
 
-// anything bigger than the 'narrow tablet' breakpoint
-@media only screen and (min-width: 855px) and (min-height: 320px){
-    .wrapper {
-        > header {
-            nav { width: 100% !important; }
-            ul {
-                li {
-                    display: inline-block !important;
-                    float: none !important;
-                    a {
-                        font-size: 1.3em;
-                        padding: 0.46em 0.5em !important;
-                        margin-bottom: 0 !important;
-                    }
-                }
-            }
-        }
-    }
-}
-
 // Wider tablets
 @media only screen and (max-width: 980px) {
-    .wrapper > header {
-        top:5px;
-        left:0px;
-        width: 60px;
-        padding-right: 0.5em;
-        height: 30px;
-        background-image:url("/static/images/icons/bmenu.gif");
-        background-size: 60%;
-        background-position: 50%;
-        background-repeat: no-repeat;
-        border-radius: 0 6px 6px 0;
-        box-shadow: 0 0 5px rgba(#000, 0.5);
-        z-index: 99999;
-        nav { display: none; }
-
-        &:hover,
-        &.open {
-            border-radius: 0 6px 0 0;
-            background-image: url("/static/images/icons/bmenu-toclose.gif");
-
-            nav {
-                display: block;
-                position: relative;
-                top: 39px;
-                padding:1em 1em 0;
-                background: $darkGrey;
-                border-radius: 0 6px 6px 0;
-                box-shadow: 0 5px 5px rgba(#000, 0.5);
-            }
-            ul {
-                margin-top: 0.5em;
-                margin-bottom: 0.5em;
-                position: static;
-                li {
-                    margin-left: 0;
-
-                    a {
-                        display: block;
-                        background-color: darken($darkGrey, 2%);
-                     }
-                }
-                &.main-menu { margin-left: 0; }
-                &.social {
-                    margin-right: 0;
-                    display: block;
-                    float: left;
-                    .ico {
-                        width: 3.5em;
-                        margin-top: 1em;
-                        margin-right: 5px;
-                        display: inline-block;
-
-                        a {
-                            background-color: transparent;
-                            background-size: contain;
-                        }
-                    }
-                }
-            }
-        }
-        &.closed {
-            background-image: url("/static/images/icons/bmenu-toopen.gif");
-            nav { display: none; }
-            .social { display: none; }
-        }
-    }
     .button { width: 70%; }
         .landing {
             background-image: url("/static/images/steak-background-mob.jpg");
@@ -214,7 +128,6 @@
   .landing {
         > header {
             .logo {
-                margin: 1em 0;
                 box-shadow: none;
             }
         }
@@ -342,10 +255,95 @@
     .wrapper > footer .ssl { margin-top: 0; }
 }
 
+// mobile menu starts here (requires JS. non-js users will see the open list only)
+@media only screen and (max-width: 320px) {
+    .js .landing > header .logo { margin-top: 1em; }
+    .js .wrapper > header {
+        position: absolute;
+        float: left;
+        width: 52px;
+        height: 28px;
+        transition: width 0.5s, height 0.5s;
+        background-image: url('/static/images/icons/bmenu-toopen.gif');
+        background-repeat: no-repeat;
+        background-position: 0.5em 0.8em;
+        background-size: 40px;
+        z-index: 99999;
+
+        nav {
+            position: relative;
+            top:-500px;
+            left:0;
+            width: 100%;
+            transition: top 0.5s;
+        }
+        ul {
+            margin: 0 1em;
+            li {
+                display: block;
+                float: none;
+                a {
+                    padding: 1em 0;
+                    margin-bottom: 2px;
+                    background: #111;
+                    text-indent: 1em;
+                }
+            }
+
+            &.social {
+                position: static;
+                display: block;
+                margin-top: 1em;
+                margin-left: 0.5em;
+                overflow: hidden;
+                li {
+                    float: left;
+                    width: 40px;
+                    height: 40px;
+                    a { text-indent: -9999px; }
+                }
+            }
+        }
+
+        &.open,
+        &:focus {
+            background-image: url('/static/images/icons/bmenu-toclose.gif');
+            width:100%;
+            height: 275px;
+            overflow: hidden;
+            nav {
+                top: 40px;
+            }
+        }
+    }
+
+    .no-js .wrapper > header {
+        height: auto;
+        position: static;
+        ul, ul.social {
+                display: block;
+                position: static;
+                margin: 0;
+            li {
+                display: block;
+                float: none;
+            }
+        }
+
+        ul.social {
+            margin-top: 1em;
+            overflow: hidden;
+            li {
+                float: left;
+                margin-right: 2px;
+            }
+        }
+    }
+}
+
 // Small screen layout (eg Nintendo DS, iPhone - iPhone 4S)
 @media only screen and (max-width: 320px) {
     .landing {
-
         .cta {
             font-size: 0.5em;
             .button { font-size: 3em; }
@@ -369,26 +367,6 @@
 }
 
 
-//switch to the portrait menu for larger mobile devices
-
-@media only screen and (min-height: 320px) {
-    .wrapper > header {
-        &:hover,
-        &.open {
-            nav { width: 250%; }
-            li {
-                display: block;
-                float: none !important;
-                a {
-                    font-size: 1.6em;
-                    padding: 10px;
-                    margin-bottom: 2px;
-                }
-
-            }
-        }
-    }
-}
 
 // Small devices in landscape
 
@@ -396,7 +374,6 @@
     .landing {
         .scrolly { display: none; }
         .cta span { display: none }
-        > header .logo { margin: 2.5em 0 }
     }
 }
 
@@ -408,7 +385,6 @@
                 width: 100px;
                 height: 100px;
                 box-shadow: none;
-                margin-top: 0;
             }
             .slogan { display: none; }
         }

@@ -7,17 +7,13 @@ Mobile = {
 
     mobileMenu: function () {
         var toggle = 0,
-        header = Core.bodyTag.find('.wrapper > header'),
-        nav = header.find('nav');
+        header = Core.bodyTag.find('.wrapper > header');
         header.on('click', function () {
             if (toggle === 0) {
-                $(this).removeClass('closed').addClass('open');
-                nav.slideDown();
+                $(this).addClass('open');
                 toggle = 1;
             } else {
-                nav.slideUp( function() {
-                    header.removeClass('open').addClass('closed');
-                });
+                header.removeClass('open');
                 toggle = 0;
             }
         });
