@@ -261,13 +261,13 @@
     .js .wrapper > header {
         position: absolute;
         float: left;
-        width: 52px;
-        height: 28px;
+        width: 62px;
+        height: 38px;
         transition: width 0.5s, height 0.5s;
         background-image: url('/static/images/icons/bmenu-toopen.gif');
         background-repeat: no-repeat;
         background-position: 0.5em 0.8em;
-        background-size: 40px;
+        background-size: 50px;
         z-index: 99999;
 
         nav {
@@ -287,6 +287,8 @@
                     margin-bottom: 2px;
                     background: #111;
                     text-indent: 1em;
+
+                    &:focus { background-color: $brand; }
                 }
             }
 
