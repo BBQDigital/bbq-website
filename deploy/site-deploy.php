@@ -5,7 +5,6 @@ $web_root_dir = '/srv/users/serverpilot/apps/bbqpreview/public';
 
 // Full path to git binary is required if git is not in your PHP user's path. Otherwise just use 'git'.
 $git_bin_path = 'git';
-
 $update = false;
 
 // Parse data from Bitbucket hook payload
@@ -33,6 +32,6 @@ if ($update) {
   // Log the deployment
   $commit_hash = shell_exec('cd ' . $repo_dir . ' && ' . $git_bin_path  . ' rev-parse --short HEAD');
   file_put_contents('deploy.log', date('m/d/Y h:i:s a') . " Deployed branch: " .  $branch . " Commit: " . $commit_hash . " [ success ] \n", FILE_APPEND);
-  mail('incoming@bbqdigital.com', 'Deployment completed!', "The deployment made at ".date('m/d/Y h:i:s a'). "has been pushed to $branch", $headers);
+  mail('incoming@bbqdigital.com', 'Deployment completed! ['.$branch.']', "The deployment made at ".date('m/d/Y h:i:s a'). " has been pushed to $branch", $headers);
 }
 ?>
