@@ -1,0 +1,9 @@
+// This langauge file is used by javascript when adding textual content to the site, it should be updated via the CMS
+{
+  "e-required": "This field cannot be empty",
+  "e-maxChars": "This field cannot exceed @$ characters",
+  "e-minChars": "This field must be at least @$ characters",
+  "e-telNo": "Please use a valid phone number",
+  "e-email": "Please use a valid email address",
+  "e-url": "Please enter a valid URL"
+}

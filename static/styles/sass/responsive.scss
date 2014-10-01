@@ -1,0 +1,418 @@
+/* This is where all media queries are held */
+
+
+// Big displays displays
+@media only screen and (min-width: 1760px) {
+    .content-block {
+        .main & {
+            h1 { padding: 1em 0;}
+        }
+    }
+}
+
+@media only screen and (max-width: 1300px) {
+    .content-block{
+        &.contact {
+            .contact-details { width: 49%; }
+            .form { width: 100%; }
+        }
+
+        .iconblock {
+            font-size: 0.9em;
+            p { overflow: hidden; }
+        }
+    }
+
+
+
+    .brands {
+        ul {
+            li {
+                width: 32%;
+                margin: 0 0 0.5em 0.7%;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1080px) {
+
+   .content-block {
+        .iconblock {
+            img {
+                width: 30%;
+                height: auto;
+            }
+        }
+    }
+
+}
+
+// Wider tablets
+@media only screen and (max-width: 980px) {
+    .button { width: 70%; }
+        .landing {
+            background-image: url("/static/images/steak-background-mob.jpg");
+            &.about-us { background-image: url("/static/images/about-us-mob.jpg"); }
+            &.why-bbq { background-image: url("/static/images/why-bbq-mob.jpg"); }
+            &.what-we-do { background-image: url("/static/images/what-we-do-mob.jpg"); }
+            &.contact-us { background-image: url("/static/images/contact-us-mob.jpg"); }
+            &.frequently-asked-questions { background-image: url("/static/images/faq-header-mob.jpg"); }
+            &.error { background-image: url("/static/images/error-mob.jpg"); }
+
+        .cta {
+             font-size: 0.6em;
+             .button {
+                font-size: 3.5em;
+                margin-bottom: 2em;
+            }
+        }
+        &.collapsed { min-height:250px; }
+        .scrolly {
+            box-sizing: border-box;
+            right: 0;
+            width: 100%;
+            text-align: center;
+            &:before { left:1em; }
+            &:after { right:1em; }
+        }
+    }
+
+    .content-block {
+        .shout { font-size: 3em; }
+        .iconblock {
+            img {
+                width: 50%;
+                height: auto;
+                float: none;
+                margin: 0 1em 0;
+            }
+
+            h2 { line-height: 1.2; }
+
+            li { text-align: center; }
+        }
+    }
+
+    .testimonials {
+        min-height: 50em;
+        blockquote {
+            margin-top: 1.5em;
+            font-size: 2.2em;
+            line-height: 1.4;
+            text-align: center;
+            strong {
+                display: block;
+                font-weight: bold;
+                margin-bottom: 0.5em;
+            }
+        }
+    }
+
+    .brands {
+        ul {
+            li {
+                width: 45.5%;
+                margin:  0.5em 2%;
+                img {
+                    width: 70%;
+                    height: auto;
+                }
+            }
+        }
+    }
+}
+
+
+// Mobile and narrow tablet layout
+@media only screen and (max-width: 650px) {
+  .landing {
+        > header {
+            .logo {
+                box-shadow: none;
+            }
+        }
+    }
+
+     .posted-message {
+        width: 80%;
+        top:60px;
+        line-height: 2.2;
+        padding-top:1.2em;
+        padding-bottom: 1.2em;
+        left: 1.5em;
+        margin-left: 0;
+        background-image: none;
+        .close {
+            font-size: 1.6em;
+            padding: 2px 8px 4px;
+            margin-left: 0.5em;
+            line-height: 1;
+        }
+    }
+
+    .content-block {
+
+         .shout { font-size: 2.4em; }
+
+        .block-image {
+            &.beautiful-web { background-image: url("/static/images/beautiful_web_background-mob.jpg"); }
+            &.knowledge-sharing { background-image: url("/static/images/knowledge_sharing_background-mob.jpg"); }
+            &.almost-unbelievable { background-image: url("/static/images/almost_unbelievable_background-mob.jpg"); }
+            &.wwd-discover { background-image: url("/static/images/discover-mob.jpg"); }
+            &.wwd-design { background-image: url("/static/images/design-mob.jpg"); }
+            &.wwd-develop { background-image: url("/static/images/develop-mob.jpg"); }
+        }
+        .content { margin: 3em 5%; }
+
+        &.contact {
+             .phone-number { font-size: 1.8em; }
+
+            form {
+                input, textarea {
+                    width: 100%;
+                    background-color: lighten($lightGrey, 5%);
+                }
+            }
+        }
+
+    }
+
+    footer {
+        .col { width: 45%; }
+        font-size: 1.3em;
+    }
+
+    .person {
+        .staff-photo {
+            float:none;
+            margin: 0 auto;
+            border-radius:0;
+            width: 100%;
+            background-position: 50% 30%;
+        }
+
+        h2 {
+            font-size: 2.5em;
+            margin-top: 0;
+        }
+    }
+
+    .col {
+        display: block;
+        width: 100% !important;
+        margin-bottom: 1em;
+    }
+
+    .brands {
+        ul {
+            li {
+                width: 47%;
+                margin: 0.2em 1%;
+
+                img { width: 80%; }
+            }
+        }
+    }
+}
+
+
+// mobile only
+
+// Mobile and narrow tablet layout
+@media only screen and (max-width: 450px) {
+    .landing {
+        > header {
+            .logo {
+                width: 125px;
+                height: 125px;
+                box-shadow: none;
+            }
+        }
+    }
+
+    .person {
+        h2 {
+            text-align: center;
+            color:#fff;
+            background-color: $darkGrey;
+            padding: 0.5em 0;
+        }
+    }
+
+    .testimonials {
+        min-height: 43em;
+        blockquote {
+            font-size: 1.8em;
+            line-height: 1.4;
+        }
+    }
+    .content-block {
+        .iconblock {
+            li { width: 100%; }
+        }
+    }
+
+    .wrapper > footer .ssl { margin-top: 0; }
+}
+
+// mobile menu starts here (requires JS. non-js users will see the open list only)
+@media only screen and (max-width: 380px) {
+    .js .landing > header .logo { margin-top: 1em; }
+    .js .wrapper > header {
+        position: fixed;
+        float: left;
+        width: 52px;
+        height: 28px;
+        transition: width 0.5s, height 0.5s;
+        background-image: url('/static/images/icons/bmenu.gif');
+        background-repeat: no-repeat;
+        background-position: 0.5em 0.8em;
+        background-size: 40px;
+        z-index: 99999;
+
+        nav {
+            position: relative;
+            top:-500px;
+            left:0;
+            width: 100%;
+            transition: top 0.5s;
+        }
+        ul {
+            margin: 0 1em;
+            li {
+                display: block;
+                float: none;
+                a {
+                    font-size: 1.6em;
+                    padding: 1em 0;
+                    margin-bottom: 2px;
+                    background: #111;
+                    text-indent: 1em;
+
+                    &:focus { background-color: $brand; }
+                }
+            }
+
+            &.social {
+                position: static;
+                display: block;
+                margin-top: 1em;
+                margin-left: 0.5em;
+                overflow: hidden;
+                li {
+                    float: left;
+                    width: 40px;
+                    height: 40px;
+                    a { text-indent: -9999px; }
+                }
+            }
+        }
+
+        &.open,
+        &:focus {
+            background-image: url('/static/images/icons/bmenu-toclose.gif');
+            width:100%;
+            height: 310px;
+            overflow: hidden;
+            nav {
+                top: 40px;
+            }
+        }
+    }
+
+    .no-js .wrapper > header {
+        height: auto;
+        position: static;
+        ul, ul.social {
+                display: block;
+                position: static;
+                margin: 0;
+            li {
+                display: block;
+                float: none;
+            }
+        }
+
+        ul.social {
+            margin-top: 1em;
+            overflow: hidden;
+            li {
+                float: left;
+                margin-right: 2px;
+            }
+        }
+    }
+}
+
+// Small screen layout (eg Nintendo DS, iPhone - iPhone 4S)
+@media only screen and (max-width: 320px) {
+    .landing {
+        .cta {
+            font-size: 0.5em;
+            .button { font-size: 3em; }
+        }
+    }
+
+    .brands {
+        ul {
+            li {
+                width: 46.5%;
+                margin: 0.2em 1%;
+
+                img { width: 80%; }
+            }
+        }
+    }
+
+    .content-block {
+        h1 { font-size: 2em; }
+    }
+}
+
+
+
+// Small devices in landscape
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 640px) and (orientation : landscape) {
+    .landing {
+        .scrolly { display: none; }
+        .cta span { display: none }
+    }
+}
+
+// For screens with a small height
+@media screen and (max-height:450px) {
+    .landing {
+        > header {
+            .logo {
+                width: 100px;
+                height: 100px;
+                box-shadow: none;
+            }
+            .slogan { display: none; }
+        }
+        .cta span { font-size: 3em; }
+    }
+}
+
+@media screen and (max-height:290px) {
+    .landing {
+        > header {
+            .logo {
+                width: 60px;
+                height: 60px;
+            }
+        }
+        .scrolly { display: none; }
+        .cta {
+            span { display: none }
+            .button { margin-bottom: 0;}
+        }
+    }
+
+    .js .wrapper > header {
+        position: absolute;
+    }
+}
+
