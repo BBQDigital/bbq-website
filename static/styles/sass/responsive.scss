@@ -1,5 +1,6 @@
 /* This is where all media queries are held */
 
+
 // Big displays displays
 @media only screen and (min-width: 1760px) {
     .content-block {
@@ -259,7 +260,7 @@
 @media only screen and (max-width: 380px) {
     .js .landing > header .logo { margin-top: 1em; }
     .js .wrapper > header {
-        position: absolute;
+        position: fixed;
         float: left;
         width: 52px;
         height: 28px;
@@ -397,11 +398,21 @@
 
 @media screen and (max-height:290px) {
     .landing {
+        > header {
+            .logo {
+                width: 60px;
+                height: 60px;
+            }
+        }
         .scrolly { display: none; }
         .cta {
             span { display: none }
             .button { margin-bottom: 0;}
         }
+    }
+
+    .js .wrapper > header {
+        position: absolute;
     }
 }
 

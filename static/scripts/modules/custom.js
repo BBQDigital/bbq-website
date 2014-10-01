@@ -77,7 +77,8 @@ Core = {
         setInterval(
             function() {
                 o.viewportWidth = $('body').outerWidth(true);
-                o.screenLogger.html(o.viewportWidth+'px');
+                o.viewportHeight = $('body').outerHeight(true);
+                o.screenLogger.html('w: '+o.viewportWidth+'px  h: '+o.viewportHeight+'px');
             }, 500
         );
     }
