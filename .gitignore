@@ -15,8 +15,6 @@ web/bundles/*
 #######################
 app/config/parameters.ini
 app/config/parameters.yml
-.htaccess
-.htaccess-l
 
 # Compiled source #
 ###################
