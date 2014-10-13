@@ -237,7 +237,7 @@ body {
         .wrapper > header .social li.reset {
           text-indent: 0;
           width: auto; }
-          .wrapper > header .social li.reset:focus {
+          .wrapper > header .social li.reset a:focus {
             border: 0; }
       .wrapper > header .social a {
         background-size: 100%;
@@ -920,7 +920,7 @@ body {
             text-align: center;
             font-size: 1.3em; }
             .js .wrapper > header ul.social li.reset a:focus {
-              outline: 0; }
+              border: 0; }
     .js .wrapper > header.open, .js .wrapper > header:focus {
       background-image: url("/static/images/icons/bmenu-toclose.gif");
       width: 100%;
