@@ -107,7 +107,6 @@ body {
                 &.facebook { background-image: url("/static/images/icons/social-fb.png"); }
                 &.twitter { background-image: url("/static/images/icons/social-twitter.png"); }
                 &:hover { opacity: 0.8; }
-                &:focus { border: 1px dotted $brand; }
             }
         }
 

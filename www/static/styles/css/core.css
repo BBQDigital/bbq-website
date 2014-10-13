@@ -248,8 +248,6 @@ body {
           background-image: url("/static/images/icons/social-twitter.png"); }
         .wrapper > header .social a:hover {
           opacity: 0.8; }
-        .wrapper > header .social a:focus {
-          border: 1px dotted #d12531; }
     .wrapper > header li {
       display: inline-block; }
     .wrapper > header a {
