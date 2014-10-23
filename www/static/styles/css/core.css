@@ -170,8 +170,7 @@ body {
   .skip a:focus {
     top: 0; }
 
-.no-js .wrapper .warnings,
-.no-js .warning {
+.no-js .wrapper .warnings {
   position: static; }
 
 .warning {
@@ -714,10 +713,6 @@ body {
     width: 30%;
     height: auto; } }
 @media only screen and (max-width: 980px) {
-  .no-js .wrapper .warnings,
-  .no-js .warning {
-    position: absolute; }
-
   .button {
     width: 70%; }
 
@@ -871,6 +866,9 @@ body {
 
   .wrapper > footer .ssl {
     margin-top: 0; } }
+@media only screen and (min-width: 481px) {
+  .no-js .wrapper .warnings {
+    position: absolute; } }
 @media only screen and (max-width: 480px) {
   .js .landing > header .logo {
     margin-top: 1em; }
@@ -923,12 +921,12 @@ body {
             font-size: 1.3em; }
             .js .wrapper > header ul.social li.reset a:focus {
               border: 0; }
-    .js .wrapper > header.open, .js .wrapper > header:focus {
+    .js .wrapper > header.open, .js .wrapper > header:focus, .js .wrapper > header:hover {
       background-image: url("/static/images/icons/bmenu-toclose.gif");
       width: 100%;
       height: 310px;
       overflow: hidden; }
-      .js .wrapper > header.open nav, .js .wrapper > header:focus nav {
+      .js .wrapper > header.open nav, .js .wrapper > header:focus nav, .js .wrapper > header:hover nav {
         top: 40px; }
 
   .no-js .wrapper > header {
