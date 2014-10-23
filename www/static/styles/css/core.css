@@ -714,6 +714,10 @@ body {
     width: 30%;
     height: auto; } }
 @media only screen and (max-width: 980px) {
+  .no-js .wrapper .warnings,
+  .no-js .warning {
+    position: absolute; }
+
   .button {
     width: 70%; }
 
@@ -998,5 +1002,3 @@ body {
   position: relative; }
 
 /* test */
-
-/*# sourceMappingURL=core.css.map */

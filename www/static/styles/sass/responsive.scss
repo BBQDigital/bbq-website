@@ -50,6 +50,10 @@
 
 // Wider tablets
 @media only screen and (max-width: 980px) {
+
+    .no-js .wrapper .warnings,
+    .no-js .warning { position: absolute; }
+
     .button { width: 70%; }
         .landing {
             background-image: url("/static/images/steak-background-mob.jpg");
