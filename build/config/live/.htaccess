@@ -15,3 +15,11 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_URI} !(\.[a-zA-Z0-9]{1,5}|/)$
 RewriteRule (.*)$ /$1/ [R=301,L]
+
+<filesMatch "\.(jpg|jpeg|gif|png|ico)$">
+Header set Cache-Control "max-age=2419200, public, must-revalidate"
+</filesMatch>
+
+<filesMatch "\.(css|js)$">
+Header set Cache-Control "max-age=1054600, public, must-revalidate"
+</filesMatch>
