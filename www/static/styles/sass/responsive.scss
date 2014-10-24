@@ -324,8 +324,7 @@
         }
 
         &.open,
-        &:focus,
-        &:hover {
+        &:focus {
             background-image: url('/static/images/icons/bmenu-toclose.gif');
             width:100%;
             height: 310px;
