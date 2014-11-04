@@ -1,0 +1,15 @@
+<section class="landing">
+    <header itemscope itemtype="http://schema.org/LocalBusiness">
+        <img itemprop="logo" src="/static/images/logos/bbq-logo.png" width="150" height="150" alt="BBQ Digital Logo" class="logo" />
+        <span class="slogan">Building Better Quality</span>
+    </header>
+    <div class="pixel-overlay"></div>
+    <perch:if id="is_landing_page" value="false">
+        <div class="cta">
+            <span><perch:content id="cta_line_1" type="text" label="Top cta line" required="true" /></span>
+            <span><strong><perch:content id="cta_line_2" type="text" label="Bottom cta line" required="true" /></strong></span>
+            <a href="<perch:content id="button_url" type="text" label="Button link" required="true" />" class="button light"><perch:content id="button_text" type="text" label="Button text" required="true" /></a>
+        </div>
+        <span class="scrolly">Scroll down for more</span>
+    </perch:if>
+</section>

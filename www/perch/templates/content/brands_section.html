@@ -1,0 +1,17 @@
+<section class="content-block brands">
+    <h1><perch:content type="text" id="brand_title" label="Section title" required="true" default="BBQ work with the best brands" /></h1>
+    <div class="content">
+    <perch:repeater id="brands" label="Brands" max="6">
+      <perch:before>
+        <ul class="logos">
+      </perch:before>
+            <li>
+               <img src="<perch:content type="image" id="brand_logo" label="Brand Logo" />" alt="<perch:content type="text" id="brand_name" label="Brand Name" bucket="brand_logos"/>" />
+            </li>
+
+        <perch:after>
+          </ul>
+        </perch:after>
+      </perch:repeater>
+    </div>
+</section>

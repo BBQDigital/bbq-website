@@ -1,0 +1,134 @@
+<?php require_once('includes/header.php'); ?>
+        <section class="landing collapsed">
+            <?php require_once('includes/logo_slogan.php'); ?>
+        </section>
+        <div class="main" id="main" role="main">
+        <section class="content-block legal">
+            <h1>Privacy Policy</h1>
+            <div class="content">
+                <p class="warning">Last updated: 1st September 2014</p>
+                <p>BBQ Digital Ltd (registered number 08480746), whose registered office is at: 33 Harrison Road, Halifax, HX1 2AF. We know that you care how information about you is used and shared and we appreciate your trust in us to do that carefully and sensibly. This notice describes our privacy policy and forms part of our website terms and conditions ('Website Terms').</p>
+                <p>By accepting our Website Terms or by visiting bbqdigital.com ('the Website') you are accepting and consenting to the practices described in this Privacy Policy.</p>
+                <p>BBQ Digital Ltd place the utmost importance on protecting your Personal Data (as defined in the <a href="http://www.legislation.gov.uk/ukpga/1998/29/data.pdf">Data Protection Act 1998</a>) and we are committed to giving you a personalised service that meets your needs in a way that also protects your privacy. This policy explains how we may collect Personal Data about you. It also explains some of the security measures we take to protect your Personal Data, and tells you certain things we will do and not do. You should read this policy in conjunction with the Website Terms.</p>
+                <p>When we first obtain Personal Data from you, or when you take a new service or product from us, we will give you the opportunity to tell us if you do or do not want to receive information from us about other services or products (as applicable). You can normally do this by ticking a box on an application form or contract. You may change your mind at any time by emailing us at the address below.</p>
+
+                <p>Some of the Personal Data we hold about you may be 'sensitive personal data' within the meaning of the <a href="http://www.legislation.gov.uk/ukpga/1998/29/data.pdf">Data Protection Act 1998</a>, for example, information about your health or ethnic origin.</p>
+
+                <dl>
+                    <dt>1.  Collecting Information</dt>
+                    <dd>We may collect Personal Data about you from a number of sources, including the following:
+                        <ol>
+                            <li>1.1.    From you when you agree to take a service or product from us, in which case this may include your contact details, date of birth, how you will pay for the product or service and your bank details.</li>
+                            <li>1.2.    From you when you contact us with an enquiry or in response to a communication from us, in which case, this may tell us something about how you use our services.</li>
+                            <li>1.3.    From documents that are available to the public, such as the electoral register.</li>
+                        </ol>
+                    </dd>
+                    <dt>2.  Using Your Personal Information</dt>
+                    <dd>
+                       <ol>
+                           <li> 2.1.    Personal Data about our customers is an important part of our business and we shall only use your Personal Data for the following purposes and shall not keep such Personal Data longer than is necessary to fulfil these purposes:
+                               <ol>
+                                    <li>2.1.1.  To help us to identify you when you contact us.</li>
+                                    <li>2.1.2.  To help us to identify accounts, services and/or products which you could have from us or selected partners from time to time. We may do this by automatic means using a scoring system, which uses the Personal Data you have provided and/or any information we hold about you and Personal Data from third party agencies (including credit reference agencies and accountants).</li>
+                                    <li>2.1.3.  To help us to administer and to contact you about improved administration of any accounts, services and products we have provided before, do provide now or will or may provide in the future.</li>
+                                    <li>2.1.4.  To allow us to carry out marketing analysis and customer profiling (including with transactional information), conduct research, including creating statistical and testing information.</li>
+                                    <li>2.1.5.  To help to prevent and detect fraud or loss.</li>
+                                    <li>2.1.6.  To allow us to contact you in any way (including mail, email, telephone, visit, text or multimedia messages) about products and services offered by us and selected partners unless you have previously asked us not to do so.</li>
+                                    <li>2.1.7.  We may monitor and record communications with you (including phone conversations and emails) for quality assurance and compliance.</li>
+                                    <li>2.1.8.  We may check your details with fraud prevention agencies. If you provide false or inaccurate information and we suspect fraud, we will record this.</li>
+                               </ol>
+                           </li>
+                           <li>2.2.    We will not disclose your Personal Data to any third party except in accordance with this Privacy Policy.</li>
+                           <li>2.3.    We may allow other people and organisations to use Personal Data we hold about you in the following circumstances:
+                               <ol>
+                                   <li>2.3.1.  If we, or substantially all of our assets, are acquired or are in the process of being acquired by a third party, in which case Personal Data held by us, about our customers, will be one of the transferred assets.</li>
+                                   <li>2.3.2.  If we have been legitimately asked to provide information for legal or regulatory purposes or as part of legal proceedings or prospective legal proceedings.</li>
+                                   <li>2.3.3.  We employ companies and individuals to perform functions on our behalf and we may disclose your Personal Data to these parties for the purposes set out in clause 2.1 or, for example, for fulfilling orders, delivering packages, sending postal mail and email, removing repetitive information from customer lists, analysing data, providing marketing assistance, providing search results and links (including paid listings and links) and providing customer service. Those parties are bound by strict contractual provisions with us and only have access to Personal Data needed to perform their functions, and may not use it for other purposes. Further, they must process the Personal Data in accordance with this Privacy Policy and as permitted by the <a href="http://www.legislation.gov.uk/ukpga/1998/29/data.pdf">Data Protection Act 1998</a>. From time to time, these other people and organisations to whom we may pass your Personal Data may be outside the European Economic Area. We will take all steps reasonably necessary to ensure that your Personal Data is treated securely and in accordance with this Privacy Policy and the <a href="http://www.legislation.gov.uk/ukpga/1998/29/data.pdf">Data Protection Act 1998</a>.</li>
+                               </ol>
+                           </li>
+                           <li>2.4.    Where you give us Personal Data on behalf of someone else, you confirm that you have provided them with the information set out in this Privacy Policy and that they have not objected to such use of their Personal Data.</li>
+                           <li>2.5.    In connection with any transaction which we enter into with you:
+                               <ol>
+                                   <li>2.5.1.  We, and other companies in our group, may carry out credit and fraud prevention checks with one or more licensed credit reference and fraud prevention agencies or chartered accountants. We and they may keep a record of the search. Information held about you by these agencies may be linked to records relating to other people living at the same address with whom you are financially linked. These records will also be taken into account in credit and fraud prevention checks. Information from your application and payment details of your account will be recorded with one or more of these agencies and may be shared with other organisations to help make credit and insurance decisions about you and members of your household with whom you are financially linked and for debt collection and fraud prevention. This includes those who have moved house and who have missed payments.</li>
+                                   <li>2.5.2.  If you provide false or inaccurate information to us and we suspect fraud, we will record this and may share it with other people and organisations. We, and other credit and insurance organisations, may also use technology to detect and prevent fraud.</li>
+                                   <li>2.5.3.  If you need details of those credit agencies and fraud prevention agencies or chartered accountants from which we obtain and with which we record information about you, please write to our Data Protection Manager at BBQ Digital Ltd, Ocean Village Innovation Centre, Ocean Village, Ocean Way, Southampton, SO14 3JZ.</li>
+                               </ol>
+                           </li>
+                       </ol>
+                    </dd>
+                    <dt>3.  Protecting Information</dt>
+                    <dd>
+                        <p>We have strict security measures to protect Personal Data.</p>
+                        <ol>
+                            <li>3.1.    We work to protect the security of your information during transmission by using Secure Sockets Layer (SSL) software, which encrypts information you input.</li>
+                            <li>3.2.    We maintain physical, electronic and procedural safeguards in connection with the collection, storage and disclosure of personally identifiable customer information. Our security procedures mean that we may occasionally request proof of identity before we disclose personal information to you.</li>
+                            <li>3.3.    It is important for you to protect against unauthorised access to your password and to your computer. Be sure to sign off when you finish using a shared computer.</li>
+                        </ol>
+                    </dd>
+                    <dt>4.  The internet</dt>
+                    <dd>
+                        <ol>
+                            <li>4.1.    If you communicate with us using the internet, we may email you about our services and products. When you first give us Personal Data through the Website we will store this for the purpose of answering your query only. You can also always send us an email (at the address set out below) at any time if you wish for the details submitted on the internet to be removed from our system.</li>
+                            <li>4.2.    Please remember that communications over the internet, such as emails and webmails (messages sent through a website), are not secure unless they have been encrypted. Your communications may go through a number of countries before they are delivered - this is the nature of the internet. We cannot accept responsibility for any unauthorised access or loss of Personal Data that is beyond our control.</li>
+                        </ol>
+                    </dd>
+                    <dt>5.  Cookies</dt>
+                    <dd>
+                        <p>
+                            When we provide services, we want to make them easy, useful and reliable. This sometimes involves placing small amounts of information on your computer. These are called 'cookies'.</p>
+                        <p>
+                            These cookies cannot be used to identify you personally and are used to improve services for you, for example through:
+                        </p>
+
+                        <ul>
+                            <li>Letting you navigate between pages efficiently</li>
+                            <li>Enabling a service to recognise your computer so you don't have to give the same information during one task</li>
+                            <li>Recognising that you have already given a username and password so you don't need to enter it for every web page requested</li>
+                            <li>Measuring how many people are using services, so they can be made easier to use and that there is enough capacity to ensure they are fast</li>
+                        </ul>
+
+                        <p>See <a href="http://allaboutcookies.org">allaboutcookies.org</a> or <a href="http://www.youronlinechoices.eu">www.youronlinechoices.eu</a> to learn more about cookies.</p>
+                        <p>Visit <a href="http://www.google.co.uk/goodtoknow/data-on-the-web/cookies">www.google.co.uk/goodtoknow/data-on-the-web/cookies</a> for a video about cookies.</p>
+                        <p>Users typically have the opportunity to set their browser to accept all or some cookies, to notify them when a cookie is issued, or not to receive cookies at any time. The last of these options, of course, means that personalised services cannot be provided and the user may not be able to take full advantage of all of a website's features. Refer to your browser's Help section for specific guidance on how it allows you to manage cookies and how you may delete cookies you wish to remove from your computer.</p>
+                        <p>Multiple cookies may be found in a single file depending on which browser you use. By using this website, you agree that we can place these types of cookies on your device.</p>
+                        <p>The cookies used on this website have been categorised based on the categories found in the ICC UK Cookie guide, as follows:</p>
+                        <p>
+                            <strong>Category 1: strictly necessary cookies</strong>
+                        </p>
+                        <p>These cookies are essential in order to enable you to move around the website and use its features.</p>
+                        <p>
+                            <strong>Category 2: performance cookies</strong>
+                        </p>
+                        <p>These cookies collect information about how visitors use a website, for instance which pages visitors go to most often, and if they get error messages from web pages. These cookies don’t collect information that identifies a visitor. All information these cookies collect is aggregated and therefore anonymous. It is only used to improve how a website works.</p>
+                        <p>
+                            <strong>Category 3: functionality cookies</strong>
+                        </p>
+                        <p>These cookies allow the website to remember choices you make (such as your language or the region you are in) and provide enhanced, more personal features. These cookies can also be used to remember changes you have made to text size, fonts and other parts of web pages that you can customise. The information these cookies collect may be anonymised and they cannot track your browsing activity on other websites.</p>
+
+                        <p>If you have any queries about these, or would like more information, please contact our Data Protection Manager at BBQ Digital Ltd, Ocean Village Innovation Centre, Ocean Village, Ocean Way, Southampton, SO14 3JZ, or email us at <a href="mailto:info@bbqdigital.com">info@bbqdigital.com</a>.</p>
+                    </dd>
+
+
+                    <dt>6.  Links</dt>
+                    <dd>
+                       <ol>
+                           <li>6.1.    The Website may include links to other websites. We do not provide any personally identifiable customer Personal Data to these third-party websites.</li>
+                           <li>6.2.    We exclude all liability for loss that you may incur when using these third party websites.</li>
+                       </ol>
+                    </dd>
+                    <dt>7.  Further Information</dt>
+                    <dd>
+                        <ol>
+                            <li>7.1.    If you would like any more information or you have any comments about our Privacy Policy, please either write to us at Data Protection Manager, BBQ Digital Ltd, Ocean Village Innovation Centre, Ocean Village, Ocean Way, Southampton, SO14 3JZ, or email us at <a href="mailto:info@bbqdigital.com">info@bbqdigital.com</a>.</li>
+                            <li>7.2.    We may amend this Privacy Policy from time to time without notice to you, in which case, we will publish the amended version on the Website. You confirm that we shall not be liable to you or any third party for any change to this Privacy Policy from time to time. It is your responsibility to check regularly to determine whether this Privacy Policy has changed.</li>
+                            <li>7.3.    You can ask us for a copy of this Privacy Policy and of any amended Privacy Policy by writing to the above address or by emailing us at <a href="mailto:info@bbqdigital.com">info@bbqdigital.com</a>. This Privacy Policy applies to Personal Data we hold about individuals. It does not apply to information we hold about companies and other organisations.</li>
+                            <li>7.4.    If you would like access to the Personal Data that we hold about you, you can do this by emailing us at <a href="mailto:info@bbqdigital.com">info@bbqdigital.com</a> or writing to us at the address noted above. There may be a nominal charge of &pound;10.00 to cover administrative costs.</li>
+                            <li>7.5.    We aim to keep the Personal Data we hold about you accurate and up to date. If you tell us that we are holding any inaccurate Personal Data about you, we will delete it or correct it promptly. Please email us at <a href="mailto:info@bbqdigital.com">info@bbqdigital.com</a> or write to us at the address above to update your Personal Data.</li>
+                        </ol>
+                    </dd>
+                </dl>
+            </div>
+        </section>
+
+    </div>
+<?php require_once('includes/footer.php'); ?>

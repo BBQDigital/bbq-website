@@ -1,0 +1,12 @@
+<section class="content-block testimonials" itemscope="" itemtype="http://data-vocabulary.org/Review">
+    <h1><perch:content id="testimonials_header" type="text" label="Section Header" required="true" default="Testimonials" /></h1>
+    <div class="content">
+      <perch:repeater id="testimonial" label="Testimonial">
+        <blockquote itemprop="review" style="display: block;">
+        <span class="hide" itemprop="itemreviewed">BBQ Digital</span>
+        <strong itemprop="description">"<perch:content id="testimonal_quote" type="textarea" label="Quote" help="Do not add quotation tags" required="true" />"</strong>
+        <br> - <span itemprop="reviewer"><perch:content id="testimonial_author_name" type="text" label="Name of testimonial provider" required="true" />, <perch:content id="testimonial_author_job_title" type="text" label="Job title of testimonial provider" required="true" /> <perch:if exists="testimonial_author_company">@ </perch:if><perch:content id="testimonial_author_company" type="text" label="Company testimonial is from" /></span>
+        </blockquote>
+      </perch:repeater>
+    </div>
+</section>
