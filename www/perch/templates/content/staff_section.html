@@ -1,0 +1,13 @@
+<section class="content-block person" itemscope itemtype="http://data-vocabulary.org/Person">
+    <h1 itemprop="title"><perch:content id="job_title" type="text" label="Job Title" required="true" title="true" /></h1>
+    <div class="content">
+        <div class="staff-photo <perch:content id="staff_name" type="text" label="Full name" urlify="true" />">
+            A photograph of <perch:content id="staff_name" type="hidden" required="true" />.
+            <meta itemprop="photo" content="/static/images/staff/<perch:content id="staff_name" type="hidden" urlify="true" />.jpg"></meta>
+        </div>
+        <h2 itemprop="name"><perch:content id="staff_name" /></h2>
+        <div class="text">
+            <perch:content id="body" type="textarea" label="Body text" markdown="true" editor="markitup" required="true" />
+        </div>
+    </div>
+</section>

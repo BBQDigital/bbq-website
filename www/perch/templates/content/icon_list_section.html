@@ -1,0 +1,16 @@
+<section class="content-block">
+    <h1><perch:content id="heading" type="text" label="Heading" title="true" required="true"/></h1>
+    <div class="content">
+        <h2><perch:content id="sub_heading" type="text" label="Sub heading" /></h2>
+        <perch:before><ul class="iconblock"></perch:before>
+            <perch:repeater id="icon_repeater" label="Icons">
+            <li>
+                <img src="<perch:content type="image" id="image" label="Image" />" alt="<perch:content id="image_description" type="text" label="Image Description" />">
+                <h2><perch:content id="section_heading" type="text" label="Section heading" /></h2>
+                <perch:content id="section_content" type="textarea" label="Section content" markdown="true" editor="markitup" />
+            </li>
+            </perch:repeater>
+        <perch:after></ul></perch:after>
+        <perch:content id="body" type="textarea" label="Additional text" markdown="true" editor="markitup" />
+    </div>
+</section>

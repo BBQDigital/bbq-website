@@ -1,0 +1,18 @@
+<section class="content-block">
+    <perch:if exists="heading">
+        <h1><perch:content id="heading" type="text" label="Heading" title="true" /></h1>
+    </perch:if>
+
+    <div class="content">
+        <perch:if exists="shout"><h2 class="shout"><perch:content id="shout" type="text" label="Shout heading" /></h2></perch:if>
+        <perch:content id="body" type="textarea" label="Body" markdown="true" editor="markitup" />
+    </div>
+
+    <perch:content id="has_cta" type="checkbox" label="Do you want to include a call to action button?" help="If this box is ticked, make sure you fill in the boxes below" suppress="true" value="1" divider-before="Call to action details"/>
+    <perch:if id="has_cta" value="1">
+    <div class="cta">
+        <a href="<perch:content id="button_url" type="text" label="Button link" />" class="button <perch:content id="button_type" type="select" label="Button Style" options="Dark|dark, Light|light" allowempty="false" />">
+        <perch:content id="button_text" type="text" label="Button text" /></a>
+    </div>
+    </perch:if>
+</section>

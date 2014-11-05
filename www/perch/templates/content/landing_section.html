@@ -1,14 +1,15 @@
-<section class="landing">
+<perch:content id="is_landing_page" type="checkbox" label="Make this page a landing page" help="If this box is ticked, the next section can be skipped" suppress="true" value="1"/>
+<section class="landing <perch:if id="is_landing_page" value="0">collapsed</perch:if> <perch:content id="extra_class" type="text" label="Extra class for landing page section" help="If you can edit the CSS, adding an extra class will help to customise this section further" />">
     <header itemscope itemtype="http://schema.org/LocalBusiness">
         <img itemprop="logo" src="/static/images/logos/bbq-logo.png" width="150" height="150" alt="BBQ Digital Logo" class="logo" />
         <span class="slogan">Building Better Quality</span>
     </header>
     <div class="pixel-overlay"></div>
-    <perch:if id="is_landing_page" value="false">
+    <perch:if id="is_landing_page" value="1">
         <div class="cta">
-            <span><perch:content id="cta_line_1" type="text" label="Top cta line" required="true" /></span>
-            <span><strong><perch:content id="cta_line_2" type="text" label="Bottom cta line" required="true" /></strong></span>
-            <a href="<perch:content id="button_url" type="text" label="Button link" required="true" />" class="button light"><perch:content id="button_text" type="text" label="Button text" required="true" /></a>
+            <span><perch:content id="cta_line_1" type="text" label="Top cta line" divider-before="Landing page additional content" /></span>
+            <span><strong><perch:content id="cta_line_2" type="text" label="Bottom cta line" /></strong></span>
+            <a href="<perch:content id="button_url" type="text" label="Button link" />" class="button light"><perch:content id="button_text" type="text" label="Button text" /></a>
         </div>
         <span class="scrolly">Scroll down for more</span>
     </perch:if>
