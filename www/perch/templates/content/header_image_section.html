@@ -6,8 +6,10 @@
     <div class="content">
         <perch:content id="body" type="textarea" label="Body" markdown="true" editor="markitup" required="true" />
     </div>
+    <perch:if exists="button_url">
     <div class="cta">
         <a href="<perch:content id="button_url" type="text" label="Button link" />" class="button <perch:content id="button_type" type="select" label="Button Style"
 options="Light|light, Dark|dark allowempty="false" required="true" />"><perch:content id="button_text" type="text" label="Button text" /></a>
     </div>
+    </perch:if>
 </section>

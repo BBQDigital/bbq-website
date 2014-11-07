@@ -1,0 +1,15 @@
+<section class="content-block faq">
+    <h1><perch:content id="header" type="text" label="Main header" title="true"/></h1>
+    <div class="content">
+        <perch:repeater id="faqs" label="Frequently Asked Questions">
+            <perch:before>
+            <dl>
+            </perch:before>
+            <dt><perch:content id="question" type="text" label="Question" required="true"/></dt>
+            <dd><perch:content id="answer" type="textarea" label="Answer" markdown="true" editor="markitup" required="true" /></dd>
+            <perch:after>
+            </dl>
+            </perch:after>
+        </perch:repeater>
+    </div>
+</section>
