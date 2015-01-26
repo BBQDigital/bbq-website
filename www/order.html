@@ -72,7 +72,7 @@
             <div class="js-disabled warning"><span>Umm... </span>It looks like you have disabled JavaScript. You can still do most things here but our site works a lot better with it.</div>
         </div>
 
-        <section class="landing collapsed why-bbq">
+        <section class="landing collapsed">
             <header itemscope itemtype="http://schema.org/LocalBusiness">
     <a href="/"><img itemprop="logo" src="/static/images/logos/bbq-logo.png" width="150" height="150" alt="BBQ Digital Logo" class="logo" /></a>
     <span class="slogan">Building Better Quality</span>
@@ -80,70 +80,62 @@
 <div class="pixel-overlay"></div>
         </section>
         <div class="main" id="main" role="main">
-        <section class="content-block">
-            <h1>Why choose BBQ?</h1>
-            <div class="content">
-              <h2 class="shout">We are on a mission</h2>
-              <p>The digital industry has a lot of making up to do. Far too many web developers break their promises, break reputations and worst of all break websites and this is simply unacceptable to us.</p>
-              <p>We’ve spent a lot of time researching other web developers and often they are able to ‘talk the talk’ but fail to deliver on their own manifesto, sometimes even on their own website! We don’t work that way, we always deliver the best, ‘It’ll do’ is not in our vocabulary. If we can’t build it perfectly, we won’t accept the project. We would rather lose money than fail to deliver what we promised.</p>
-              <p>We are BBQ and we Build Better Quality as standard.</p>
-            </div>
-        </section>
-        <section class="content-block">
-            <h1>The fuel to our fire</h1>
-            <div class="content">
-                <h2>Sounds good right? It’s easy enough to say that we are exceptional but here is what we do to guarantee it:</h2>
-                <ul class="iconblock">
-                    <li>
-                        <img src="/static/images/icons/ico-wizard.png" alt="Illustration of a wizards hat" />
-                        <h2>We put the wizards in charge</h2>
-                        <p>Every person in our team has been a project lead in the past. We only allow people of the highest calibre to be part of our team. There are no juniors at BBQ Digital.</p>
-                    </li>
-                    <li>
-                        <img src="/static/images/icons/ico-responsive.png" alt="Illustration of responsive design" />
-                        <h2>No half measures</h2>
-                        <p>Every website we build is responsive and when we say that, we really mean it. We test on real devices to make sure everything looks as it should.</p>
-                    </li>
-                    <li>
-                        <img src="/static/images/icons/ico-clipboard.png" alt="Illustration of a clipboard" />
-                        <h2>No lazy coding</h2>
-                        <p>We have strict coding guidelines which all our developers must adhere to at all times.</p>
-                    </li>
-                    <li>
-                        <img src="/static/images/icons/ico-tape-measure.png" alt="Illustration of a tape measure" />
-                        <h2>Made to measure</h2>
-                        <p>We don’t use ‘off the shelf’ products; everything we deliver is bespoke. We even chose a CMS based on how much we could tailor it to our customers.</p>
-                    </li>
-                    <li>
-                        <img src="/static/images/icons/ico-accessibility.png" alt="Illustration of the new disability/accessibility logo" />
-                        <h2>A web for everyone</h2>
-                        <p>Every website we build adheres to <a href="http://www.w3.org/TR/WCAG20/">WCAG 2.0 accessibility standards</a> enabling those with physical impairments to use your website.</p>
-                    </li>
-                    <li>
-                        <img src="/static/images/icons/ico-seo.png" alt="Illustration of a space rocket" />
-                        <h2>Rocket-powered website</h2>
-                        <p>All of our websites are optimized for ideal SEO conditions. Meaning your website will get a boost just by being built by us.</p>
-                    </li>
-                    <li>
-                        <img src="/static/images/icons/ico-prince2.png" alt="Illustration of the prince 2 logo" />
-                        <h2>Staying organized</h2>
-                        <p>Our project manager is PRINCE2 certified, ensuring your projects will always run smoothly.</p>
-                    </li>
-                    <li>
-                        <img src="/static/images/icons/ico-warranty.png" alt="Illustration of a certicate" />
-                        <h2>Peace of mind</h2>
-                        <p>All our projects are covered by a 1 year warranty.</p>
-                    </li>
-                </ul>
-                <p>That’s not everything of course. That’s just for starters; we aren’t giving all our secrets away!</p>
-        </section>
-        <section class="content-block tac">
-            <div class="content">
-                <h2 class="shout">Want to know more?</h2>
-                <a href="/contact-us" class="button dark">Get in touch</a>
-            </div>
-        </section>
-    </div>
+            <section class="content-block contact">
+                <h1>DSQS Audit order form</h1>
+                <div class="content">
+                    <p>To place an order for a DSQS assessment, please complete the details below. We will contact you within three working days to collect any additonal information and confirm your order.</p>
+                    <p>Once your order has been confirmed and payment has been received, you can expect your report within 10 working days.</p>
+
+                    <div class="col form disabled">
+                        <div class="warning">The browser you are using is not secure and I\'m afraid we cannot allow you to continue. <br /> <a href="http://browsehappy.com/?locale=en">Please update to a new version of your browser</a> and try completing the form again</div>
+                        <form action="/order.php" method="post">
+                            <fieldset>
+                                <legend>Order a DSQS audit</legend>
+                                <div class="inputContainer">
+                                    <label for="name">Hi, my name is*: </label>
+                                    <input type="text" name="yourname" class="v-text required" id="name" placeholder="Insert your name" data-validation="Please enter your full name" disabled>
+                                </div>
+                                <div class="inputContainer">
+                                    <label for="website">I would like the following website to be audited: </label>
+                                    <input type="url" name="website" id="website" class="v-url required" placeholder="Enter your website address" data-validation="Please enter a valid web address (must include 'www')" disabled>
+                                </div>
+                                <div class="inputContainer">
+                                    <label for="standard">the audit level I require is: </label>
+                                    <select name="standard" id="time">
+                                        <option value="gold">Gold standard (&pound;150+VAT)</option>
+                                        <option value="platinum">Platinum standard (&pound;150+VAT)</option>
+                                    </select>
+                                </div>
+                                <div class="inputContainer">
+                                    <label for="email">When you contact me, you can email me at*: </label>
+                                    <input type="email" name="email" id="email" class="v-email required" placeholder="Enter a valid email address" data-validation="Please enter a valid email address " disabled>
+                                </div>
+                                <div class="inputContainer">
+                                    <label for="tel">or call me on: </label>
+                                    <input type="tel" name="tel" id="tel" class="v-phone" placeholder="Enter your telephone number" data-validation="Please enter a valid UK Landline or mobile number" disabled>
+                                </div>
+                                <div class="inputContainer">
+                                    <label for="time">My contact preference is: </label>
+                                    <select name="time" id="time">
+                                        <option>Either phone or email</option>
+                                        <option value="email">Email</option>
+                                        <option value="phone">Phone</option>
+                                    </select>
+                                </div>
+                                <div class="inputContainer">
+                                    <label for="no-print"><input type="checkbox" name="no-print" id="no-print" value="No print" disabled/>Tick this box to save a tree. We will email you a digital copy of your report instead of sending you a printed version.</label>
+                                </div>
+                                <div class="inputContainer">
+                                    <label for="consent"><input type="checkbox" name="consent" id="consent" class="required" value="I agree" data-validation="We cannot contact you if you do not provide consent" disabled/>By ticking this box, you agree to be contacted by BBQ Digital Limited and allow us to store your contact details for this purpose. For more information, please view our <a href="/privacy-policy.html">Privacy Policy</a>*</label>
+                                </div>
+                                <button type="submit" value="submit" name="submitform" disabled>Place order</button>
+                                <p>* required field</p>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
         <div class="clear"></div>
         <footer>
             <ul class="col">
