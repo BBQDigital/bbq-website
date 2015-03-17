@@ -306,6 +306,12 @@ body {
         margin-bottom: 1em;
     }
 
+    h3 {
+        font-size: 1.6em;
+        font-weight: bold;
+        margin-bottom: 1em;
+    }
+
     .shout {
         display: block;
         text-align: center;
@@ -371,7 +377,7 @@ body {
         @extend .bodyTextStyle;
     }
 
-    ul {
+    ul, ol {
         margin: 0 0 2em 2em;
         list-style-type: disc;
         list-style-position: inside;
@@ -385,6 +391,22 @@ body {
                 list-style: lower-alpha;
             }
         }
+    }
+    .clickable {
+        cursor:pointer;
+        color: $brand;
+        font-weight: bold;
+        list-style:none;
+    }
+    .hide-info {
+        color: $darkGrey;
+        font-weight: normal;
+        cursor: initial;
+        background-color: #f0f0f0;
+        padding: 1em;
+        margin-top: 1em;
+        p { font-size: 1em; }
+        ol { margin-bottom: 0;}
     }
 
     /* Contact type */

@@ -1,0 +1,62 @@
+<!-- @import includes/header -->
+        <section class="landing collapsed">
+            <!-- @import includes/logo_slogan -->
+        </section>
+        <div class="main" id="main" role="main">
+            <section class="content-block contact">
+                <h1>DSQS Audit order form</h1>
+                <div class="content">
+                    <p>To place an order for a DSQS assessment, please complete the details below. We will contact you within three working days to collect any additonal information and confirm your order.</p>
+                    <p>Once your order has been confirmed and payment has been received, you can expect your report within 10 working days.</p>
+
+                    <div class="col form disabled">
+                        <div class="warning">The browser you are using is not secure and I\'m afraid we cannot allow you to continue. <br /> <a href="http://browsehappy.com/?locale=en">Please update to a new version of your browser</a> and try completing the form again</div>
+                        <form action="/order.php" method="post">
+                            <fieldset>
+                                <legend>Order a DSQS audit</legend>
+                                <div class="inputContainer">
+                                    <label for="name">Hi, my name is*: </label>
+                                    <input type="text" name="yourname" class="v-text required" id="name" placeholder="Insert your name" data-validation="Please enter your full name" disabled>
+                                </div>
+                                <div class="inputContainer">
+                                    <label for="website">I would like the following website to be audited: </label>
+                                    <input type="url" name="website" id="website" class="v-url required" placeholder="Enter your website address" data-validation="Please enter a valid web address (must include 'www')" disabled>
+                                </div>
+                                <div class="inputContainer">
+                                    <label for="standard">the audit level I require is: </label>
+                                    <select name="standard" id="time">
+                                        <option value="gold">Gold standard (&pound;150+VAT)</option>
+                                        <option value="platinum">Platinum standard (&pound;150+VAT)</option>
+                                    </select>
+                                </div>
+                                <div class="inputContainer">
+                                    <label for="email">When you contact me, you can email me at*: </label>
+                                    <input type="email" name="email" id="email" class="v-email required" placeholder="Enter a valid email address" data-validation="Please enter a valid email address " disabled>
+                                </div>
+                                <div class="inputContainer">
+                                    <label for="tel">or call me on: </label>
+                                    <input type="tel" name="tel" id="tel" class="v-phone" placeholder="Enter your telephone number" data-validation="Please enter a valid UK Landline or mobile number" disabled>
+                                </div>
+                                <div class="inputContainer">
+                                    <label for="time">My contact preference is: </label>
+                                    <select name="time" id="time">
+                                        <option>Either phone or email</option>
+                                        <option value="email">Email</option>
+                                        <option value="phone">Phone</option>
+                                    </select>
+                                </div>
+                                <div class="inputContainer">
+                                    <label for="no-print"><input type="checkbox" name="no-print" id="no-print" value="No print" disabled/>Tick this box to save a tree. We will email you a digital copy of your report instead of sending you a printed version.</label>
+                                </div>
+                                <div class="inputContainer">
+                                    <label for="consent"><input type="checkbox" name="consent" id="consent" class="required" value="I agree" data-validation="We cannot contact you if you do not provide consent" disabled/>By ticking this box, you agree to be contacted by BBQ Digital Limited and allow us to store your contact details for this purpose. For more information, please view our <a href="/privacy-policy.html">Privacy Policy</a>*</label>
+                                </div>
+                                <button type="submit" value="submit" name="submitform" disabled>Place order</button>
+                                <p>* required field</p>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+<!-- @import includes/footer -->

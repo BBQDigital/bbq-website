@@ -25,7 +25,7 @@ Forms = {
 
     checkPosted: function () {
         if (getUrlVars().posted === 'true') {
-            var message = $('<div class="posted-message">Thank you, your message has been sent <span class="close">x</span></div>').prependTo(Core.bodyTag);
+            var message = $('<div class="posted-message">Thank you, your request has been sent <span class="close">x</span></div>').prependTo(Core.bodyTag);
 
             $('.close').click( function () {
                 message.fadeOut('slow', function () {

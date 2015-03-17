@@ -15,6 +15,7 @@ Core = {
         o.contentCycle('.testimonials blockquote');
         o.warningClose();
         o.interceptSkip();
+        o.showHide('.hide-info');
         //o.responsiveLogger(); // Only turn on in dev environment
 
         /* These are fine for now but don't allow them into release 2 */
@@ -50,6 +51,18 @@ Core = {
                     i = 0;
                 }
             }, 11000);
+    },
+
+    showHide : function (element) {
+        var el = $(element);
+        el.hide();
+        el.parent().addClass('clickable').click(function() {
+            if(el.not(':visible')) {
+                el.slideUp('fast');
+                $(this).find(element).slideDown('fast');
+            }
+
+        });
     },
 
     interceptSkip : function () {
