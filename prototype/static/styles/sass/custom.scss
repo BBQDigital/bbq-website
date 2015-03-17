@@ -1,0 +1,242 @@
+/* This is where all custom styles are held */
+
+/* Global styles */
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+     > header {
+        position: fixed;
+        width: 100%;
+        z-index: 9999;
+        background-color: $darkGrey;
+        color: $offWhite;
+        padding: 1em 0;
+        .main-menu { margin-left: 1em; }
+        .social {
+            margin-right: 1em;
+            width: 5.5em;
+            float: right;
+
+            li {
+                text-indent: -9999px;
+                width: 2.5em;
+                height: 100%;
+            }
+
+            a {
+                background-size: contain;
+                background-repeat: no-repeat;
+                &.facebook { background-image: url("/static/images/social-fb.png"); }
+                &.twitter { background-image: url("/static/images/social-twitter.png"); }
+                &:hover { opacity: 0.8; }
+            }
+        }
+        li {
+            display: inline-block;
+        }
+
+        a {
+            color: $offWhite;
+            font-size: 1.2em;
+            display: block;
+            padding: 0.46em 0.5em;
+            &:hover {
+                background-color: rgba($offWhite, 0.1);
+            }
+        }
+    }
+
+    > footer {
+        @extend .dark;
+        padding:1em;
+
+        a {
+            color: $offWhite;
+            font-size: 1.1em;
+        }
+
+        .copy {
+            display: block;
+            margin-bottom: 1em;
+        }
+    }
+}
+
+/* Landing section */
+.landing {
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+    max-height: 100%;
+    background-image: url("/static/images/steak-background.jpg");
+    background-position-y: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &.collapsed {
+        min-height:30%;
+        max-height:30%;
+        background-position-y: 50%;
+    }
+
+    > header {
+        position: relative;
+        z-index: 999;
+        text-align: center;
+        .logo {
+            margin: 6em auto 0;
+            box-shadow: 0 0 100px #000;
+        }
+        .slogan {
+            display: block;
+            margin: 0 auto;
+            font-size: 2.5em;
+            color: $offWhite;
+
+            strong { font-weight: bold; }
+        }
+    }
+
+    .cta {
+        position: absolute;
+        width: 100%;
+        bottom: 5%;
+        text-align: center;
+
+        span {
+            display: block;
+            font-size: 4em;
+            color: $offWhite;
+            text-shadow: 0 0 10px #000;
+            text-transform: uppercase;
+            @extend .extraBold;
+            strong {
+                @extend .black;
+                font-size: 1.3em;
+            }
+        }
+
+        .button { margin-top: 1em; }
+    }
+}
+
+/* Content Blocks */
+
+// some content blocks on the home page are contained in this div
+.main { position: relative; }
+
+.content-block {
+    h1 {
+        background-color: $darkGrey;
+        color: $offWhite;
+        padding: 1em 0;
+        @extend .mainH1Style;
+    }
+
+    .shout {
+        display: block;
+        text-align: center;
+        text-transform: uppercase;
+        @extend .black;
+        font-size: 4em;
+        color: $darkGrey;
+        padding: 1em 20%;
+        background-image: url("/static/images/striped-bg.gif");
+        background-repeat: repeat;
+        margin-bottom: 1em;
+    }
+
+    .block-image {
+        background-size: cover;
+        background-position: 50% 80%;
+        height: 30em;
+        margin-bottom: 2em;
+        text-indent: -9999px;
+        &.beautiful-web {
+            background-image: url("/static/images/beautiful_web_background.jpg");
+        }
+        &.knowledge-sharing {
+            background-image: url("/static/images/knowledge_sharing_background.jpg");
+        }
+        &.almost-unbelievable {
+            background-image: url("/static/images/almost_unbelievable_background.jpg");
+            background-position: 50% 65%;
+        }
+    }
+
+    .content { margin: 5em 15%; }
+
+    .button { margin: 2em auto 1em; }
+
+    a {
+        color: $brand;
+        &:hover {
+            color: darken($brand, 15%);
+        }
+    }
+
+    p {
+        color: $darkGrey;
+        font-size: 2em;
+        line-height: 2em;
+        margin: 0 0 1em 0;
+    }
+
+    /* Contact type */
+    &.contact {
+
+        .content { padding: 1.5em 0;}
+
+        h1 { margin-bottom: 0.2em; }
+        .col p { padding-right: 2em; }
+        .item-detail {
+            display: block;
+            font-size: 1.4em;
+            margin-bottom: 1em;
+            h2, strong { font-weight: bold}
+        }
+        address { @extend .col-33; }
+    }
+
+    /* Map type */
+    &.map {
+        h1 {
+            font-size: 1.5em;
+            margin-bottom: 0
+        }
+    }
+}
+
+.brands {
+    .content { margin: 2em 0; }
+    ul {
+        margin-bottom: 1em;
+        display: table;
+        width: 100%;
+        border-spacing: 2em;
+        border-collapse: separate;
+        li {
+            display: table-cell;
+            margin-right: 20px;
+            text-indent: -9999px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            height: 5em;
+            text-align: center;
+
+            &.honda { background-image:url(/static/images/brands/honda.png); }
+            &.accenture { background-image:url(/static/images/brands/accenture.png); }
+            &.nokia { background-image:url(/static/images/brands/nokia.png); }
+            &.asda { background-image:url(/static/images/brands/asda.png); }
+            &.plusnet { background-image:url(/static/images/brands/plusnet.png); }
+            &.bandq { background-image:url(/static/images/brands/bandq.png); }
+            &.sse { background-image:url(/static/images/brands/sse.png); }
+        }
+    }
+}

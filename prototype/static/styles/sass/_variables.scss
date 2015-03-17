@@ -1,0 +1,42 @@
+$brand: #d12531;
+$brand50: lighten( $brand, 50%);
+$brand25: lighten( $brand, 25%);
+$brand10: lighten( $brand, 10%);
+$brand5: lighten( $brand, 5%);
+
+$darkGrey: #333;
+$mediumGrey: #666;
+$lightGrey: #ccc;
+$offWhite: #f1f1f1;
+
+/* The classes below are not to be used in Markup, they are for sass imports only */
+
+.extraBold { font-weight: 600; }
+.black { font-weight: 900; }
+
+
+.mainH1Style {
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+    @extend .black;
+    font-size: 3em;
+}
+
+/* Mixins */
+
+@mixin hires-switch() {
+    .brands {
+        ul {
+            li {
+                &.honda { background-image:url(/static/images/brands/honda-hires.png); }
+                &.accenture { background-image:url(/static/images/brands/accenture-hires.png); }
+                &.nokia { background-image:url(/static/images/brands/nokia-hires.png); }
+                &.asda { background-image:url(/static/images/brands/asda-hires.png); }
+                &.plusnet { background-image:url(/static/images/brands/plusnet-hires.png); }
+                &.bandq { background-image:url(/static/images/brands/bandq-hires.png); }
+                &.sse { background-image:url(/static/images/brands/sse-hires.png); }
+            }
+        }
+    }
+}
